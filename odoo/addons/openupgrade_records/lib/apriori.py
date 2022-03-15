@@ -7,6 +7,8 @@ renamed_modules = {
     'base_vat_autocomplete': 'partner_autocomplete',
     'mrp_repair': 'repair',
     'product_extended': 'mrp_bom_cost',
+    # OCA/account-budgeting
+    'account_budget': 'account_budget_oca',
     # OCA/account-payment
     'account_payment_return_import_sepa_pain': (
         'account_payment_return_import_iso20022'
@@ -32,6 +34,8 @@ renamed_modules = {
     'stock_barcode': 'to_stock_barcode',
     # OCA/server-brand
     'res_config_settings_enterprise_remove': 'remove_odoo_enterprise',
+    # OCA/server-tools
+    'attachment_base_synchronize': 'attachment_queue',
     # OCA/stock-logistics-workflow
     'stock_batch_picking': 'stock_picking_batch_extended',
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
@@ -44,6 +48,14 @@ renamed_modules = {
 
     # tvtma
     'to_refesh_sale_order': 'to_refresh_sale_order',
+
+    # OCA/web
+    'web_advanced_filters': 'web_advanced_filter',
+    'web_tree_image': 'web_tree_image_tooltip',
+    # OCA/l10n-brazil
+    'l10n_br_account_payment': 'l10n_br_account_payment_order',
+    'l10n_br_account_product': 'l10n_br_fiscal',
+    'l10n_br_data_account_product': 'l10n_br_nfe_account'
 }
 
 merged_modules = {
@@ -65,16 +77,20 @@ merged_modules = {
     # OCA/account-analytic
     # although model is defined in "analytic", logic is in "account"
     'account_analytic_distribution': 'account',
-    'account_asset_analytic': 'account_asset_management',
+    'account_analytic_asset': 'account_asset_management',
+    'account_asset_analytic': 'account_asset_management',  # (from <= v10)
     # OCA/account-financial-reporting
     'customer_activity_statement': 'partner_statement',
     'customer_outstanding_statement': 'partner_statement',
     # OCA/account-financial-tools
     'account_asset_depr_line_cancel': 'account_asset_management',
     'account_asset_disposal': 'account_asset_management',
+    'account_asset_management_xls': 'account_asset_management',
     'account_reversal': 'account',
     # OCA/e-commerce
     'website_sale_default_country': 'website_sale',
+    # OCA/edi
+    'base_business_document_import_stock': 'base_business_document_import',
     # OCA/event
     'event_registration_mass_mailing': 'mass_mailing_event',
     # OCA/hr
@@ -94,7 +110,6 @@ merged_modules = {
     # OCA/stock-logistics-warehouse
     'stock_putaway_product': 'stock',
     # OCA/web
-    'web_no_bubble': 'web',
     'web_sheet_full_width': 'web_responsive',
     # OCA/website
     'website_form_metadata': 'website_form',
@@ -112,6 +127,14 @@ merged_modules = {
     'to_multi_website': 'website',
     'to_multi_website_blog': 'website_blog',
     'to_multi_website_slide': 'website_slides',
+
+    # OCA/l10n-brazil
+    'l10n_br_account_banking_payment': 'l10n_br_account_payment_order',
+    'l10n_br_account_product_service': 'l10n_br_fiscal',
+    'l10n_br_data_account': 'l10n_br_fiscal',
+    'l10n_br_sale_product': 'l10n_br_sale',
+    'l10n_br_data_account_service': 'l10n_br_fiscal',
+    'l10n_br_zip_correios': 'l10n_br_zip',
 }
 
 # only used here for openupgrade_records analysis:

@@ -416,6 +416,9 @@ registry.sizing = SnippetOption.extend({
         this.$handles.on('mousedown', function (ev) {
             ev.preventDefault();
 
+            // First update size values as some element sizes may not have been
+            // initialized on option start (hidden slides, etc)
+            resizeValues = self._getSize();
             var $handle = $(ev.currentTarget);
 
             var compass = false;
@@ -487,7 +490,7 @@ registry.sizing = SnippetOption.extend({
             };
             var body_mouseup = function () {
                 $body.off('mousemove', body_mousemove);
-                $body.off('mouseup', body_mouseup);
+                $(window).off('mouseup', body_mouseup);
                 $body.removeClass(cursor);
                 $handle.removeClass('o_active');
 
@@ -508,7 +511,7 @@ registry.sizing = SnippetOption.extend({
                 }, 0);
             };
             $body.on('mousemove', body_mousemove);
-            $body.on('mouseup', body_mouseup);
+            $(window).on('mouseup', body_mouseup);
         });
 
         return def;
@@ -874,7 +877,6 @@ registry.background = SnippetOption.extend({
         var $editable = this.$target.closest('.o_editable');
         var _editor = new weWidgets.MediaDialog(this, {
             onlyImages: true,
-            firstFilters: ['background'],
             res_model: $editable.data('oe-model'),
             res_id: $editable.data('oe-id'),
         }, null, $image[0]).open();
@@ -1342,7 +1344,7 @@ registry.many2one = SnippetOption.extend({
                     });
                 });
         } else {
-            self.$target.html($li.data('name'));
+            self.$target.text($li.data('name'));
         }
 
         _.defer(function () {

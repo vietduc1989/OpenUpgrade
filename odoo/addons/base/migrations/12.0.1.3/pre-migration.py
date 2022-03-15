@@ -70,6 +70,11 @@ xmlid_renames = [
     ('stock.incoterm_FOB', 'account.incoterm_FOB'),
 ]
 
+_obsolete_tables = (
+    "sale_layout_category",
+    "stock_location_path",
+)
+
 
 def switch_noupdate_flag(env):
     """"Some renamed XML-IDs have changed their noupdate status, so we change
@@ -166,8 +171,46 @@ def fill_ir_attachment_res_model_name(cr):
         )
 
 
+def fix_double_membership(cr):
+    # avoid error raised by new function '_check_one_user_type'
+
+    # assuming that group_public < group_portal < group_user
+    # this script keept the highest group, if a user belong to many
+    # groups
+    confs = [
+        ("group_public", "group_portal"),
+        ("group_public", "group_user"),
+        ("group_portal", "group_user"),
+    ]
+    for conf in confs:
+        group_to_remove = conf[0]
+        group_to_keep = conf[1]
+        openupgrade.logged_query(
+            cr, """
+                DELETE FROM res_groups_users_rel
+                WHERE
+                gid = (
+                    SELECT res_id
+                    FROM ir_model_data
+                    WHERE module = 'base' AND name = %s
+                )
+                AND uid IN (
+                    SELECT uid FROM res_groups_users_rel WHERE gid IN (
+                        SELECT res_id
+                        FROM ir_model_data
+                        WHERE module = 'base'
+                        AND name IN (%s, %s)
+                    )
+                    GROUP BY uid
+                    HAVING count(*) > 1
+                );
+            """, (group_to_remove, group_to_remove, group_to_keep)
+        )
+
+
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
+    openupgrade.remove_tables_fks(env.cr, _obsolete_tables)
     # Deactivate the noupdate flag (hardcoded on initial SQL load) for allowing
     # to update changed data on this group.
     openupgrade.logged_query(
@@ -229,3 +272,13 @@ def migrate(env, version):
             'view_menu',
             'lang_km',
         ], False)
+    # In Odoo 12.0, fields xmlids are noupdate FALSE instead of NULL and are
+    # thus included when cleaning up obsolete data records in _process_end.
+    openupgrade.logged_query(
+        env.cr,
+        """UPDATE ir_model_data
+        SET noupdate=FALSE
+        WHERE model='ir.model.fields' AND noupdate IS NULL""")
+
+    # Fix potentiel duplicates in res_groups_users_rel
+    fix_double_membership(env.cr)
