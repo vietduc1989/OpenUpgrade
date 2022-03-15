@@ -143,9 +143,9 @@ class AccountReconciliation(models.AbstractModel):
         reconcile_model = self.env['account.reconcile.model'].search([('rule_type', '!=', 'writeoff_button')])
 
         # Search for missing partners when opening the reconciliation widget.
-        partner_map = self._get_bank_statement_line_partners(bank_statement_lines)
-
-        matching_amls = reconcile_model._apply_rules(bank_statement_lines, excluded_ids=excluded_ids, partner_map=partner_map)
+        if bank_statement_lines:
+            partner_map = self._get_bank_statement_line_partners(bank_statement_lines)
+            matching_amls = reconcile_model._apply_rules(bank_statement_lines, excluded_ids=excluded_ids, partner_map=partner_map)
 
         results = {
             'lines': [],
@@ -548,6 +548,10 @@ class AccountReconciliation(models.AbstractModel):
             domain = expression.AND([[('id', 'not in', excluded_ids)], domain])
         if search_str:
             str_domain = self._domain_move_lines(search_str=search_str)
+            str_domain = expression.OR([
+                str_domain,
+                [('partner_id.name', 'ilike', search_str)]
+            ])
             domain = expression.AND([domain, str_domain])
         # filter on account.move.line having the same company as the given account
         account = self.env['account.account'].browse(account_id)
@@ -735,8 +739,8 @@ class AccountReconciliation(models.AbstractModel):
             AND (%s IS NULL AND b.account_id = %s)
             AND (%s IS NULL AND NOT b.reconciled OR b.id = %s)
             AND (%s is NULL OR (a.partner_id = %s AND b.partner_id = %s))
-            AND a.id IN (SELECT id FROM {0})
-            AND b.id IN (SELECT id FROM {0})
+            AND a.id IN (SELECT "account_move_line".id FROM {0})
+            AND b.id IN (SELECT "account_move_line".id FROM {0})
             ORDER BY a.date desc
             LIMIT 1
             """.format(from_clause + where_str)

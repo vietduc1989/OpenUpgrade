@@ -24,4 +24,5 @@ Send KPI Digests periodically
     ],
     'post_init_hook': 'post_init_hook',
     'installable': True,
+    'license': 'LGPL-3',
 }

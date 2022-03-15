@@ -53,7 +53,7 @@ class AccountInvoice(models.Model):
 
     @api.one
     @api.depends('invoice_line_ids.price_subtotal', 'tax_line_ids.amount', 'tax_line_ids.amount_rounding',
-                 'currency_id', 'company_id', 'date_invoice', 'type')
+                 'currency_id', 'company_id', 'date_invoice', 'type', 'date')
     def _compute_amount(self):
         round_curr = self.currency_id.round
         self.amount_untaxed = sum(line.price_subtotal for line in self.invoice_line_ids)
@@ -63,8 +63,9 @@ class AccountInvoice(models.Model):
         amount_untaxed_signed = self.amount_untaxed
         if self.currency_id and self.company_id and self.currency_id != self.company_id.currency_id:
             currency_id = self.currency_id
-            amount_total_company_signed = currency_id._convert(self.amount_total, self.company_id.currency_id, self.company_id, self.date_invoice or fields.Date.today())
-            amount_untaxed_signed = currency_id._convert(self.amount_untaxed, self.company_id.currency_id, self.company_id, self.date_invoice or fields.Date.today())
+            rate_date = self._get_currency_rate_date() or fields.Date.today()
+            amount_total_company_signed = currency_id._convert(self.amount_total, self.company_id.currency_id, self.company_id, rate_date)
+            amount_untaxed_signed = currency_id._convert(self.amount_untaxed, self.company_id.currency_id, self.company_id, rate_date)
         sign = self.type in ['in_refund', 'out_refund'] and -1 or 1
         self.amount_total_company_signed = amount_total_company_signed * sign
         self.amount_total_signed = self.amount_total * sign
@@ -75,12 +76,6 @@ class AccountInvoice(models.Model):
             sign = invoice.type in ['in_refund', 'out_refund'] and -1 or 1
             invoice.amount_untaxed_invoice_signed = invoice.amount_untaxed * sign
             invoice.amount_tax_signed = invoice.amount_tax * sign
-
-    @api.onchange('amount_total')
-    def _onchange_amount_total(self):
-        for inv in self:
-            if float_compare(inv.amount_total, 0.0, precision_rounding=inv.currency_id.rounding) == -1:
-                raise Warning(_('You cannot validate an invoice with a negative total amount. You should create a credit note instead.'))
 
     @api.model
     def _default_journal(self):
@@ -221,8 +216,11 @@ class AccountInvoice(models.Model):
             if float_is_zero(amount_to_show, precision_rounding=self.currency_id.rounding):
                 continue
             payment_ref = payment.move_id.name
+            invoice_view_id = None
             if payment.move_id.ref:
                 payment_ref += ' (' + payment.move_id.ref + ')'
+            if payment.invoice_id:
+                invoice_view_id = payment.invoice_id.get_formview_id()
             payment_vals.append({
                 'name': payment.name,
                 'journal_name': payment.journal_id.name,
@@ -234,6 +232,7 @@ class AccountInvoice(models.Model):
                 'payment_id': payment.id,
                 'account_payment_id': payment.payment_id.id,
                 'invoice_id': payment.invoice_id.id,
+                'invoice_view_id': invoice_view_id,
                 'move_id': payment.move_id.id,
                 'ref': payment_ref,
             })
@@ -869,7 +868,8 @@ class AccountInvoice(models.Model):
                     self.partner_id = False
 
         self.account_id = account_id
-        self.payment_term_id = payment_term_id
+        if payment_term_id:
+            self.payment_term_id = payment_term_id
         self.date_due = False
         self.fiscal_position_id = fiscal_position
 
@@ -936,6 +936,10 @@ class AccountInvoice(models.Model):
                             biggest_tax_line = tax_line
                     biggest_tax_line.amount_rounding += rounding_amount
                 elif self.cash_rounding_id.strategy == 'add_invoice_line':
+                    if rounding_amount > 0.0:
+                        account_id = self.cash_rounding_id._get_loss_account_id().id
+                    else:
+                        account_id = self.cash_rounding_id._get_profit_account_id().id
                     # Create a new invoice line to perform the rounding
                     rounding_line = self.env['account.invoice.line'].new({
                         'name': self.cash_rounding_id.name,
@@ -1068,7 +1072,7 @@ class AccountInvoice(models.Model):
         tax_grouped = {}
         round_curr = self.currency_id.round
         for line in self.invoice_line_ids:
-            if not line.account_id:
+            if not line.account_id or line.display_type:
                 continue
             price_unit = line.price_unit * (1 - (line.discount or 0.0) / 100.0)
             taxes = line.invoice_line_tax_ids.compute_all(price_unit, self.currency_id, line.quantity, line.product_id, self.partner_id)['taxes']
@@ -1193,17 +1197,13 @@ class AccountInvoice(models.Model):
     def tax_line_move_line_get(self):
         res = []
         # keep track of taxes already processed
-        done_taxes = []
         # loop the invoice.tax.line in reversal sequence
         for tax_line in sorted(self.tax_line_ids, key=lambda x: -x.sequence):
             tax = tax_line.tax_id
-            if tax.amount_type == "group":
-                for child_tax in tax.children_tax_ids:
-                    done_taxes.append(child_tax.id)
 
             analytic_tag_ids = [(4, analytic_tag.id, None) for analytic_tag in tax_line.analytic_tag_ids]
             if tax_line.amount_total:
-                res.append({
+                tax_line_vals = {
                     'invoice_tax_line_id': tax_line.id,
                     'tax_line_id': tax_line.tax_id.id,
                     'type': 'tax',
@@ -1215,9 +1215,20 @@ class AccountInvoice(models.Model):
                     'account_analytic_id': tax_line.account_analytic_id.id,
                     'analytic_tag_ids': analytic_tag_ids,
                     'invoice_id': self.id,
-                    'tax_ids': [(6, 0, list(done_taxes))] if done_taxes and tax_line.tax_id.include_base_amount else []
-                })
-            done_taxes.append(tax.id)
+                }
+
+                if tax.include_base_amount:
+                    affected_taxes = []
+                    for invoice_line in tax_line.invoice_id.invoice_line_ids:
+                        if tax in invoice_line.invoice_line_tax_ids or tax in invoice_line.invoice_line_tax_ids.mapped('children_tax_ids'):
+                            all_taxes = invoice_line.invoice_line_tax_ids.filtered(lambda x: x.amount_type != 'group') \
+                                        + invoice_line.invoice_line_tax_ids.mapped('children_tax_ids')
+                            following_taxes = all_taxes.filtered(lambda x: x.sequence > tax.sequence
+                                                                           or (x.sequence == tax.sequence and x.id > tax.id))
+
+                    tax_line_vals['tax_ids'] = [(6, 0, following_taxes.ids)]
+
+                res.append(tax_line_vals)
         return res
 
     def inv_line_characteristic_hashcode(self, invoice_line):
@@ -1431,6 +1442,8 @@ class AccountInvoice(models.Model):
         if name:
             invoice_ids = self._search([('number', '=', name)] + args, limit=limit, access_rights_uid=name_get_uid)
         if not invoice_ids:
+            invoice_ids = self._search([('number', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
+        if not invoice_ids:
             invoice_ids = self._search([('name', operator, name)] + args, limit=limit, access_rights_uid=name_get_uid)
         return self.browse(invoice_ids).name_get()
 
@@ -1539,14 +1552,16 @@ class AccountInvoice(models.Model):
         values['state'] = 'draft'
         values['number'] = False
         values['origin'] = invoice.number
-        values['payment_term_id'] = False
         values['refund_invoice_id'] = invoice.id
         values['reference'] = False
 
         if values['type'] == 'in_refund':
+            values['payment_term_id'] = invoice.partner_id.property_supplier_payment_term_id.id
             partner_bank_result = self._get_partner_bank_id(values['company_id'])
             if partner_bank_result:
                 values['partner_bank_id'] = partner_bank_result.id
+        else:
+            values['payment_term_id'] = invoice.partner_id.property_payment_term_id.id
 
         if date:
             values['date'] = date
@@ -1694,8 +1709,9 @@ class AccountInvoiceLine(models.Model):
 
     @api.model
     def _default_account(self):
-        if self._context.get('journal_id'):
-            journal = self.env['account.journal'].browse(self._context.get('journal_id'))
+        journal_id = self._context.get('journal_id') or self._context.get('default_journal_id')
+        if journal_id:
+            journal = self.env['account.journal'].browse(journal_id)
             if self._context.get('type') in ('out_invoice', 'in_refund'):
                 return journal.default_credit_account_id.id
             return journal.default_debit_account_id.id
@@ -1829,6 +1845,8 @@ class AccountInvoiceLine(models.Model):
             if type not in ('in_invoice', 'in_refund'):
                 self.price_unit = 0.0
             domain['uom_id'] = []
+            if fpos:
+                self.account_id = fpos.map_account(self.account_id)
         else:
             self_lang = self
             if part.lang:
