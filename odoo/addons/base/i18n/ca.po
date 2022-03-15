@@ -12,6 +12,8 @@
 # Manel Fernandez Ramirez <manelfera@outlook.com>, 2019
 # Arnau Ros, 2019
 # Carles Antoli <carlesantoli@hotmail.com>, 2020
+# Eugeni Chafer <eugeni@chafer.cat>, 2020
+# jabelchi, 2021
 # 
 msgid ""
 msgstr ""
@@ -19,7 +21,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:05+0000\n"
 "PO-Revision-Date: 2017-09-20 10:13+0000\n"
-"Last-Translator: Carles Antoli <carlesantoli@hotmail.com>, 2020\n"
+"Last-Translator: jabelchi, 2021\n"
 "Language-Team: Catalan (https://www.transifex.com/odoo/teams/41243/ca/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -520,6 +522,11 @@ msgid ""
 "        Colloquially known as \"Month 13\"\n"
 "    "
 msgstr ""
+"\n"
+"        Permet generar el balanç de comprovació pel assentament de tancament.\n"
+"\n"
+"        Es coneix col·loquialment com a \"Mes 13\"\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_voip
@@ -3344,6 +3351,10 @@ msgid ""
 "========================\n"
 "    "
 msgstr ""
+"\n"
+"Geolocalització de partners\n"
+"========================\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_appraisal
@@ -3871,6 +3882,9 @@ msgid ""
 "The kernel of Odoo, needed for all installation.\n"
 "===================================================\n"
 msgstr ""
+"\n"
+"Nucli de Odoo, necessari per a tota la instal·lació.\n"
+"===================================================\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_google_account
@@ -5476,6 +5490,8 @@ msgid ""
 "<code>records</code>: recordset of all records on which the action is "
 "triggered in multi mode; may be void"
 msgstr ""
+"<code>records</code>: conjunt de tots els registres en els que es llença "
+"l'acció en mode múltiple. Pot estar buit."
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_fields_form
@@ -5519,7 +5535,7 @@ msgstr "<strong>Dependències :</strong>"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_res_company_kanban
 msgid "<strong>Email:</strong>"
-msgstr ""
+msgstr "<strong>Email:</strong>"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -6623,7 +6639,7 @@ msgstr "Quantitat Posterior"
 #. module: base
 #: model:res.partner.industry,name:base.res_partner_industry_A
 msgid "Agriculture"
-msgstr ""
+msgstr "Agricultura"
 
 #. module: base
 #: model:res.country,name:base.al
@@ -6807,7 +6823,7 @@ msgstr "Aplicació"
 #: model:ir.ui.view,arch_db:base.user_groups_view
 #, python-format
 msgid "Application Accesses"
-msgstr ""
+msgstr "Accesos a aplicacions"
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_planner
@@ -7471,7 +7487,7 @@ msgstr "Benín"
 #. module: base
 #: model:res.country,name:base.bm
 msgid "Bermuda"
-msgstr "Bermuda"
+msgstr "Bermudes"
 
 #. module: base
 #: model:res.country,name:base.bt
@@ -8361,7 +8377,7 @@ msgstr "Tipus d'empresa"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_timesheet_forecast_sale
 msgid "Compare timesheets and forecast for your projects"
-msgstr ""
+msgstr "Comprareu els fulls d'hores i les previsions pels projectes"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_contact_address
@@ -8449,7 +8465,7 @@ msgstr "Assistents de configuració"
 #. module: base
 #: model:ir.module.module,summary:base.module_timesheet_grid_sale
 msgid "Configure timesheet invoicing"
-msgstr ""
+msgstr "Configurar facturació de fulls d'hores"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_uninstall
@@ -8721,7 +8737,7 @@ msgstr "Crear permisos d'accés "
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Create Contextual Action"
-msgstr ""
+msgstr "Crear acció contextual"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_logging_create_date
@@ -9489,7 +9505,7 @@ msgstr "Descripció HTML "
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing_themes
 msgid "Design gorgeous mails"
-msgstr ""
+msgstr "Dissenya bonics correus"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing
@@ -10527,7 +10543,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_address_extended
 msgid "Extended Addresses"
-msgstr ""
+msgstr "Adreces ampliades"
 
 #. module: base
 #: selection:ir.ui.view,mode:0
@@ -11514,7 +11530,7 @@ msgstr "Gibraltar"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mail_github
 msgid "Github Integration with Discuss"
-msgstr ""
+msgstr "Integració de Github amb Converses"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_rule_global
@@ -11664,7 +11680,7 @@ msgstr "Quadrícula"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_grid
 msgid "Grid View"
-msgstr "Vista de quadrícula"
+msgstr "Vista de graella"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_access_group_id
@@ -11729,7 +11745,7 @@ msgstr "Grups (sense grups = global)"
 #. module: base
 #: model:res.country,name:base.gp
 msgid "Guadeloupe"
-msgstr ""
+msgstr "Guadalupe"
 
 #. module: base
 #: model:res.country,name:base.gu
@@ -11759,7 +11775,7 @@ msgstr "Guinea"
 #. module: base
 #: model:res.country,name:base.gw
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinea Bissau"
 
 #. module: base
 #: model:res.country,name:base.gy
@@ -11954,7 +11970,7 @@ msgstr "L'ajuda a gestionar els seus treballadors."
 #. module: base
 #: model:ir.module.category,description:base.module_category_hr_expense
 msgid "Helps you manage your expenses."
-msgstr "L'ajuda a gestionar els seus despeses."
+msgstr "Us ajuda a gestionar les despeses."
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_warehouse_management
@@ -12350,7 +12366,7 @@ msgstr "Si s'estableix, l'acció enllaçada només s'aplica a aquest usuari."
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_default_condition
 msgid "If set, applies the default upon condition."
-msgstr ""
+msgstr "Si es marca, s'aplicarà la condició predeterminada."
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -12491,12 +12507,12 @@ msgstr "Aplicacions Afectades"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_uninstall_model_ids
 msgid "Impacted data models"
-msgstr ""
+msgstr "Models de dades afectats"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_uninstall_module_ids
 msgid "Impacted modules"
-msgstr ""
+msgstr "Mòduls afectats"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_sequence_implementation
@@ -12566,7 +12582,7 @@ msgstr "A les Aplicacions"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_iap
 msgid "In-App Purchases"
-msgstr ""
+msgstr "Compres a l'aplicació"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_currency_search
@@ -14084,6 +14100,8 @@ msgid ""
 "Manage sectors of activity to better classify partners for tracking and "
 "analysis purposes."
 msgstr ""
+"Gestiona sectors d'activitat per a classificar millor els parners amb "
+"propòsit d'anàlisi i seguiment. "
 
 #. module: base
 #: model:ir.actions.act_window,help:base.action_partner_title_contact
@@ -17823,7 +17841,7 @@ msgstr "Classificació del projecte"
 #. module: base
 #: model:ir.module.module,summary:base.module_helpdesk_sale_timesheet
 msgid "Project, Helpdesk, Timesheet and Sale Orders"
-msgstr ""
+msgstr "Projecte, Helpdesk, Fulls d'Hores i Comandes de Venda"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_helpdesk_timesheet
@@ -17869,6 +17887,8 @@ msgid ""
 "Provide the field used to link the newly created record on the record on "
 "used by the server action."
 msgstr ""
+"Implementa el camp usat per enllaçar el registre acabat de crear al registre"
+" usat per l'acció de servidor. "
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hw_screen
@@ -17970,7 +17990,7 @@ msgstr "Codi Python"
 #. module: base
 #: selection:ir.server.object.lines,type:0
 msgid "Python expression"
-msgstr "expresió Python"
+msgstr "expressió Python"
 
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_Q
@@ -18532,7 +18552,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_sepa_direct_debit
 msgid "SEPA Direct Debit"
-msgstr ""
+msgstr "Càrrec directe SEPA"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sms
@@ -18542,7 +18562,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sms
 msgid "SMS gateway"
-msgstr ""
+msgstr "Passarel·la de SMSs"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server_smtp_port
@@ -18627,7 +18647,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_coupon_delivery
 msgid "Sale Coupon Delivery"
-msgstr ""
+msgstr "Lliurament de cupons de venda"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_service_rating
@@ -19054,7 +19074,7 @@ msgstr "Accions del servidor"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_cron_ir_actions_server_id
 msgid "Server action"
-msgstr ""
+msgstr "Acció del servidor"
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_11
@@ -19090,6 +19110,8 @@ msgid ""
 "Setting a value makes this action available in the sidebar for the given "
 "model."
 msgstr ""
+"Establir-hi un valor fa que aquesta acció estigui disponible a la barra "
+"lateral pel model determinat."
 
 #. module: base
 #: code:addons/base/res/res_users.py:567
@@ -19144,7 +19166,7 @@ msgstr "Adreça d'enviament "
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_uninstall_show_all
 msgid "Show All"
-msgstr ""
+msgstr "Mostrar tot"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_currency_search
@@ -19159,7 +19181,7 @@ msgstr "Mostrar monedes inactives"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_uninstall
 msgid "Show technical modules"
-msgstr ""
+msgstr "Mostra mòduls tècnics"
 
 #. module: base
 #: model:res.country,name:base.sl
@@ -20739,6 +20761,14 @@ msgid "The list of models that extends the current model."
 msgstr "La llista de models que estenen al model actual."
 
 #. module: base
+#: code:addons/base/ir/ir_model.py:522
+#, python-format
+msgid ""
+"The m2o field %s is required but declares its ondelete policy as being 'set "
+"null'. Only 'restrict' and 'cascade' make sense."
+msgstr ""
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_filters_action_id
 msgid ""
 "The menu action this filter applies to. When left empty the filter applies "
@@ -20814,7 +20844,7 @@ msgstr "Les úniques variables predefinides"
 #: code:addons/model.py:121
 #, python-format
 msgid "The operation cannot be completed:"
-msgstr ""
+msgstr "La operació no pot ésser completada:"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_domain
@@ -20898,7 +20928,7 @@ msgstr ""
 #. module: base
 #: sql_constraint:res.currency:0
 msgid "The rounding factor must be greater than 0!"
-msgstr ""
+msgstr "El factor d'arrodoniment ha d'ésser mes gran que 0"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_language_install
@@ -21122,7 +21152,7 @@ msgstr "Format d'hora"
 #. module: base
 #: model:ir.module.module,summary:base.module_timesheet_grid
 msgid "Timesheet Validation and Grid View"
-msgstr ""
+msgstr "Validació de fulls d'hores i vista de graella"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_timesheet_holidays
@@ -22324,7 +22354,7 @@ msgstr "Avisos"
 #. module: base
 #: model:res.partner.industry,name:base.res_partner_industry_E
 msgid "Water supply"
-msgstr ""
+msgstr "Subministrament d'aigua"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_upgrade_install
@@ -22353,12 +22383,12 @@ msgstr "Editor Web"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_enterprise
 msgid "Web Enterprise"
-msgstr ""
+msgstr "Web Enterprise"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_gantt
 msgid "Web Gantt"
-msgstr ""
+msgstr "Web Gantt"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_menu_web_icon
@@ -23379,7 +23409,7 @@ msgstr "ir.ui.view.custom"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "many2many"
-msgstr ""
+msgstr "many2many"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
@@ -23432,7 +23462,7 @@ msgstr ""
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "reference"
-msgstr ""
+msgstr "referència"
 
 #. module: base
 #: model:ir.model,name:base.model_report_base_report_irmodulereference

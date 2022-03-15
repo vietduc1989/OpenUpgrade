@@ -300,7 +300,13 @@ class MrpProduction(models.Model):
                 self.bom_id = False
             self.product_uom_id = self.product_id.uom_id.id
             return {'domain': {'product_uom_id': [('category_id', '=', self.product_id.uom_id.category_id.id)]}}
-
+    
+    @api.onchange('bom_id')
+    def _onchange_bom_id(self):
+        self.product_qty = self.bom_id.product_qty
+        self.product_uom_id = self.bom_id.product_uom_id.id
+        self.picking_type_id = self.bom_id.picking_type_id or self.picking_type_id     
+        
     @api.onchange('picking_type_id', 'routing_id')
     def onchange_picking_type(self):
         location = self.env.ref('stock.stock_location_stock')
@@ -453,8 +459,7 @@ class MrpProduction(models.Model):
             if quantity > 0:
                 production = move[0].raw_material_production_id
                 production_qty = production.product_qty - production.qty_produced
-                move[0]._decrease_reserved_quanity(quantity)
-                move[0].with_context(do_not_unreserve=True).write({'product_uom_qty': quantity})
+                move[0].write({'product_uom_qty': quantity})
                 move[0]._recompute_state()
                 move[0]._action_assign()
                 move[0].unit_factor = production_qty and (quantity - move[0].quantity_done) / production_qty or 1.0

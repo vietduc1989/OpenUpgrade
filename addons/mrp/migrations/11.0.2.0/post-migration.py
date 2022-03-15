@@ -4,6 +4,18 @@ from openupgradelib import openupgrade
 from psycopg2.extensions import AsIs
 
 
+def set_stock_move_created_production_id(cr):
+    """Migrate the created production order to the destination move"""
+    openupgrade.logged_query(
+        cr, """
+        UPDATE stock_move sm
+        SET created_production_id = po.production_id
+        FROM procurement_order po
+        WHERE sm.id = po.move_dest_id
+            AND po.production_id IS NOT NULL"""
+    )
+
+
 def fill_mrp_document(cr):
     cr.execute(
         """
@@ -100,7 +112,7 @@ def create_stock_move_lines_from_stock_move_lots(env):
         )
         SELECT %(select)s
         FROM %(from)s
-        WHERE sm.state NOT IN ('cancel', 'confirmed')
+        WHERE sm.state NOT IN ('cancel', 'confirmed', 'waiting')
             AND sm.id NOT IN (SELECT sq.reservation_id
                               FROM stock_quant sq
                               WHERE sq.reservation_id IS NOT NULL)
@@ -157,7 +169,7 @@ def create_stock_move_lines_from_stock_move_lots(env):
         SELECT %(select)s
         FROM %(from)s
         WHERE sm.state NOT IN ('cancel') AND (sml.lot_id IS NOT NULL OR
-            sm.state NOT IN ('confirmed'))
+            sm.state = 'done')
             AND sm.id NOT IN (SELECT sq.reservation_id
                               FROM stock_quant sq
                               WHERE sq.reservation_id IS NOT NULL)
@@ -210,6 +222,7 @@ def fill_stock_move_line_consume_rel(cr):
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
     cr = env.cr
+    set_stock_move_created_production_id(cr)
     fill_mrp_document(cr)
     create_stock_move_lines_from_stock_move_lots(env)
     update_stock_move_line_production_id(env)

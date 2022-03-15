@@ -8,13 +8,9 @@ from odoo.addons.openupgrade_records.lib import apriori
 from openupgradelib import openupgrade
 
 
-# backup of
-# - datetime field because it changes to date field
-column_copies = {
-    'res_currency_rate': [('name', None, None)],
-}
 column_renames = {
     'ir_actions': [('usage', None)],
+    'res_currency_rate': [('name', None)],
 }
 
 
@@ -110,6 +106,53 @@ def fill_cron_action_server_pre(env):
     )
 
 
+def set_currency_rate_dates(env):
+    """Set currency rate date by creation user timezone."""
+    openupgrade.logged_query(
+        env.cr,
+        "ALTER TABLE res_currency_rate ADD COLUMN name DATE")
+    cr = env.cr
+    openupgrade.logged_query(
+        cr, """
+        UPDATE res_currency_rate rcr
+        SET name = (%s::TIMESTAMP at TIME ZONE 'UTC'
+            AT TIME ZONE COALESCE(rp.tz, 'UTC'))::DATE
+        FROM res_users ru
+        JOIN res_partner rp ON ru.partner_id = rp.id
+        WHERE rcr.create_uid = ru.id
+        """, (
+            AsIs(openupgrade.get_legacy_name('name')),
+        ),
+    )
+    # Now delete duplicated currency rates due to 'unique_name_per_day'
+    # sql constrain and name type changed from datetime to date"""
+    openupgrade.logged_query(
+        cr, """
+        DELETE FROM res_currency_rate
+        WHERE id IN (
+            SELECT id
+            FROM (
+                SELECT id, row_number() over (partition BY name, currency_id,
+                    company_id ORDER BY id) AS rnum
+                FROM res_currency_rate
+            ) t
+            WHERE t.rnum > 1)"""
+    )
+
+
+def rename_mass_mailing_event(env):
+    env.cr.execute("""
+        SELECT id
+        FROM ir_module_module
+        WHERE name = 'mass_mailing_event' AND state <> 'uninstalled'""")
+    row = env.cr.fetchone()
+    if row:
+        openupgrade.update_module_names(
+            env.cr,
+            [("mass_mailing_event", "mass_mailing_event_registration_exclude")],
+            merge_modules=True)
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.remove_tables_fks(env.cr, _obsolete_tables)
@@ -118,7 +161,6 @@ def migrate(env, version):
     )
     openupgrade.update_module_names(
         env.cr, apriori.merged_modules.items(), merge_modules=True)
-    openupgrade.copy_columns(env.cr, column_copies)
     openupgrade.rename_columns(env.cr, column_renames)
     openupgrade.rename_models(env.cr, model_renames_ir_actions_report)
     handle_partner_sector(env)
@@ -155,3 +197,8 @@ def migrate(env, version):
     remove_currency_rates_of_the_same_day(env)
     openupgrade.set_xml_ids_noupdate_value(
         env, 'base', ['lang_km'], True)
+    set_currency_rate_dates(env)
+
+    # Rename 'mass_mailing_event' module to not collide with the new
+    # core module with the same name.
+    rename_mass_mailing_event(env)
