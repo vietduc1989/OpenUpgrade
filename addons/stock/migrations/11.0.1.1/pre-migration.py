@@ -5,21 +5,6 @@
 from openupgradelib import openupgrade
 
 
-def copy_global_rules(env):
-    """Copy global rules to another table and remove them from main one."""
-    for table in ['procurement_rule', 'stock_location_path']:
-        openupgrade.logged_query(
-            env.cr, """
-            CREATE TABLE %s AS (
-                SELECT * FROM %s
-                WHERE route_id IS NULL
-            )""" % (openupgrade.get_legacy_name(table), table)
-        )
-        openupgrade.logged_query(
-            env.cr, "DELETE FROM %s WHERE route_id IS NULL" % table,
-        )
-
-
 def delete_quants_for_consumable(env):
     """On v11, consumable products don't generate quants, so we can remove them
     as soon as possible for cleaning the DB and avoid other computations (like
@@ -33,6 +18,25 @@ def delete_quants_for_consumable(env):
         WHERE sq.product_id = pp.id
             AND pt.id = pp.product_tmpl_id
             AND pt.type = 'consu'
+        """
+    )
+
+
+def remove_company_for_quants_in_vendor_customer(env):
+    """On v11, customer or vendor location's quants do not have company
+    (it is not assinged, it is related to the location) and customer
+    location should not have company. In v10 is was a _company_default_get.
+    We should remove the company on those in order to be aligned to the
+    new flow.
+    """
+    openupgrade.logged_query(
+        env.cr, """
+        UPDATE stock_quant sq
+        SET company_id = sl.company_id
+        FROM stock_location sl
+        WHERE sl.id = sq.location_id
+            AND sl.usage in ('customer', 'supplier')
+            AND sq.company_id != sl.company_id
         """
     )
 
@@ -57,8 +61,8 @@ def fix_act_window(env):
 
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
-    copy_global_rules(env)
     delete_quants_for_consumable(env)
+    remove_company_for_quants_in_vendor_customer(env)
     fix_act_window(env)
     openupgrade.update_module_moved_fields(
         env.cr, 'stock.move', ['has_tracking'], 'mrp', 'stock',

@@ -5,15 +5,17 @@
 # Translators:
 # Masayuki Takesue <m_takesue@nifty.com>, 2017
 # SHIMIZU Taku <shimizu.taku@gmail.com>, 2017
-# NOKA Shigekazu <shigekazu.noka@gmail.com>, 2017
 # 高木正勝 <masakatsu.takagi@pro-spire.co.jp>, 2017
 # Manami Hashi <manami@roomsfor.hk>, 2017
 # Takahiro MURAKAMI <murakami@date-yakkyoku.com>, 2017
 # Norimichi Sugimoto <norimichi.sugimoto@tls-ltd.co.jp>, 2017
 # Takuya Sawada <takuya@tuntunkun.com>, 2017
 # Martin Trigaux, 2019
-# Yoshi Tashiro <tashiro@roomsfor.hk>, 2019
 # Tim Siu Lai <tl@roomsfor.hk>, 2019
+# Hau Dao <hau@quartile.co>, 2020
+# Yoshi Tashiro <tashiro@roomsfor.hk>, 2020
+# Noma Yuki, 2020
+# Shigekazu N. <shigekazu.noka@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -21,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:05+0000\n"
 "PO-Revision-Date: 2017-09-20 10:13+0000\n"
-"Last-Translator: Tim Siu Lai <tl@roomsfor.hk>, 2019\n"
+"Last-Translator: Shigekazu N. <shigekazu.noka@gmail.com>, 2020\n"
 "Language-Team: Japanese (https://www.transifex.com/odoo/teams/41243/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,6 +63,10 @@ msgid ""
 "Allow cashier to reprint receipts\n"
 "\n"
 msgstr ""
+"\n"
+"\n"
+"レジでのレシート再発行を許可\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_hu
@@ -160,6 +166,72 @@ msgid ""
 "11010101 Caja General\n"
 "    "
 msgstr ""
+"\n"
+"\n"
+"ドミニカ共和国のローカリゼーションモジュール\n"
+"===========================================\n"
+"\n"
+"CatálogodeCuentaseImpuestosparaRepúblicaDominicana、互換性のあるパラ\n"
+"**Internacionalización** con ** NIIF ** y alineado a lasnormasyregulaciones\n"
+"delaDirecciónGeneraldeImpuestosInternos（** DGII **）。\n"
+"\n"
+"**Estemóduloconsistede：**\n"
+"\n"
+"-CatálogodeCuentasEstándar（alineado a DGII y NIIF）\n"
+"--CatálogodeImpuestosconlamayoríadeImpuestosPreconfigurados\n"
+"-ITBISパラコンプリーティベンタス\n"
+"--RetencionesdeITBIS\n"
+"--RetencionesdeISR\n"
+"--Grupos de Impuestos y Retenciones：\n"
+"-Telecomunicaiones\n"
+"--ProveedoresdeMaterialesdeConstrucción\n"
+"--PersonasFísicasProveedorasdeServicios\n"
+"--Otrosimpuestos\n"
+"--Secuenicas Preconfiguradas para manejodetodoslosNCF\n"
+"--Facturas con Valor Fiscal（パラベンタス）\n"
+"--FacturasparaConsumidoresFinales\n"
+"--NotasdeDébitoyCrédito\n"
+"--RegistrodeProveedoresInformales\n"
+"--RegistrodeIngresoÚnico\n"
+"--RegistrodeGastosMenores\n"
+"-Gubernamentales\n"
+"--PosicionesFiscalesparaautomatizacióndeimpuestosyretenciones\n"
+"--Cambios de Impuestos a Exenciones（Ej。Ventasal Estado）\n"
+"--Cambios de Impuestos a Retenciones（Ej。CompraServicios alExterior）\n"
+"--Entreotros\n"
+"\n"
+"**注意：**\n"
+"Estalocalización、aunqueposee las secuencias para NCF、lasmismasnopueden\n"
+"serutilizadassinlainstalacióndemódulosdetercerosodesarrollo\n"
+"adicional.\n"
+"\n"
+"EstructuradeCodificacióndelCatálogodeCuentas：\n"
+"================================================== =\n"
+"\n"
+"**Undígito**は、categoría/ tipo de cuenta del delestadofinancieroを表します。\n"
+"** 1 **-Activo ** 4 **-Cuentas deIngresosyGanancias\n"
+"** 2 **-Pasivo ** 5 **-Costos、GastosyPérdidas\n"
+"** 3 **-資本** 6 **-CuentasLiquidadorasdeResultados\n"
+"\n"
+"**Dosdígitos**はlosrubrosdeagrupaciónを表します：\n"
+"11-ActivoCorriente\n"
+"21-PasivoCorriente\n"
+"31-キャピタルコンテーブル\n"
+"\n"
+"**Cuatrodígitos** se asignan a las cuentas de mayor：cuentasdeprimerorden\n"
+"1101-Efectivo yEquivalentesdeEfectivo\n"
+"2101- CuentasyDocumentosporpagar\n"
+"3101-キャピタルソーシャル\n"
+"\n"
+"**Seisdígitos** se asignan a las sub-cuentas：cuentasdesegundoorden\n"
+"110101-Caja\n"
+"210101-Proveedoresロケール\n"
+"\n"
+"**Ochodígitos** son para las cuentas de tercer orden（lasvisualizadas\n"
+"en Odoo）：\n"
+"1101-EfectivoyEquivalentes\n"
+"110101-Caja\n"
+"11010101カハ将軍"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_jp
@@ -405,6 +477,9 @@ msgid ""
 "        Accounting reports for Netherlands\n"
 "    "
 msgstr ""
+"\n"
+"        オランダ向けの会計レポート\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ro_reports
@@ -429,6 +504,9 @@ msgid ""
 "        Accounting reports for Spain\n"
 "    "
 msgstr ""
+"\n"
+"        スペイン向けの会計レポート\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ch_reports
@@ -437,6 +515,9 @@ msgid ""
 "        Accounting reports for Switzerland\n"
 "    "
 msgstr ""
+"\n"
+"        スイス向けの会計レポート\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_uk_reports
@@ -453,6 +534,9 @@ msgid ""
 "        Accounting reports for US\n"
 "    "
 msgstr ""
+"\n"
+"        アメリカ向けの会計レポート\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_uy_reports
@@ -489,6 +573,10 @@ msgid ""
 "        Colloquially known as \"Month 13\"\n"
 "    "
 msgstr ""
+"\n"
+"        決算エントリの試算表を生成できるようにします。\n"
+"\n"
+"        口語的に\"Month 13\"として知られています"
 
 #. module: base
 #: model:ir.module.module,description:base.module_voip
@@ -514,6 +602,9 @@ msgid ""
 "        Bill timesheets logged on helpdesk tickets.\n"
 "    "
 msgstr ""
+"\n"
+"        ヘルプデスクチケットにログオンしていた時間を請求する\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_maintenance
@@ -552,6 +643,12 @@ msgid ""
 "        DIOT Report\n"
 "    "
 msgstr ""
+"\n"
+"        電子会計レポート\n"
+"            - COA\n"
+"            - 試算表\n"
+"        DIOT レポート\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_cache
@@ -589,6 +686,12 @@ msgid ""
 "        For more informations about the SEPA standards : http://www.iso20022.org/ and http://www.europeanpaymentscouncil.eu/\n"
 "    "
 msgstr ""
+"\n"
+"        pain.001メッセージのために、SEPA基準で推奨されている支払い注文を生成する必要があります。サポートされているpainバージョン（国）は、pain.001.001.03（一般）、pain.001.001.03.ch.02（スイス）、pain.001.003.03（ドイツ）です。生成されたXMLファイルは銀行にアップロードできます。\n"
+"\n"
+"        このモジュールは、EuropeanPaymentCouncilによって発行された実装ガイドラインに従います。\n"
+"        SEPA標準の詳細: http://www.iso20022.org/ と http://www.europeanpaymentscouncil.eu/\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,summary:base.module_voip
@@ -624,6 +727,11 @@ msgid ""
 "        fields are stored in a \"serialized\" field in the form of a JSON mapping.\n"
 "    "
 msgstr ""
+"\n"
+"        このモジュールの目的は、「スパース」フィールド、つまりほとんどがnullのフィールドを実装することです。\n"
+"         この実装は、テーブルの列数に関するPostgreSQLの制限を回避します。\n"
+"        すべてのスパースフィールドの値は、JSONマッピングの形式で「シリアル化された」フィールドに格納されます。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_delivery_barcode
@@ -683,6 +791,8 @@ msgid ""
 "\n"
 "        This module is used for Online bank synchronization."
 msgstr ""
+"\n"
+"        このモジュールは、オンライン銀行の同期に使用されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_online_sync
@@ -691,6 +801,9 @@ msgid ""
 "        This module is used for Online bank synchronization. It provides basic methods to synchronize bank statement.\n"
 "    "
 msgstr ""
+"\n"
+"        このモジュールは、オンライン銀行の同期に使用されます。銀行取引明細書を同期するための基本的な方法を提供します。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_mobile
@@ -699,6 +812,9 @@ msgid ""
 "        This module provides the core of the Odoo Mobile App.\n"
 "        "
 msgstr ""
+"\n"
+"        このモジュールは、Odooモバイルアプリのコアを提供します。\n"
+"        "
 
 #. module: base
 #: model:ir.module.module,description:base.module_maintenance
@@ -715,6 +831,8 @@ msgid ""
 "\n"
 "        Use Plaid.com to retrieve bank statements"
 msgstr ""
+"\n"
+"        Plaid.comを使用して銀行取引明細書を取得する"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_plaid
@@ -723,6 +841,9 @@ msgid ""
 "        Use Plaid.com to retrieve bank statements.\n"
 "    "
 msgstr ""
+"\n"
+"        Plaid.comを使用して銀行の明細書を取得します。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_recruitment_survey
@@ -747,6 +868,10 @@ msgid ""
 "        linked to an SO, or only the validated timesheets\n"
 "    "
 msgstr ""
+"\n"
+"        タイムシートを請求する場合、SOにリンクされているすべてのタイムシート、\n"
+"        または検証済みのタイムシートのみを請求できます。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_multilang
@@ -771,6 +896,8 @@ msgid ""
 "\n"
 "    Adds workcenters to Quality Control\n"
 msgstr ""
+"\n"
+"    品質管理にワークセンターを追加します\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_documentation_examples
@@ -813,6 +940,13 @@ msgid ""
 "    * The new lock date for advisors must be set after the previous lock date.\n"
 "    "
 msgstr ""
+"\n"
+"    ロック日を元に戻せないようにします。\n"
+"\n"
+"    * ユーザーよりもアドバイザーに厳しい条件を定義することはできません。そのため、アドバイザのロック日をユーザーのロック日の前に設定する必要があります。\n"
+"    * まだ終了していない期間をロックすることはできません。そのため、アドバイザーのロック日を前月の最終日より前に設定する必要があります。\n"
+"    * アドバイザの新しいロック日は、前のロック日より後に設定する必要があります。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_timesheet_attendance
@@ -864,6 +998,8 @@ msgid ""
 "\n"
 "  Publish your products on eBay"
 msgstr ""
+"\n"
+"  EBayで商品を公開する"
 
 #. module: base
 #: model:ir.module.module,description:base.module_project_forecast_sale
@@ -881,6 +1017,10 @@ msgid ""
 "* Activate grid view for timesheets\n"
 "    "
 msgstr ""
+"\n"
+"*タイムシートの提出と検証\n"
+"*タイムシートのグリッドビューをアクティブにする\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_report_intrastat
@@ -936,6 +1076,10 @@ msgid ""
 "==================\n"
 "    "
 msgstr ""
+"\n"
+"会計レポート\n"
+"==================\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ar_reports
@@ -965,6 +1109,10 @@ msgid ""
 "================================\n"
 "    "
 msgstr ""
+"\n"
+"コロンビアの会計レポート\n"
+"================================\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_hr_reports
@@ -994,6 +1142,11 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"\n"
+"フランスの会計レポート\n"
+"================================\n"
+"\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_gr_reports
@@ -1013,6 +1166,10 @@ msgid ""
 "================================\n"
 "    "
 msgstr ""
+"\n"
+"インドの会計レポート\n"
+"================================\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_jp_reports
@@ -1031,6 +1188,10 @@ msgid ""
 "=================================\n"
 "    "
 msgstr ""
+"\n"
+"ルクセンブルクの会計レポート\n"
+"=================================\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ma_reports
@@ -1204,6 +1365,10 @@ msgid ""
 "-------------------------------------------------------------\n"
 "\n"
 msgstr ""
+"\n"
+"クライアントがあなたのウェブサイトを通じて予定をスケジュールできるようにする\n"
+"-------------------------------------------------------------\n"
+"\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_mercury
@@ -1323,6 +1488,11 @@ msgid ""
 "\n"
 "* Cost structure report\n"
 msgstr ""
+"\n"
+"MRPの分析会計\n"
+"==========================\n"
+"\n"
+"* コスト構造レポート\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_ar
@@ -1630,6 +1800,19 @@ msgid ""
 "    * Salary Maj, ONSS, Withholding Tax, Child Allowance, ...\n"
 "    "
 msgstr ""
+"ベルギーの給与計算規則。\n"
+"======================\n"
+"\n"
+"\n"
+"*従業員の詳細\n"
+"*従業員の契約\n"
+"*パスポートベースの契約\n"
+"*手当/控除\n"
+"*基本給/総額/正味給与の構成を許可\n"
+"*従業員の給与計算\n"
+"*月次給与台帳\n"
+"*休暇管理と統合\n"
+"*給与Maj、ONSS、源泉徴収税、児童手当、..。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_pos_blackbox_be
@@ -1691,6 +1874,12 @@ msgid ""
 "on leaves. Project and task can be configured company-wide.\n"
 "    "
 msgstr ""
+"リーフをタイムシートに統合するためのブリッジモジュール\n"
+"================================================\n"
+"\n"
+"このモジュールを使用すると、従業員が休暇を取っているときに\n"
+"タイムシートを自動的に記録できます。プロジェクトとタスクは\n"
+"全社的に構成できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_base_automation_hr_contract
@@ -1700,6 +1889,8 @@ msgid ""
 "====================================================\n"
 "    "
 msgstr ""
+"自動化されたアクションに契約カレンダーを追加するためのブリッジ\n"
+"===================================================="
 
 #. module: base
 #: model:ir.module.module,description:base.module_crm_phone_validation
@@ -1847,6 +2038,11 @@ msgid ""
 "This module allows to enforce users to choose the city of a partner inside a given list instead of a free text field.\n"
 "        "
 msgstr ""
+"アドレスの都市管理\n"
+"============================\n"
+"\n"
+"このモジュールを使用すると、ユーザーはフリーテキストフィールドの代わりに\n"
+"特定のリスト内のパートナーの都市を選択できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_project_timesheet_forecast_sale
@@ -1858,6 +2054,11 @@ msgid ""
 "In your project plan, you can compare your timesheets and your forecast to better schedule your resources.\n"
 "    "
 msgstr ""
+"プロジェクトのタイムシートと予測を比較します。\n"
+"==================================================\n"
+"\n"
+"\n"
+"プロジェクト計画では、タイムシートと予測を比較して、リソースをより適切にスケジュールできます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_decimal_precision
@@ -1945,6 +2146,17 @@ msgid ""
 "when you confirm your sales order it will automatically create a registration for\n"
 "this event.\n"
 msgstr ""
+"受注への登録を作成します。\n"
+"========================================\n"
+"\n"
+"\n"
+"このモジュールを使用すると、登録を自動化して接続できます\n"
+"メインの販売フローを使用して作成するため、登録の請求機能を有効にします。\n"
+"\n"
+"関連するイベントカテゴリを選択する可能性を提供する新しい種類のサービス\n"
+"製品を定義します。その製品の販売注文をエンコードすると、そのカテゴリの\n"
+"既存のイベントを選択でき、販売注文を確認すると、このイベントの登録が\n"
+"自動的に作成されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_hr
@@ -2022,7 +2234,7 @@ msgid ""
 "\n"
 "Design gorgeous mails\n"
 "    "
-msgstr ""
+msgstr "美しいメールをデザインする"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_de
@@ -2079,7 +2291,7 @@ msgstr ""
 msgid ""
 "\n"
 "Display orders to invoice in website dashboard.\n"
-msgstr ""
+msgstr "Webサイトのダッシュボードに請求する注文を表示します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_forum_doc
@@ -2102,6 +2314,12 @@ msgid ""
 "This module allows the creation of the EDI documents and the communication with the Mexican certification providers (PACs) to sign/cancel them.\n"
 "    "
 msgstr ""
+"EDIメキシコのローカリゼーション\n"
+"========================\n"
+"ユーザーがメキシコの請求書のEDIドキュメントを生成できるようにします。\n"
+"\n"
+"\n"
+"このモジュールを使用すると、EDIドキュメントを作成し、メキシコの認証プロバイダー(PAC)と通信して、それらに署名/キャンセルすることができます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_mx_edi_payment_bank
@@ -2125,6 +2343,13 @@ msgid ""
 "that would need such functionality.\n"
 "\n"
 msgstr ""
+"ESC /POSハードウェアドライバー\n"
+"=======================\n"
+"\n"
+"\n"
+"このモジュールを使用すると、OdooはPOSおよびそのような\n"
+"機能を必要とするその他のモジュールにおいてESC / POS互換\n"
+"プリンターで印刷し、ESC / POS制御のキャッシュドロワーを開くことができます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_eu_service
@@ -2299,6 +2524,11 @@ msgid ""
 "with the street name, the house number, and room number.\n"
 "        "
 msgstr ""
+"拡張アドレス管理\n"
+"=============================\n"
+"このモジュールは、アドレスを正確に管理するために必要なすべての追加フィールドを\n"
+"保持します。たとえば、法定報告書では、国によっては、通りをいくつかのフィールド\n"
+"に分割する必要があります。通りの名前、家番号、部屋番号を使用します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_hw_blackbox_be
@@ -2605,6 +2835,21 @@ msgid ""
 "    - Yearly Salary by Head and Yearly Salary by Employee Report\n"
 "    "
 msgstr ""
+"インドの給与給与ルール。\n"
+"============================\n"
+"\n"
+"\n"
+"-インドのローカリゼーションのためのhr_payrollの構成\n"
+"-インドの給与明細のすべての主要な貢献ルール。 \n"
+"*新しい給与明細レポート\n"
+"*従業員契約\n"
+"*基本/総額/正味給与の構成を許可\n"
+"*従業員給与明細\n"
+"*手当/控除\n"
+"*休暇管理と統合\n"
+"*医療手当、旅行手当、児童手当、...\n"
+"-給与アドバイスとレポート\n"
+"-年俸ヘッド別および従業員別年俸レポート"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mail_github
@@ -2616,6 +2861,11 @@ msgid ""
 "This Module integrates all post commits, pull requests and activity of github issue to channels in Odoo.\n"
 "    "
 msgstr ""
+"GithubをOdooDiscussに統合します。\n"
+"======================================\n"
+"\n"
+"\n"
+"このモジュールは、すべてのポストコミット、プルリクエスト、およびアクティビティを統合します。 Odooのチャネルに対するgithubの問題。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_google_drive
@@ -2721,6 +2971,14 @@ msgid ""
 "\n"
 "        "
 msgstr ""
+"ライブチャットサポート\n"
+"==========================\n"
+"\n"
+"\n"
+"現在のサーバーと通信して訪問者のリクエストをディスパッチする\n"
+"任意のWebページにインスタントメッセージングウィジェットを\n"
+"ドロップできるようにしますいくつかのライブチャットオペレーター\n"
+"の間で。このチャットで顧客を支援し、フィードバックを分析します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mrp_maintenance
@@ -2734,6 +2992,13 @@ msgid ""
 "* Equipments related to workcenters\n"
 "* MTBF, MTTR, ...\n"
 msgstr ""
+"MRPでのメンテナンス\n"
+"==================\n"
+"*予防的メンテナンスと修正的メンテナンス\n"
+"*メンテナンスリクエストのさまざまな段階を定義します\n"
+"*メンテナンスリクエストを計画します(定期的な予防も)\n"
+"*ワークセンターに関連する機器\n"
+"* MTBF 、MTTR、.."
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_3way_match
@@ -2760,6 +3025,27 @@ msgid ""
 "    - Exception (Received and invoiced quantities differ)\n"
 "    "
 msgstr ""
+"\n"
+"Manage 3-way matching on vendor bills\n"
+"=====================================\n"
+"\n"
+"In the manufacturing industry, people often receive the vendor bills before\n"
+"receiving their purchase, but they don't want to pay the bill until the goods\n"
+"have been delivered.\n"
+"\n"
+"The solution to this situation is to create the vendor bill when you get it\n"
+"(based on ordered quantities) but only pay the invoice when the received\n"
+"quantities (on the PO lines) match the recorded vendor bill.\n"
+"\n"
+"This module introduces a \"release to pay\" mechanism that marks for each vendor\n"
+"bill whether it can be paid or not.\n"
+"\n"
+"Each vendor bill receives one of the following three states:\n"
+"\n"
+"    - Yes (The bill can be paid)\n"
+"    - No (The bill cannot be paid, nothing has been delivered yet)\n"
+"    - Exception (Received and invoiced quantities differ)\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_stock_dropshipping
@@ -2778,6 +3064,17 @@ msgid ""
 "internal transfer document is needed.\n"
 "\n"
 msgstr ""
+"ドロップシッピング注文の管理\n"
+"===========================\n"
+"\n"
+"\n"
+"このモジュールは、事前設定されたドロップシッピング操作タイプと、\n"
+"以下を可能にする調達ルートを追加します。\n"
+"\n"
+"\n"
+"ドロップシッピング製品と注文の構成。ドロップシッピングを使用すると、\n"
+"商品は小売業者の倉庫を経由せずに、ベンダーから顧客に直接転送されます(直接配送)。\n"
+"この場合、内部転送ドキュメントは必要ありません。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr_expense
@@ -2939,6 +3236,11 @@ msgid ""
 "Bridge module adding UX requirements to ease mass mailing of event attendees.\n"
 "        "
 msgstr ""
+"大量メールイベント参加者\n"
+"=========================\n"
+"\n"
+"\n"
+"ブリッジモジュールは、イベント参加者の大量メール送信を容易にするためにUX要件を追加します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mass_mailing_event_track
@@ -2950,6 +3252,11 @@ msgid ""
 "Bridge module adding UX requirements to ease mass mailing of event track speakers.\n"
 "        "
 msgstr ""
+"マスメールイベントトラックスピーカー\n"
+"==============================\n"
+"\n"
+"\n"
+"ブリッジモジュールは、イベントトラックスピーカーのマスメールを容易にするためにUX要件を追加します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mrp_mps
@@ -2969,6 +3276,13 @@ msgid ""
 "safety stock, min/max to supply and to manually override the amount you will\n"
 "procure.\n"
 msgstr ""
+"マスター生産スケジュール\n"
+"==========================\n"
+"後でのみ作成される製造指図のコンポーネントの発注書を作成する必要がある場合があります。\n"
+"または、後で受注のみが発生する製造指図の場合。\n"
+"解決策は、販売予測を予測し、それに基づいて、すでにいくつかの製造指図または発注書を作成することです。\n"
+"レポートに追加する製品を選択する必要があります。\n"
+"レポートの期間を選択できます:日、週、月、...供給する安全在庫、最小/最大を定義し、調達する金額を手動で上書きすることもできます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_mx
@@ -2993,6 +3307,25 @@ msgid ""
 ".. _SAT: http://www.sat.gob.mx/\n"
 "    "
 msgstr ""
+"\n"
+"Minimal accounting configuration for Mexico.\n"
+"============================================\n"
+"\n"
+"This Chart of account is a minimal proposal to be able to use OoB the\n"
+"accounting feature of Odoo.\n"
+"\n"
+"This doesn't pretend be all the localization for MX it is just the minimal\n"
+"data required to start from 0 in mexican localization.\n"
+"\n"
+"This modules and its content is updated frequently by openerp-mexico team.\n"
+"\n"
+"With this module you will have:\n"
+"\n"
+" - Minimal chart of account tested in production environments.\n"
+" - Minimal chart of taxes, to comply with SAT_ requirements.\n"
+"\n"
+".. _SAT: http://www.sat.gob.mx/\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_analytic
@@ -3121,6 +3454,52 @@ msgid ""
 "V2.2 specifications.\n"
 "If required, you can manually adjust the descriptions via the CODA configuration menu.\n"
 msgstr ""
+"\n"
+"Module to import CODA bank statements.\n"
+"======================================\n"
+"\n"
+"Supported are CODA flat files in V2 format from Belgian bank accounts.\n"
+"----------------------------------------------------------------------\n"
+"    * CODA v1 support.\n"
+"    * CODA v2.2 support.\n"
+"    * Foreign Currency support.\n"
+"    * Support for all data record types (0, 1, 2, 3, 4, 8, 9).\n"
+"    * Parsing & logging of all Transaction Codes and Structured Format\n"
+"      Communications.\n"
+"    * Automatic Financial Journal assignment via CODA configuration parameters.\n"
+"    * Support for multiple Journals per Bank Account Number.\n"
+"    * Support for multiple statements from different bank accounts in a single\n"
+"      CODA file.\n"
+"    * Support for 'parsing only' CODA Bank Accounts (defined as type='info' in\n"
+"      the CODA Bank Account configuration records).\n"
+"    * Multi-language CODA parsing, parsing configuration data provided for EN,\n"
+"      NL, FR.\n"
+"\n"
+"The machine readable CODA Files are parsed and stored in human readable format in\n"
+"CODA Bank Statements. Also Bank Statements are generated containing a subset of\n"
+"the CODA information (only those transaction lines that are required for the\n"
+"creation of the Financial Accounting records). The CODA Bank Statement is a\n"
+"'read-only' object, hence remaining a reliable representation of the original\n"
+"CODA file whereas the Bank Statement will get modified as required by accounting\n"
+"business processes.\n"
+"\n"
+"CODA Bank Accounts configured as type 'Info' will only generate CODA Bank Statements.\n"
+"\n"
+"A removal of one object in the CODA processing results in the removal of the\n"
+"associated objects. The removal of a CODA File containing multiple Bank\n"
+"Statements will also remove those associated statements.\n"
+"\n"
+"Instead of a manual adjustment of the generated Bank Statements, you can also\n"
+"re-import the CODA after updating the OpenERP database with the information that\n"
+"was missing to allow automatic reconciliation.\n"
+"\n"
+"Remark on CODA V1 support:\n"
+"~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+"In some cases a transaction code, transaction category or structured\n"
+"communication code has been given a new or clearer description in CODA V2.The\n"
+"description provided by the CODA configuration tables is based upon the CODA\n"
+"V2.2 specifications.\n"
+"If required, you can manually adjust the descriptions via the CODA configuration menu.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_bank_statement_import_csv
@@ -3137,6 +3516,17 @@ msgid ""
 "Because of the CSV format limitation, we cannot ensure the same transactions aren't imported several times or handle multicurrency.\n"
 "Whenever possible, you should use a more appropriate file format like OFX.\n"
 msgstr ""
+"CSV銀行取引明細書をインポートするモジュール。\n"
+"======================================\n"
+"このモジュールを使用すると、OdooにCSVファイルをインポートできます。\n"
+"解析され、人間が読める形式で会計\\銀行および現金\\銀行取引明細書に保存されます。\n"
+"\n"
+"\n"
+"重要な注意事項\n"
+"--------------------------------------------- \n"
+"CSV形式の制限により、同じトランザクションが複数回インポートされたり、\n"
+"複数通貨を処理したりしないようにすることはできません。\n"
+"可能な限り、OFXなどのより適切なファイル形式を使用する必要があります。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_bank_statement_import_ofx
@@ -3152,6 +3542,13 @@ msgid ""
 "creation of the Financial Accounting records).\n"
 "    "
 msgstr ""
+"OFX銀行取引明細書をインポートするモジュール。\n"
+"======================================\n"
+"このモジュールを使用すると、マシンで読み取り可能なOFXファイルをインポートできます。\n"
+"Odoo:それらは解析され、会計\\銀行および現金\\銀行取引明細書に人間が読める形式で保存されます。\n"
+"\n"
+"OFX情報のサブセットを含む銀行取引明細書を生成できます\n"
+"(財務会計レコードの作成に必要なトランザクションラインのみ)。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_bank_statement_import_qif
@@ -3168,6 +3565,16 @@ msgid ""
 "Because of the QIF format limitation, we cannot ensure the same transactions aren't imported several times or handle multicurrency.\n"
 "Whenever possible, you should use a more appropriate file format like OFX.\n"
 msgstr ""
+"QIF銀行取引明細書をインポートするモジュール。\n"
+"======================================\n"
+"このモジュールを使用すると、機械可読QIFファイルを次の場所にインポートできます。 \n"
+"Odoo:それらは解析され、会計\\銀行および現金\\銀行取引明細書に人間が読める形式で保存されます。\n"
+"\n"
+"重要な注意事項\n"
+"--------------------------------------------- \n"
+"QIF形式の制限により、同じトランザクションが複数回インポートされたり、\n"
+"複数通貨を処理したりしないようにすることはできません。\n"
+"可能な限り、OFXなどのより適切なファイル形式を使用する必要があります。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_voip_onsip
@@ -3175,7 +3582,7 @@ msgid ""
 "\n"
 "Module with the required configuration to connect to OnSIP.\n"
 "    "
-msgstr ""
+msgstr "OnSIPに接続するために必要な構成のモジュール。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_cash_basis_base_account
@@ -3234,6 +3641,26 @@ msgid ""
 "* In a module, so that administrators and users of Odoo who do not\n"
 "  need or want an online import can avoid it being available to users.\n"
 msgstr ""
+"\n"
+"New extensible file import for Odoo\n"
+"======================================\n"
+"\n"
+"Re-implement Odoo's file import system:\n"
+"\n"
+"* Server side, the previous system forces most of the logic into the\n"
+"  client which duplicates the effort (between clients), makes the\n"
+"  import system much harder to use without a client (direct RPC or\n"
+"  other forms of automation) and makes knowledge about the\n"
+"  import/export system much harder to gather as it is spread over\n"
+"  3+ different projects.\n"
+"\n"
+"* In a more extensible manner, so users and partners can build their\n"
+"  own front-end to import from other file formats (e.g. OpenDocument\n"
+"  files) which may be simpler to handle in their work flow or from\n"
+"  their data production sources.\n"
+"\n"
+"* In a module, so that administrators and users of Odoo who do not\n"
+"  need or want an online import can avoid it being available to users.\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_sa
@@ -3307,6 +3734,9 @@ msgid ""
 "This module modifies the web addon to provide Enterprise design and responsiveness.\n"
 "        "
 msgstr ""
+"Odoo EnterpriseWebクライアント。\n"
+"===========================\n"
+"このモジュールは、エンタープライズデザインと応答性を提供するようにWebアドオンを変更します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_form_editor
@@ -3487,6 +3917,13 @@ msgid ""
 "(N+1, N+2, direct subordinates)\n"
 "        "
 msgstr ""
+"\n"
+"Org Chart Widget for HR\n"
+"=======================\n"
+"\n"
+"This module extend the employee form with a organizational chart.\n"
+"(N+1, N+2, direct subordinates)\n"
+"        "
 
 #. module: base
 #: model:ir.module.module,description:base.module_event
@@ -3591,6 +4028,24 @@ msgid ""
 "* Every Appraisal Form filled by employees, colleague, collaborator, can be viewed in a PDF form.\n"
 "* Meeting Requests are created manually according to employees appraisals.\n"
 msgstr ""
+"定期的な従業員の評価\n"
+"==============================\n"
+"このアプリケーションを使用すると、従業員のパフォーマンスへの定期的な評価を行うことで\n"
+"動機付けプロセスを維持できます。人事の定期的な評価は、組織だけでなく人々にも利益をもたらす\n"
+"可能性があります。各従業員に評価計画を割り当てることができます。\n"
+"\n"
+"これらの計画は、定期的な個人評価を管理する頻度と方法を定義します。\n"
+"\n"
+"主な機能\n"
+"------------ \n"
+"*従業員の評価を作成する機能。\n"
+"*評価は、従業員のマネージャーが作成することも、従業員フォームで定義されたスケジュールに\n"
+"基づいて自動的に作成することもできます。 \n"
+"※鑑定評価は、各種調査を作成できる計画に基づいて行われます。各調査は、従業員階層の特定の\n"
+"レベルで回答できます。最終的なレビューと評価はマネージャーによって行われます。 \n"
+"*マネージャー、同僚、共同作業者、および従業員自身が、定期的な評価を実行するための電子メールを受信します。 \n"
+"*従業員、同僚、共同編集者が記入したすべての評価フォームは、PDFフォームで表示できます。 \n"
+"*会議出席依頼は、従業員の評価に従って手動で作成されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_pe
@@ -3684,6 +4139,11 @@ msgid ""
 "* Different approval flows possible depending on the type of change order\n"
 "\n"
 msgstr ""
+"製品寿命管理\n"
+"=======================\n"
+"\n"
+"*部品表と工順のバージョン管理\n"
+"*変更要求のタイプに応じて異なる承認フローが可能"
 
 #. module: base
 #: model:ir.module.module,description:base.module_product_extended
@@ -3704,7 +4164,7 @@ msgid ""
 "\n"
 "Proposes advanced routing options not available in web or base to keep\n"
 "base modules simple.\n"
-msgstr ""
+msgstr "ベースモジュールをシンプルに保つために、Webまたはベースでは使用できない高度なルーティングオプションを提案します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_crm_partner_assign
@@ -3736,6 +4196,17 @@ msgid ""
 "\n"
 "  "
 msgstr ""
+"eBayで製品を公開する\n"
+"=============================\n"
+"eBayインテグレーターは、eBayでOdooの製品を管理する機会を提供します。\n"
+"\n"
+"\n"
+"主な機能\n"
+"------------ \n"
+"* eBayでの製品の公開\n"
+"* eBayでの改訂、再リスト、最終品目\n"
+"*在庫移動との統合\n"
+"*販売注文と請求書の自動作成"
 
 #. module: base
 #: model:ir.module.module,description:base.module_quality
@@ -3762,6 +4233,11 @@ msgid ""
 "Create some products for which you can re-invoice the costs.\n"
 "This module allow to reinvoice employee expense, by setting the SO directly on the expense.\n"
 msgstr ""
+"従業員の経費を再請求する\n"
+"==========================\n"
+"\n"
+"コストを再請求できる製品をいくつか作成します。\n"
+"このモジュールでは、SOを経費に直接設定することにより、従業員の経費を再請求できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_fetchmail
@@ -3828,6 +4304,13 @@ msgid ""
 "2) Analyse the subscriptions modifications by salesman and compute their value.\n"
 "    "
 msgstr ""
+"\n"
+"セールスサブスクリプションダッシュボード\n"
+"===========================\n"
+"これはダッシュボードに次を追加します：\n"
+"1) サブスクリプションのための経常収益とその他のメトリクスの分析\n"
+"2) セールスマンによるサブスクリプションの変更を分析し、その値を計算する。\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_hw_screen
@@ -3863,6 +4346,14 @@ msgid ""
 "See: https://www.bpost.be/portal/goHome\n"
 "    "
 msgstr ""
+"bpostを介して配送を送信し、オンラインで追跡します\n"
+"=======================================================\n"
+"\n"
+"\n"
+"ベルギーにある会社は、地元の郵便会社との配送を利用できます。\n"
+"\n"
+"\n"
+"参照:https://www.bpost.be/portal/goHome"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_analytic_default
@@ -3926,6 +4417,9 @@ msgid ""
 "Let your customers follow the signature process easily.\n"
 "    "
 msgstr ""
+"文書に簡単に署名して記入します。テキストフィールドと署名フィールドを使用してドキュメントをカスタマイズし、受信者に送信します。\n"
+"\n"
+"顧客が署名プロセスを簡単に実行できるようにします。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_sg
@@ -3982,6 +4476,18 @@ msgid ""
 "    * Defines fiscal positions for spanish fiscal legislation\n"
 "    * Defines tax reports mod 111, 115 and 303\n"
 msgstr ""
+"\n"
+"Spanish charts of accounts (PGCE 2008).\n"
+"========================================\n"
+"\n"
+"    * Defines the following chart of account templates:\n"
+"        * Spanish general chart of accounts 2008\n"
+"        * Spanish general chart of accounts 2008 for small and medium companies\n"
+"        * Spanish general chart of accounts 2008 for associations\n"
+"    * Defines templates for sale and purchase VAT\n"
+"    * Defines tax templates\n"
+"    * Defines fiscal positions for spanish fiscal legislation\n"
+"    * Defines tax reports mod 111, 115 and 303\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_studio
@@ -3998,6 +4504,15 @@ msgid ""
 "\n"
 "Note: Only the admin user is allowed to make those customizations.\n"
 msgstr ""
+"Studio-Odooのカスタマイズ\n"
+"=======================\n"
+"このアドオンを使用すると、ユーザーはユーザーインターフェイスのほとんどの要素をシンプルでグラフィカルな方法でカスタマイズできます。\n"
+"主な機能は2つあります。\n"
+"\n"
+"*新しいアプリケーションの作成(モジュールの追加、トップレベルのメニュー項目、デフォルトのアクション)\n"
+"*既存のアプリケーションのカスタマイズ(メニュー、アクション、ビュー、翻訳の編集など)\n"
+"\n"
+"注:管理者ユーザーのみがそれらのカスタマイズを行うことができます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_studio
@@ -4010,6 +4525,10 @@ msgid ""
 "model. Furthermore, you can create a new website form or edit an existing one.\n"
 "\n"
 msgstr ""
+"Studio-Odooのカスタマイズ\n"
+"=======================\n"
+"このアドオンを使用すると、ユーザーは特定のモデルにリンクされているすべてのWebサイトフォームを表示できます。\n"
+"さらに、新しいWebサイトフォームを作成したり、既存のWebサイトフォームを編集したりできます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_quote_subscription
@@ -4057,6 +4576,24 @@ msgid ""
 "    - Clicking the 'Send by mail' button will attach two files to your draft mail : the invoice, and the corresponding ISR.\n"
 "    "
 msgstr ""
+"\n"
+"スイス　ローカライゼーション\n"
+"==================\n"
+"This module defines a chart of account for Switzerland (Swiss PME/KMU 2015), taxes and enables the generation of ISR when you print an invoice or send it by mail.\n"
+"\n"
+"An ISR will be generated if you specify the information it needs :\n"
+"    - The bank account you expect to be paid on must be set, and have a valid postal reference.\n"
+"    - Your invoice must have been set assigned a bank account to receive its payment\n"
+"      (this can be done manually, but a default value is automatically set if you have defined a bank account).\n"
+"    - You must have set the postal references of your bank.\n"
+"    - Your invoice must be in EUR or CHF (as ISRs do not accept other currencies)\n"
+"\n"
+"The generation of the ISR is automatic if you meet the previous criteria.\n"
+"\n"
+"Here is how it works:\n"
+"    - Printing the invoice will trigger the download of two files: the invoice, and its ISR\n"
+"    - Clicking the 'Send by mail' button will attach two files to your draft mail : the invoice, and the corresponding ISR.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_yodlee
@@ -4067,6 +4604,9 @@ msgid ""
 "\n"
 "Yodlee interface.\n"
 msgstr ""
+"銀行のフィードをYodleeと同期する\n"
+"================================\n"
+"Yodleeインターフェース"
 
 #. module: base
 #: model:ir.module.module,description:base.module_project_timesheet_synchro
@@ -4078,6 +4618,10 @@ msgid ""
 "If you use the external timesheet application, this module alows you to synchronize timesheet entries between Odoo and the application.\n"
 "    "
 msgstr ""
+"タイムシートエントリと外部タイムシートアプリケーションとの同期。\n"
+"=============================================================================\n"
+"\n"
+"外部タイムシートアプリケーションを使用する場合、このモジュールを使用すると、Odooとアプリケーションの間でタイムシートエントリを同期できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_account_voucher
@@ -4215,6 +4759,21 @@ msgid ""
 "\n"
 "    Access to download the mandatory Certificate of Conformity delivered by Odoo SA (only for Odoo Enterprise users)\n"
 msgstr ""
+"\n"
+"This add-on brings the technical requirements of the French regulation CGI art. 286, I. 3° bis that stipulates certain criteria concerning the inalterability, security, storage and archiving of data related to sales to private individuals (B2C).\n"
+"-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n"
+"\n"
+"Install it if you use the Point of Sale app to sell to individuals.\n"
+"\n"
+"The module adds following features:\n"
+"\n"
+"    Inalterability: deactivation of all the ways to cancel or modify key data of POS orders, invoices and journal entries\n"
+"\n"
+"    Security: chaining algorithm to verify the inalterability\n"
+"\n"
+"    Storage: automatic sales closings with computation of both period and cumulative totals (daily, monthly, annually)\n"
+"\n"
+"    Access to download the mandatory Certificate of Conformity delivered by Odoo SA (only for Odoo Enterprise users)\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_fr_certification
@@ -4728,6 +5287,16 @@ msgid ""
 "    - General Solutions.\n"
 "    - Trobz\n"
 msgstr ""
+"\n"
+"これはOdooでベトナムの勘定科目を管理するモジュールです。\n"
+"=========================================================================\n"
+"\n"
+"This module applies to companies based in Vietnamese Accounting Standard (VAS)\n"
+"with Chart of account under Circular No. 200/2014/TT-BTC\n"
+"\n"
+"**Credits:**\n"
+"    - General Solutions.\n"
+"    - Trobz\n"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_vn_reports
@@ -4777,6 +5346,13 @@ msgid ""
 "modules.\n"
 "    "
 msgstr ""
+"モジュールは、CRMの1つまたは複数の商談ケースにショートカットを追加します。\n"
+"===========================================================================\n"
+"ショートカットを使用すると、選択したケースに基づいて販売注文を生成できます。\n"
+"異なるケースが開いている場合(リスト)、ケースごとに1つの受注が生成されます。\n"
+"その後、ケースはクローズされ、生成された販売注文にリンクされます。\n"
+"\n"
+"saleモジュールとcrmモジュールの両方をインストールした場合は、モジュールをインストールすることをお勧めします。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_portal
@@ -4814,6 +5390,8 @@ msgid ""
 "the registration is confirmed.\n"
 "    "
 msgstr ""
+"モジュールは、イベント管理システムにバーコードスキャンのサポートを追加します。\n"
+"出席者ごとにバーコードが生成され、バッジに印刷されます。スキャンすると、登録が確認されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_sale_margin
@@ -5018,6 +5596,12 @@ msgid ""
 "    - Modify subscriptions with sales orders\n"
 "    - Generate invoice automatically at fixed intervals\n"
 msgstr ""
+"モジュールを使用すると、サブスクリプションを管理できます。\n"
+"\n"
+"機能:\n"
+"-サブスクリプションの作成と編集\n"
+"-販売注文によるサブスクリプションの変更\n"
+"-一定の間隔で自動的に請求書を生成する"
 
 #. module: base
 #: model:ir.module.module,description:base.module_purchase_requisition
@@ -5030,6 +5614,10 @@ msgid ""
 "competing offers from different vendors and select the best ones. Blanket orders\n"
 "are agreements you have with vendors to benefit from a predetermined pricing.\n"
 msgstr ""
+"モジュールを使用すると、購入契約を管理できます。\n"
+"===========================================================\n"
+"入札および一括注文の呼び出しを管理します。入札の呼びかけは、さまざまなベンダーから競合するオファーを取得し、\n"
+"最適なものを選択するために使用されます。一括注文は、事前に決定された価格設定の恩恵を受けるためにベンダーと締結している契約です。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mrp_byproduct
@@ -5085,7 +5673,7 @@ msgid ""
 "\n"
 "This module contains all the common features of Sales Management and eCommerce.\n"
 "    "
-msgstr ""
+msgstr "モジュールには、販売管理とeコマースのすべての一般的な機能が含まれています。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_rating_project
@@ -5105,6 +5693,10 @@ msgid ""
 "\n"
 "The service is provided by the In App Purchase Odoo platform.\n"
 msgstr ""
+"モジュールは、SMSテキストメッセージングのフレームワークを提供します\n"
+"----------------------------------------------------\n"
+"\n"
+"サービスはInApp PurchaseOdooプラットフォームによって提供されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_contacts
@@ -5254,6 +5846,9 @@ msgid ""
 "from purchase order.\n"
 "    "
 msgstr ""
+"モジュールは、mrpをインストールしてモジュールを一度に購入する機能をユーザーに提供します。\n"
+"========================================================================================\n"
+"基本的に注文書から生成された注文に対して生産を追跡したいときに使用されます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_sale_mrp
@@ -5329,6 +5924,14 @@ msgid ""
 "still unreserve a picking.\n"
 "    "
 msgstr ""
+"モジュールは、受注が確認されると、在庫からのピッキングを自動的に予約します\n"
+"=============================================================================================\n"
+"受注の確認時、または数量が追加されたときに、必要な数量が利用可能であれば、在庫から予約するピッキングが予約されます。\n"
+"\n"
+"最も単純な構成では、これは簡単な作業方法です。先着順です。ただし、インストールされていない場合は、手動予約を使用するか、\n"
+"システムが予定日と優先度を考慮に入れるスケジューラーを実行できます。\n"
+"\n"
+"自動予約で予約が多すぎる場合でも、ピッキングの予約を解除できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_delivery_ups
@@ -5346,6 +5949,8 @@ msgid ""
 "This module will test the main workflow of Odoo.\n"
 "It will install some main apps and will try to execute the most important actions.\n"
 msgstr ""
+"モジュールは、Odooのメインワークフローをテストします。\n"
+"いくつかの主要なアプリをインストールし、最も重要なアクションを実行しようとします。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_web_kanban_gauge
@@ -5403,6 +6008,15 @@ msgid ""
 "project.\n"
 "        "
 msgstr ""
+"Transifexの統合\n"
+"=====================\n"
+"このモジュールは、翻訳ビューにTransifexプロジェクトへのリンクを追加します。\n"
+"このモジュールの目的は、メインモジュールの翻訳を高速化することです。\n"
+"\n"
+"これを機能させるために、OdooはTransifex構成ファイル `.tx /config`を使用してプロジェクトソースを検出します。\n"
+"カスタムモジュールは翻訳されません(メインのTransifexプロジェクトで公開されていないため)。\n"
+"\n"
+"ユーザーが翻訳しようとする言語は、Transifexプロジェクトでアクティブ化する必要があります。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_tr
@@ -5604,6 +6218,9 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"ヘルプデスクモジュールのウェブサイトフォーラム統合\n"
+"=================================================\n"
+"チームが顧客の質問に答えるための関連フォーラムを持つことを許可します。ワンクリックでチケットをフォーラムの質問に変換します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_gengo
@@ -5634,6 +6251,11 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"ヘルプデスクモジュールのWebサイトIMLivechat統合\n"
+"=======================================================\n"
+"機能:\n"
+"-顧客の質問に答えるために、チーム関連のライブチャットチャネルを用意します。 \n"
+"-チャネルのコマンドを使用して、新しいチケットを簡単に作成できます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_helpdesk_slides
@@ -5646,6 +6268,9 @@ msgid ""
 "\n"
 "    "
 msgstr ""
+"ヘルプデスクモジュールのウェブサイトスライドの統合\n"
+"==================================================\n"
+"スライドプレゼンテーションをチームに追加して、ヘルプを求めている顧客が新しいチケットを送信する前にスライドプレゼンテーションを見ることができるようにします。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_membership
@@ -5730,7 +6355,7 @@ msgstr ""
 msgid ""
 " another model requires the record being deleted. If possible, archive it "
 "instead."
-msgstr ""
+msgstr "別のモデルでは、レコードを削除する必要があります。可能であれば、代わりにアーカイブしてください。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
@@ -5878,31 +6503,33 @@ msgid ""
 "- Create/update: a mandatory field is not set.\n"
 "- Delete: another model requires the record being deleted. If possible, archive it instead."
 msgstr ""
+"-作成/更新:必須フィールドが設定されていません。 \n"
+"-削除:別のモデルでは、レコードを削除する必要があります。可能であれば、代わりにアーカイブしてください。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- domain ="
-msgstr ""
+msgstr "-ドメイン="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- field ="
-msgstr ""
+msgstr "-フィールド="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- groups ="
-msgstr ""
+msgstr "- グループ="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- ondelete ="
-msgstr ""
+msgstr "- ondelete="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- relation ="
-msgstr ""
+msgstr "- 関係="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -5912,7 +6539,7 @@ msgstr ""
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "- size ="
-msgstr ""
+msgstr "- サイズ="
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.module_form
@@ -5937,12 +6564,12 @@ msgstr "- このモジュールは他のモジュールに依存しません。"
 #. module: base
 #: model:ir.ui.view,arch_db:base.module_form
 msgid "-This module does not exclude any other module."
-msgstr ""
+msgstr "-このモジュールは他のモジュールを除外しません。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
 msgid "1. %b, %B         ==&gt; Dec, December"
-msgstr ""
+msgstr "1. %b, %B ==&gt; 12月、12月"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_rule_form
@@ -5954,7 +6581,7 @@ msgstr "1. グローバル規則は、他のグローバル規則および以下
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
 msgid "2. %a ,%A         ==&gt; Fri, Friday"
-msgstr ""
+msgstr "2. %a ,%A ==&gt; 金曜日、金曜日"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_rule_form
@@ -5988,7 +6615,7 @@ msgstr "5. %H:%M:%S      ==&gt; 18:25:20"
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
 msgid "6. %I:%M:%S %p  ==&gt; 06:25:20 PM"
-msgstr ""
+msgstr "6. %I:%M:%S %p ==&gt; 06:25:20 PM"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
@@ -6003,7 +6630,7 @@ msgstr "8. %S              ==&gt; 20"
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
 msgid "9. %w              ==&gt; 5 ( Friday is the 6th day)"
-msgstr ""
+msgstr "9. %w ==&gt; 5 (金曜日は6日目)"
 
 #. module: base
 #: selection:report.paperformat,format:0
@@ -6023,6 +6650,10 @@ msgid ""
 "env['res.partner'].create({'name': partner_name})\n"
 "</code>"
 msgstr ""
+"<code style=\"white-space: pre-wrap\">\n"
+"partner_name = record.name + '_code'\n"
+"env['res.partner'].create({'name': partner_name})\n"
+"</code>"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -6154,7 +6785,7 @@ msgstr "<strong>名称</strong>"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_res_company_kanban
 msgid "<strong>Phone</strong>"
-msgstr ""
+msgstr "<strong>電話</strong>"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodulereference
@@ -6497,7 +7128,7 @@ msgstr ""
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_A
 msgid "A AGRICULTURE, FORESTRY AND FISHING"
-msgstr ""
+msgstr "農業、林業、漁業"
 
 #. module: base
 #: code:addons/models.py:2826
@@ -6547,7 +7178,7 @@ msgstr "APIテスト用モジュール"
 #. module: base
 #: model:ir.module.module,description:base.module_test_rpc
 msgid "A module to test the RPC requests."
-msgstr ""
+msgstr "RPC要求をテストするためのモジュール。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_uninstall
@@ -6557,7 +7188,7 @@ msgstr "アンインストール機能テスト用モジュール"
 #. module: base
 #: model:ir.module.module,description:base.module_test_translation_import
 msgid "A module to test translation import."
-msgstr ""
+msgstr "翻訳のインポートをテストするモジュール。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_assetsbundle
@@ -6758,22 +7389,22 @@ msgstr "アカウント番号はユニークでなくてはなりません"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_taxcloud
 msgid "Account TaxCloud"
-msgstr ""
+msgstr "TaxCloud科目"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_account_taxcloud
 msgid "Account TaxCloud - Ecommerce"
-msgstr ""
+msgstr "アカウントTaxCloud-eコマース"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_account_taxcloud
 msgid "Account TaxCloud - Sale"
-msgstr ""
+msgstr "アカウントTaxCloud-セール"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_payment
 msgid "Account and Payment Link and Portal"
-msgstr ""
+msgstr "アカウントと支払いのリンクとポータル"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_accounting
@@ -6793,7 +7424,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_account
 msgid "Accounting - MRP"
-msgstr ""
+msgstr "会計-MRP"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_test
@@ -6982,17 +7613,17 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_transifex
 msgid "Add a link to edit a translation in Transifex"
-msgstr ""
+msgstr "Transifexで翻訳を編集するためのリンクを追加する"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_base_address_city
 msgid "Add a many2one field city on addresses"
-msgstr ""
+msgstr "住所にmany2oneフィールド都市を追加する"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_delivery_barcode
 msgid "Add barcode scanning facilities to Delivery."
-msgstr ""
+msgstr "Deliveryにバーコードスキャン機能を追加します。"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_stock_barcode
@@ -7002,12 +7633,12 @@ msgstr "倉庫管理にバーコードスキャン機能を追加"
 #. module: base
 #: model:ir.module.module,summary:base.module_event_barcode
 msgid "Add barcode scanning feature to event management."
-msgstr ""
+msgstr "イベント管理にバーコードスキャン機能を追加します。"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_base_address_extended
 msgid "Add extra fields on addresses"
-msgstr ""
+msgstr "アドレスにフィールドを追加する"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.act_report_xml_view
@@ -7293,7 +7924,7 @@ msgstr "レポートのカスタマイズを可能にします。"
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_coupon_delivery
 msgid "Allows to offer free shippings in coupon reward"
-msgstr ""
+msgstr "クーポン特典で送料無料を提供することができます"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hw_posbox_upgrade
@@ -7361,7 +7992,7 @@ msgstr "分析会計"
 #. module: base
 #: model:ir.module.module,summary:base.module_mrp_account
 msgid "Analytic accounting in Manufacturing"
-msgstr ""
+msgstr "製造業における分析会計"
 
 #. module: base
 #: model:res.country,name:base.ad
@@ -7540,7 +8171,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_act_client_params
 msgid "Arguments sent to the client along with the view tag"
-msgstr ""
+msgstr "ビュータグとともにクライアントに送信される引数"
 
 #. module: base
 #: model:res.country,name:base.am
@@ -7693,7 +8324,7 @@ msgstr "自動化アクションのルール"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_automation_hr_contract
 msgid "Automated Action based on Employee Contracts"
-msgstr ""
+msgstr "従業員の契約に基づく自動化されたアクション"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_gengo
@@ -7709,7 +8340,7 @@ msgstr "自動インストール"
 #: code:addons/base/module/module.py:730
 #, python-format
 msgid "Automatic install of downloaded Apps is currently disabled."
-msgstr ""
+msgstr "ダウンロードしたアプリの自動インストールは現在無効になっています。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_translation_state
@@ -7736,7 +8367,7 @@ msgstr "アゼルバイジャン"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_B
 msgid "B MINING AND QUARRYING"
-msgstr ""
+msgstr "B鉱業と採石"
 
 #. module: base
 #: selection:report.paperformat,format:0
@@ -7797,7 +8428,7 @@ msgstr "背景"
 #: code:addons/translate.py:1066
 #, python-format
 msgid "Bad file format: %s"
-msgstr ""
+msgstr "不正なファイル形式:%s"
 
 #. module: base
 #: model:res.country,name:base.bs
@@ -7894,12 +8525,12 @@ msgstr "バーコードスキャナーハードウエアドライバー"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_barcodes_mobile
 msgid "Barcode in Mobile"
-msgstr ""
+msgstr "モバイルのバーコード"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_barcodes_mobile
 msgid "Barcode scan in Mobile"
-msgstr ""
+msgstr "モバイルでのバーコードスキャン"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_barcodes
@@ -7966,7 +8597,7 @@ msgstr "基本ビュー"
 #: model:ir.cron,cron_name:base.autovacuum_job
 #: model:ir.cron,name:base.autovacuum_job
 msgid "Base: Auto-vacuum internal data"
-msgstr ""
+msgstr "基本：自動バキューム内部データ"
 
 #. module: base
 #: model:ir.actions.server,name:base.action_server_module_immediate_install
@@ -7976,12 +8607,12 @@ msgstr "モジュール即時インストール"
 #. module: base
 #: model:ir.module.module,summary:base.module_web_grid
 msgid "Basic 2D Grid view for odoo"
-msgstr ""
+msgstr "odooの基本的な2Dグリッドビュー"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_iap
 msgid "Basic models and helpers to support In-App purchases."
-msgstr ""
+msgstr "アプリ内購入をサポートするための基本的なモデルとヘルパー。"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_batch_deposit
@@ -8003,7 +8634,7 @@ msgstr "金額の前"
 #, python-format
 msgid ""
 "Before clicking on 'Change Password', you have to write a new password."
-msgstr ""
+msgstr "[パスワードの変更]をクリックする前に、新しいパスワードを作成する必要があります。"
 
 #. module: base
 #: model:res.country,name:base.by
@@ -8023,7 +8654,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_pos_blackbox_be
 msgid "Belgian Registered Cash Register"
-msgstr ""
+msgstr "ベルギーの登録レジ"
 
 #. module: base
 #: model:res.country,name:base.be
@@ -8038,12 +8669,12 @@ msgstr "ベルギー - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_be_reports
 msgid "Belgium - Accounting Reports"
-msgstr ""
+msgstr "ベルギー-会計報告"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_be_coda
 msgid "Belgium - Import Bank CODA Statements"
-msgstr ""
+msgstr "ベルギー-輸入銀行のCODAステートメント"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll
@@ -8053,7 +8684,7 @@ msgstr "ベルギー - 給与"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_fleet
 msgid "Belgium - Payroll - Fleet"
-msgstr ""
+msgstr "ベルギー-給与-艦隊"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_account
@@ -8106,7 +8737,7 @@ msgstr "バイナリ"
 #: model:ir.model.fields,field_description:base.field_ir_actions_binding_model_id_274
 #: model:ir.model.fields,field_description:base.field_ir_cron_binding_model_id
 msgid "Binding Model"
-msgstr ""
+msgstr "結合モデル"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_client_binding_type
@@ -8118,7 +8749,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:base.field_ir_actions_binding_type_275
 #: model:ir.model.fields,field_description:base.field_ir_cron_binding_type
 msgid "Binding Type"
-msgstr ""
+msgstr "結合タイプ"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hw_blackbox_be
@@ -8209,7 +8840,7 @@ msgstr "決済サービスとウェブサイトのブリッジモジュール。
 #: model:ir.module.module,description:base.module_website_helpdesk
 #: model:ir.module.module,summary:base.module_website_helpdesk
 msgid "Bridge module for helpdesk modules using the website."
-msgstr ""
+msgstr "Webサイトを使用したヘルプデスクモジュール用のブリッジモジュール。"
 
 #. module: base
 #: model:res.country,name:base.io
@@ -8270,7 +8901,7 @@ msgstr "By"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_C
 msgid "C MANUFACTURING"
-msgstr ""
+msgstr "C製造"
 
 #. module: base
 #: selection:report.paperformat,format:0
@@ -8290,7 +8921,7 @@ msgstr "CRM ゲーミフィケーション"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_livechat
 msgid "CRM Livechat"
-msgstr ""
+msgstr "CRMライブチャット"
 
 #. module: base
 #: selection:base.language.export,format:0
@@ -8606,7 +9237,7 @@ msgstr "チリ-会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_cl_reports
 msgid "Chile - Accounting Reports"
-msgstr ""
+msgstr "チリ-会計報告"
 
 #. module: base
 #: model:res.country,name:base.cn
@@ -8661,7 +9292,7 @@ msgstr "市区町村"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_address_city
 msgid "City Addresses"
-msgstr ""
+msgstr "市の住所"
 
 #. module: base
 #: selection:res.company,external_report_layout:0
@@ -8765,7 +9396,7 @@ msgstr "共同作業パッド"
 #. module: base
 #: model:ir.module.module,summary:base.module_account_sepa_direct_debit
 msgid "Collect payments from your customers through SEPA direct debit."
-msgstr ""
+msgstr "SEPA口座振替を通じて顧客から支払いを収集します。"
 
 #. module: base
 #: model:res.country,name:base.co
@@ -8780,7 +9411,7 @@ msgstr "コロンビア-会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_co_reports
 msgid "Colombian - Accounting Reports"
-msgstr ""
+msgstr "コロンビア-会計レポート"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_co
@@ -8841,13 +9472,13 @@ msgstr "コメント"
 #: model:ir.model.fields,field_description:base.field_res_partner_commercial_partner_id
 #: model:ir.model.fields,field_description:base.field_res_users_commercial_partner_id
 msgid "Commercial Entity"
-msgstr "取引先"
+msgstr "企業体"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_commercial_partner_country_id
 #: model:ir.model.fields,field_description:base.field_res_users_commercial_partner_country_id
 msgid "Commercial Entity's Country"
-msgstr ""
+msgstr "企業体の国"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_data_drinks
@@ -8922,7 +9553,7 @@ msgstr "会社名"
 #: model:ir.model.fields,field_description:base.field_res_partner_commercial_company_name
 #: model:ir.model.fields,field_description:base.field_res_users_commercial_company_name
 msgid "Company Name Entity"
-msgstr "会社名エントリー"
+msgstr "企業体名"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.ir_property_form
@@ -8949,7 +9580,7 @@ msgstr "会社タイプ"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_timesheet_forecast_sale
 msgid "Compare timesheets and forecast for your projects"
-msgstr ""
+msgstr "プロジェクトのタイムシートと予測を比較する"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_contact_address
@@ -8980,7 +9611,7 @@ msgstr "計算"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_sale_taxcloud_delivery
 msgid "Compute taxes with TaxCloud after online delivery computation."
-msgstr ""
+msgstr "オンライン配信の計算後、TaxCloudを使用して税金を計算します。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_form
@@ -9014,7 +9645,7 @@ msgstr "設定ウィザードステップ"
 #. module: base
 #: model:ir.actions.server,name:base.action_run_ir_action_todo
 msgid "Config: Run Remaining Action Todo"
-msgstr ""
+msgstr "構成:残りのアクションTodoを実行します"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_reporting_config
@@ -9037,7 +9668,7 @@ msgstr "設定ウィザード"
 #. module: base
 #: model:ir.module.module,summary:base.module_timesheet_grid_sale
 msgid "Configure timesheet invoicing"
-msgstr ""
+msgstr "タイムシートの請求を構成する"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_uninstall
@@ -9096,7 +9727,7 @@ msgstr "制約タイプ"
 #: code:addons/model.py:153
 #, python-format
 msgid "Constraint:"
-msgstr ""
+msgstr "制約:"
 
 #. module: base
 #: sql_constraint:ir.model.constraint:0
@@ -9307,7 +9938,7 @@ msgstr "作成権限"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Create Contextual Action"
-msgstr ""
+msgstr "コンテキストアクションの作成"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_logging_create_date
@@ -9377,12 +10008,12 @@ msgstr "会社の作成"
 #. module: base
 #: model:ir.module.module,summary:base.module_crm_livechat
 msgid "Create lead from livechat conversation"
-msgstr ""
+msgstr "ライブチャットの会話からリードを作成する"
 
 #. module: base
 #: model:ir.module.module,description:base.module_crm_livechat
 msgid "Create new lead with using /lead command in the channel"
-msgstr ""
+msgstr "チャネルで/leadコマンドを使用して新しいリードを作成します"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_survey
@@ -9782,12 +10413,12 @@ msgstr "コートジボワール共和国"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_D
 msgid "D ELECTRICITY,GAS,STEAM AND AIR CONDITIONING SUPPLY"
-msgstr ""
+msgstr "D電気、ガス、蒸気および空調供給"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_delivery_dhl
 msgid "DHL Express Shipping"
-msgstr ""
+msgstr "DHLエクスプレス配送"
 
 #. module: base
 #: selection:report.paperformat,format:0
@@ -10062,7 +10693,7 @@ msgstr "説明 HTML"
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing_themes
 msgid "Design gorgeous mails"
-msgstr ""
+msgstr "ゴージャスなメールをデザインする"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_mass_mailing
@@ -10092,7 +10723,7 @@ msgstr "通貨記号が金額の前後、どちらに置かれるべきなのか
 msgid ""
 "Determines where the customer/company name should be placed, i.e. after or "
 "before the address."
-msgstr ""
+msgstr "顧客/会社名を配置する場所、つまり住所の後または前を決定します。"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_de
@@ -10260,7 +10891,7 @@ msgstr "表示名"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_studio
 msgid "Display Website Elements in Studio"
-msgstr ""
+msgstr "スタジオでウェブサイトの要素を表示する"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_report_paperformat_header_line
@@ -10270,7 +10901,7 @@ msgstr "見出し線を表示"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Display an option in the 'More' top-menu in order to run this action."
-msgstr ""
+msgstr "このアクションを実行するには、'その他'トップメニューにオプションを表示します。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.act_report_xml_view
@@ -10304,6 +10935,12 @@ msgid ""
 "%(country_name)s: the name of the country\n"
 "%(country_code)s: the code of the country"
 msgstr ""
+"この国に属する住所に使用する表示形式。\n"
+"アドレスのすべてのフィールドでpythonスタイルの文字列パターンを使用できます(たとえば、'%(street)s'を使用してフィールド'street'を表示します)\n"
+"%(state_name)s:州の名前\n"
+"%(state_code )s:州のコード\n"
+"%(country_name)s:国の名前\n"
+"%(country_code)s:国のコード"
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_13
@@ -10345,7 +10982,7 @@ msgstr "ドキュメントモデル"
 #: code:addons/models.py:2888
 #, python-format
 msgid "Document type:"
-msgstr ""
+msgstr "ドキュメントタイプ:"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_forum_doc
@@ -10406,7 +11043,7 @@ msgstr "直送"
 #, python-format
 msgid ""
 "Duplicating a company is not allowed. Please create a new company instead."
-msgstr ""
+msgstr "会社を複製することは許可されていません。代わりに新しい会社を作成してください。"
 
 #. module: base
 #: code:addons/base/ir/ir_qweb/fields.py:394
@@ -10417,7 +11054,7 @@ msgstr "持続時間は負にすることはできません"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_E
 msgid "E WATER SUPPLY;SEWERAGE,WASTE MANAGEMENT AND REMEDIATION ACTIVITIES"
-msgstr ""
+msgstr "E水の供給;下水、廃棄物管理および修復活動"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_mx_edi_cancellation
@@ -10611,7 +11248,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_edi
 msgid "EDI for Mexico"
-msgstr ""
+msgstr "メキシコのEDI"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hw_escpos
@@ -10972,7 +11609,7 @@ msgstr "例"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module_exclusion_exclusion_id
 msgid "Exclusion Module"
-msgstr ""
+msgstr "除外モジュール"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module_exclusion_ids
@@ -10983,7 +11620,7 @@ msgstr "排他"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_category_exclusive
 msgid "Exclusive"
-msgstr ""
+msgstr "独占"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_cron_view_form
@@ -11075,7 +11712,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_account_sepa
 msgid "Export payments as SEPA Credit Transfer files"
-msgstr ""
+msgstr "支払いをSEPAクレジット転送ファイルとしてエクスポートする"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_server_object_lines_value
@@ -11084,11 +11721,14 @@ msgid ""
 "When Formula type is selected, this field may be a Python expression  that can use the same values as for the code field on the server action.\n"
 "If Value type is selected, the value will be used directly without evaluation."
 msgstr ""
+"値の指定を含む式。\n"
+"数式タイプが選択されている場合、このフィールドは、サーバーアクションのコードフィールドと同じ値を使用できるPython式である可能性があります。\n"
+"値タイプが選択されている場合、値は評価なしで直接使用されます。"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_address_extended
 msgid "Extended Addresses"
-msgstr ""
+msgstr "拡張アドレス"
 
 #. module: base
 #: selection:ir.ui.view,mode:0
@@ -11313,12 +11953,12 @@ msgstr "その他ツール"
 #. module: base
 #: model:res.partner.industry,name:base.res_partner_industry_U
 msgid "Extraterritorial"
-msgstr ""
+msgstr "治外法権"
 
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_F
 msgid "F CONSTRUCTION"
-msgstr ""
+msgstr "F構造"
 
 #. module: base
 #: code:addons/base/ir/ir_mail_server.py:128
@@ -11353,7 +11993,7 @@ msgstr "都道府県/州"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_delivery_fedex
 msgid "Fedex Shipping"
-msgstr ""
+msgstr "フェデックス配送"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_fr_fec
@@ -11515,12 +12155,12 @@ msgstr "フィールド `%(field_name)s` がありません。"
 #, python-format
 msgid ""
 "Field names can only contain characters, digits and underscores (up to 63)."
-msgstr ""
+msgstr "フィールド名には、文字、数字、およびアンダースコア(最大63)のみを含めることができます。"
 
 #. module: base
 #: sql_constraint:ir.model.fields:0
 msgid "Field names must be unique per model."
-msgstr ""
+msgstr "フィールド名はモデルごとに一意である必要があります。"
 
 #. module: base
 #: code:addons/model.py:143
@@ -11555,7 +12195,7 @@ msgstr ""
 #: code:addons/base/ir/ir_model.py:595
 #, python-format
 msgid "Fields: %s"
-msgstr ""
+msgstr "フィールド:%s"
 
 #. module: base
 #: model:res.country,name:base.fj
@@ -11830,7 +12470,7 @@ msgstr "フランス - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_fr_reports
 msgid "France - Accounting Reports"
-msgstr ""
+msgstr "フランス-会計報告"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_fr_fec
@@ -11852,7 +12492,7 @@ msgstr ""
 #: model:ir.module.module,shortdesc:base.module_l10n_fr_pos_cert
 msgid ""
 "France - VAT Anti-Fraud Certification for Point of Sale (CGI 286 I-3 bis)"
-msgstr ""
+msgstr "フランス-POSのVAT不正防止認証(CGI 286 I-3 bis)"
 
 #. module: base
 #: model:res.country,name:base.gf
@@ -11913,7 +12553,7 @@ msgstr "ファンクション"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_G
 msgid "G WHOLESALE AND RETAIL TRADE;REPAIR OF MOTOR VEHICLES AND MOTORCYCLES"
-msgstr ""
+msgstr "G卸売りおよび小売業;自動車およびオートバイの修理"
 
 #. module: base
 #: selection:ir.module.module,license:0
@@ -11938,22 +12578,22 @@ msgstr "GPL-3 またはそれ以降のバージョン"
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_in_purchase
 msgid "GST Purchase Report"
-msgstr ""
+msgstr "GST購入レポート"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_in_sale
 msgid "GST Sale Report"
-msgstr ""
+msgstr "GST販売レポート"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_in_stock
 msgid "GST Stock Report"
-msgstr ""
+msgstr "GSTストックレポート"
 
 #. module: base
 #: model:res.country,vat_label:base.in
 msgid "GSTIN"
-msgstr ""
+msgstr "GSTIN"
 
 #. module: base
 #: model:res.country,name:base.ga
@@ -12060,7 +12700,7 @@ msgstr "ジブラルタル"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mail_github
 msgid "Github Integration with Discuss"
-msgstr ""
+msgstr "GithubとDiscussの連動"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_rule_global
@@ -12313,7 +12953,7 @@ msgstr "ガイアナ"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_H
 msgid "H TRANSPORTATION AND STORAGE"
-msgstr ""
+msgstr "H TRANSPORTATION AND STORAGE"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_maintenance
@@ -12333,12 +12973,12 @@ msgstr "HR ゲーミフィケーション"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_org_chart
 msgid "HR Org Chart"
-msgstr ""
+msgstr "HR組織図"
 
 #. module: base
 #: model:res.country,vat_label:base.ca
 msgid "HST"
-msgstr ""
+msgstr "HST"
 
 #. module: base
 #: selection:ir.actions.report,report_type:0
@@ -12426,12 +13066,12 @@ msgstr "ヘルプデスク"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_helpdesk_timesheet
 msgid "Helpdesk Timesheet"
-msgstr ""
+msgstr "タイムシートヘルプデスク"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_helpdesk_forum
 msgid "Helpdesk: Knowledge Base"
-msgstr ""
+msgstr "ヘルプデスク:ナレッジベース"
 
 #. module: base
 #: model:ir.module.category,description:base.module_category_point_of_sale
@@ -12659,7 +13299,7 @@ msgstr "ハンガリー"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_I
 msgid "I ACCOMMODATION AND FOOD SERVICE ACTIVITIES"
-msgstr ""
+msgstr "I ACCOMMODATION AND FOOD SERVICE ACTIVITIES"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_iban
@@ -12836,6 +13476,7 @@ msgid ""
 "If enabled, the full output of SMTP sessions will be written to the server "
 "log at DEBUG level (this is very verbose and may include confidential info!)"
 msgstr ""
+"有効にすると、SMTPセッションの完全な出力がDEBUGレベルでサーバーログに書き込まれます(これは非常に冗長であり、機密情報が含まれる場合があります)。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_rule_global
@@ -12868,7 +13509,7 @@ msgstr "設定すると、アクションバインディングはこのユーザ
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_default_condition
 msgid "If set, applies the default upon condition."
-msgstr ""
+msgstr "設定されている場合、条件に応じてデフォルトを適用します。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -13004,14 +13645,14 @@ msgstr "付番方針"
 #. module: base
 #: model:ir.module.module,summary:base.module_base_sparse_field
 msgid "Implementation of sparse fields."
-msgstr ""
+msgstr "分散フィールドの実装。"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_blackbox_be
 msgid ""
 "Implements the registered cash system, adhering to guidelines by FPS "
 "Finance."
-msgstr ""
+msgstr "FPSファイナンスのガイドラインに準拠した登録済みの現金システムを実装します。"
 
 #. module: base
 #: model:ir.ui.menu,name:base.menu_translation_export
@@ -13021,22 +13662,22 @@ msgstr "インポート / エクスポート"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_bank_statement_import_camt
 msgid "Import CAMT Bank Statement"
-msgstr ""
+msgstr "CAMT銀行取引明細書のインポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_bank_statement_import_csv
 msgid "Import CSV Bank Statement"
-msgstr ""
+msgstr "CSV銀行取引明細書のインポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_bank_statement_import_ofx
 msgid "Import OFX Bank Statement"
-msgstr ""
+msgstr "OFX銀行取引明細書のインポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_bank_statement_import_qif
 msgid "Import QIF Bank Statement"
-msgstr ""
+msgstr "QIF銀行取引明細書のインポート"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_view_base_import_language
@@ -13048,7 +13689,7 @@ msgstr "翻訳インポート"
 #. module: base
 #: model:ir.module.module,description:base.module_currency_rate_live
 msgid "Import exchange rates from the Internet.\n"
-msgstr ""
+msgstr "インターネットから為替レートをインポートします。\n"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_reports_cash_flow
@@ -13101,17 +13742,17 @@ msgstr "インド-会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_reports
 msgid "Indian - Accounting Reports"
-msgstr ""
+msgstr "インド-会計レポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_purchase
 msgid "Indian - Purchase Report(GST)"
-msgstr ""
+msgstr "インド-購入レポート（GST）"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_sale
 msgid "Indian - Sale Report(GST)"
-msgstr ""
+msgstr "インド-販売レポート（GST）"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_schedule6
@@ -13121,7 +13762,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_stock
 msgid "Indian - Stock Report(GST)"
-msgstr ""
+msgstr "インド-株式レポート（GST）"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_in_hr_payroll
@@ -13279,12 +13920,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,description:base.module_sale_coupon
 msgid "Integrate coupon mechanism in sales orders."
-msgstr ""
+msgstr "クーポンの仕組みを販売注文に連動させます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_sale_coupon_delivery
 msgid "Integrate coupon mechanism with shipping costs."
-msgstr ""
+msgstr "クーポンメカニズムを送料と統合します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_sale_coupon
@@ -13294,7 +13935,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_inter_company_rules
 msgid "Inter Company Module for Sale/Purchase Orders and Invoices"
-msgstr ""
+msgstr "販売/購入注文および請求書のための会社間モジュール"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_rule_form
@@ -13304,7 +13945,7 @@ msgstr "規則間の作用"
 #. module: base
 #: model:ir.module.module,summary:base.module_inter_company_rules
 msgid "Intercompany SO/PO/INV rules"
-msgstr ""
+msgstr "会社間SO /PO / INVルール"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_groups_search
@@ -13392,7 +14033,7 @@ msgstr "日付 / 時間の書式が不正です。編集する際に表示され
 #: code:addons/base/ir/ir_default.py:68
 #, python-format
 msgid "Invalid field %s.%s"
-msgstr ""
+msgstr "無効なフィールド%s。%s"
 
 #. module: base
 #: sql_constraint:ir.ui.view:0
@@ -13435,7 +14076,7 @@ msgstr "無効な型"
 #: code:addons/base/ir/ir_default.py:70
 #, python-format
 msgid "Invalid value for %s.%s: %s"
-msgstr ""
+msgstr "%s。%sの値が無効です:%s"
 
 #. module: base
 #: code:addons/base/ir/ir_ui_view.py:343
@@ -13502,7 +14143,7 @@ msgstr "アイルランド"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_lock
 msgid "Irreversible Lock Date"
-msgstr ""
+msgstr "不可逆的なロック日"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_is_company
@@ -13550,7 +14191,7 @@ msgstr "イタリア - 会計"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_J
 msgid "J INFORMATION AND COMMUNICATION"
-msgstr ""
+msgstr "J情報とコミュニケーション"
 
 #. module: base
 #: model:res.country,name:base.jm
@@ -13611,7 +14252,7 @@ msgstr "ジャストインタイムスケジューリング"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_K
 msgid "K FINANCIAL AND INSURANCE ACTIVITIES"
-msgstr ""
+msgstr "Kの金融および保険活動"
 
 #. module: base
 #: selection:ir.actions.act_window.view,view_mode:0
@@ -13655,7 +14296,7 @@ msgstr "キリバス"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_forum
 msgid "Knowledge base for helpdesk based on Odoo Forum"
-msgstr ""
+msgstr "Odooフォーラムに基づくヘルプデスクのナレッジベース"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_si
@@ -13665,7 +14306,7 @@ msgstr "スロベニア　Kontni načrt za gospodarske družbe"
 #. module: base
 #: model:res.country,name:base.xk
 msgid "Kosovo"
-msgstr ""
+msgstr "コソボ"
 
 #. module: base
 #: model:res.country,name:base.kw
@@ -13680,7 +14321,7 @@ msgstr "キルギス共和国"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_L
 msgid "L REAL ESTATE ACTIVITIES"
-msgstr ""
+msgstr "L不動産活動"
 
 #. module: base
 #: selection:ir.module.module,license:0
@@ -14038,7 +14679,7 @@ msgstr "リード自動化"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_crm_score
 msgid "Lead Scoring"
-msgstr ""
+msgstr "リードスコア"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_crm_project
@@ -14171,6 +14812,11 @@ msgid ""
 "\n"
 " * UPDATE ME\n"
 msgstr ""
+"アカウントと支払いをリンクし、ポータル支払いを追加します。\n"
+"\n"
+"アカウント関連の支払い用のツールと、支払いを有効にするポータルオプションを提供します。 \n"
+"\n"
+"*私を更新します"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_payment
@@ -14198,7 +14844,7 @@ msgstr "リンクトラッカー"
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_sale
 msgid "Link module between Point of Sale and Sales"
-msgstr ""
+msgstr "POSと販売の間のリンクモジュール"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_forecast_sale
@@ -14248,7 +14894,7 @@ msgstr "ビジター/顧客とのライブチャット"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_currency_rate_live
 msgid "Live Currency Exchange Rate"
-msgstr ""
+msgstr "ライブ為替レート"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_language_install
@@ -14292,7 +14938,7 @@ msgstr "ログイン"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_company_logo_web
 msgid "Logo Web"
-msgstr ""
+msgstr "ロゴウェブ"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.ir_logging_search_view
@@ -14308,7 +14954,7 @@ msgstr "ロイヤリティプログラム"
 #. module: base
 #: model:ir.module.module,summary:base.module_pos_loyalty
 msgid "Loyalty Program for the Point of Sale "
-msgstr ""
+msgstr "POSのロイヤルティプログラム"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_lunch
@@ -14333,12 +14979,12 @@ msgstr "ルクセンブルグ - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_lu_reports
 msgid "Luxembourg - Accounting Reports"
-msgstr ""
+msgstr "ルクセンブルク-会計報告"
 
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_M
 msgid "M PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES"
-msgstr ""
+msgstr "M PROFESSIONAL, SCIENTIFIC AND TECHNICAL ACTIVITIES"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_byproduct
@@ -14348,7 +14994,7 @@ msgstr "MRP 副産品"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_quality_mrp
 msgid "MRP features for Quality Control"
-msgstr ""
+msgstr "品質管理のためのMRP機能"
 
 #. module: base
 #: model:res.country,name:base.mo
@@ -14485,6 +15131,36 @@ msgid ""
 "allowing you to easily find for specific skills and build up a database of\n"
 "profiles.\n"
 msgstr ""
+"採用および求人応募の管理\n"
+"---------------------------------------\n"
+"Odooで公開、宣伝、整理\n"
+"<a href=\"https://www.odoo.com/page/recruitment\">オープンソース採用アプリケーションでの求人</a>。\n"
+"\n"
+"求人掲示板を整理し、求人の発表を宣伝し、応募の提出を簡単に追跡します。\n"
+"すべての応募者をフォローし、インデックス付きのドキュメントを使用してスキルとプロファイルのデータベースを構築します。\n"
+"\n"
+"最高の求人掲示板に求人を投稿する\n"
+"---------------------------------\n"
+"最も有名な求人掲示板のウェブサイトに自動的に接続します。\n"
+"LinkedIn、Monster、Craigslist、...\n"
+"すべての求人には、アプリケーションを適切な求人に自動的にルーティングするために自動的に割り当てられた新しいメールアドレスがあります。\n"
+"応募者がメールで連絡する場合でも、オンラインフォームを使用する場合でも、\n"
+"すべてのデータ(履歴書、モチベーションレター)が自動的にインデックスに登録され、回答のテンプレートを再利用して、\n"
+"クリックするだけで回答できます。\n"
+"\n"
+"採用プロセスのカスタマイズ\n"
+"----------------------------------\n"
+"カンバンビューを使用して、採用プロセスのステップをカスタマイズします;\n"
+"事前資格審査、最初の面接、2番目の面接、交渉、...採用パイプラインに関する正確な統計を取得します。\n"
+"レポートを入手して、外部の求人掲示板へのさまざまな投資のパフォーマンスを比較します。\n"
+"\n"
+"採用プロセスの合理化\n"
+"-----------------------------------\n"
+"スマートカンバンビューを使用して、採用プロセスで応募者をフォローします。\n"
+"メールテンプレートを使用して一部の通信を自動化することにより、時間を節約します。\n"
+"\n"
+"履歴書やモチベーションレターなどのドキュメントには自動的にインデックスが付けられるため、\n"
+"特定のスキルを簡単に見つけて、プロファイルのデータベースを構築できます。"
 
 #. module: base
 #: model:ir.actions.act_window,help:base.grant_menu_access
@@ -14539,7 +15215,7 @@ msgstr "債権債務は、単純な販売/発注の領収書で管理します"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_payroll
 msgid "Manage your employee payroll records"
-msgstr ""
+msgstr "従業員の給与記録を管理する"
 
 #. module: base
 #: model:res.partner.category,name:base.res_partner_category_14
@@ -14625,12 +15301,12 @@ msgstr "メール一括配信テーマ"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_event
 msgid "Mass mailing on attendees"
-msgstr ""
+msgstr "出席者への一括メーリング"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mass_mailing_event_track
 msgid "Mass mailing on track speakers"
-msgstr ""
+msgstr "トラックスピーカーでの一括メーリング"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_mrp_mps
@@ -14746,7 +15422,7 @@ msgstr ""
 #: model:ir.module.module,summary:base.module_l10n_mx_edi
 #: model:ir.module.module,summary:base.module_l10n_mx_edi_payment
 msgid "Mexican Localization for EDI documents"
-msgstr ""
+msgstr "EDI資料のメキシコのローカライゼーション"
 
 #. module: base
 #: model:res.country,name:base.mx
@@ -14822,7 +15498,7 @@ msgstr "フィールドに必要な値がありません'%s' (%s)"
 #: code:addons/base/ir/ir_ui_view.py:387
 #, python-format
 msgid "Missing view architecture."
-msgstr ""
+msgstr "ビューアーキテクチャがありません。"
 
 #. module: base
 #: model:res.partner.title,name:base.res_partner_title_mister
@@ -14867,7 +15543,7 @@ msgstr "モデル"
 #: code:addons/base/ir/ir_model.py:471
 #, python-format
 msgid "Model %s does not exist"
-msgstr ""
+msgstr "モデル%sはありません"
 
 #. module: base
 #: code:addons/base/ir/ir_model.py:631
@@ -14943,7 +15619,7 @@ msgstr "サーバアクションが実行されるモデル"
 #: code:addons/model.py:142 code:addons/model.py:152
 #, python-format
 msgid "Model:"
-msgstr ""
+msgstr "モデル:"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_model_model
@@ -15014,7 +15690,7 @@ msgstr "モジュール依存"
 #. module: base
 #: model:ir.model,name:base.model_ir_module_module_exclusion
 msgid "Module exclusion"
-msgstr ""
+msgstr "モジュールの除外"
 
 #. module: base
 #: code:addons/convert.py:832
@@ -15038,7 +15714,7 @@ msgstr "モジュール"
 #: code:addons/base/module/module.py:410
 #, python-format
 msgid "Modules \"%s\" and \"%s\" are incompatible."
-msgstr ""
+msgstr "モジュール \"%s\" と \"%s\" に互換性がありません。"
 
 #. module: base
 #: model:res.country,name:base.md
@@ -15144,12 +15820,12 @@ msgstr "ミャンマー"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_N
 msgid "N ADMINISTRATIVE AND SUPPORT SERVICE ACTIVITIES"
-msgstr ""
+msgstr "N ADMINISTRATIVE AND SUPPORT SERVICE ACTIVITIES"
 
 #. module: base
 #: model:res.country,vat_label:base.gt
 msgid "NIT"
-msgstr ""
+msgstr "NIT"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_report_xml_name
@@ -15217,7 +15893,7 @@ msgstr "オランダ - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_nl_reports
 msgid "Netherlands - Accounting Reports"
-msgstr ""
+msgstr "オランダ-会計報告"
 
 #. module: base
 #: model:res.country,name:base.nc
@@ -15446,7 +16122,7 @@ msgstr "複数のモジュールが更新されました。"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_O
 msgid "O PUBLIC ADMINISTRATION AND DEFENCE;COMPULSORY SOCIAL SECURITY"
-msgstr ""
+msgstr "O PUBLIC ADMINISTRATION AND DEFENCE;COMPULSORY SOCIAL SECURITY"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_auth_oauth
@@ -15475,7 +16151,7 @@ msgstr "オブジェクト"
 #: code:addons/model.py:148
 #, python-format
 msgid "Object %s doesn't exist"
-msgstr ""
+msgstr "オブジェクト%sは存在しません"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields_model
@@ -15754,6 +16430,50 @@ msgid ""
 "for your own company. Follow people, share best practices, 'like' top ideas,\n"
 "etc.\n"
 msgstr ""
+"Odoo Enterprise Social Network \n"
+"------------------------------\n"
+"Odoo<a href=\"https://www.odoo.com/page/enterprise-social-network\">エンタープライズソーシャルネットワーク</a>により\n"
+"専門家とつながり、興味のあることをフォローし、ドキュメントを共有し、ベストプラクティスを推進します。\n"
+"電子メールの過負荷を減らしながら、部門、地域、ドキュメント、ビジネスアプリケーション間の効果的なコラボレーションで作業を完了します。\n"
+"\n"
+"専門家とつながる\n"
+"--------------------\n"
+"今度からマーケティング、営業、研究開発、またはその他の部門について質問がある場合は、電子メールを送信しないでください。 \n"
+"Odooへの質問で適切な人からの回答を取得します。\n"
+"\n"
+"興味のあることをフォローする\n"
+"-------------------------\n"
+"新製品の機能、お得な情報、プロジェクトのボトルネック、またはその他のイベントについて情報を入手したいですか?\n"
+"興味に従って、必要な情報を入手してください。\n"
+"それ以上でもそれ以下でもありません。 \n"
+"\n"
+"\n"
+"Get Things Done\n"
+"---------------\n"
+"受信トレイを処理して(読み取るだけでなく)、将来のアクションのためにメッセージに簡単にマークを付けることができます。\n"
+"毎日空の受信トレイを持つことの喜びを感じ始めてください。情報の過負荷はもうありません。\n"
+"\n"
+"ベストプラクティスを推進する\n"
+"----------------------\n"
+"関心のあるグループで協力することにより、会議や電子メールチェーンを削減します。\n"
+"グループを作成して、人々がファイルを共有し、アイデアについて話し合い、投票してベストプラクティスを推進できるようにします。\n"
+"\n"
+"\n"
+"情報と専門知識へのアクセスを改善する\n"
+"-------------------------------------------\n"
+"情報サイロをブレークダウンします。既存のシステム全体を検索して、プロジェクトを迅速に完了するために必要な回答と専門知識を見つけます。\n"
+"\n"
+"\n"
+"安全に共同作業する\n"
+"--------------------\n"
+"適切なセキュリティポリシーを設定します。\n"
+"情報の機密性に応じて、公開、非公開、または招待のみ。\n"
+"\n"
+"\n"
+"私の会社のためのTwitterのようなネットワーク\n"
+"---------------------------------------\n"
+"自分の会社だけのTwitterのような機能で、すべての従業員をもっと連帯感と、結束感を作りましょう。\n"
+"人々をフォローし、ベストプラクティスを共有し、トップアイデアなどを'いいね'します。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_hr
@@ -15918,6 +16638,24 @@ msgid ""
 "manufacturing operations.\n"
 "\n"
 msgstr ""
+"Odoo Manufacturing Resource Planning "
+"------------------------------------部品表の管理、製造オーダーの計画、追跡Odoo<a "
+"href=\"https://www.odoo.com/page/manufacturing\">オープンソースMRP</a>アプリでの作業指示。 "
+"Odooが管理するすべての組み立てまたは製造操作を取得します。製造オーダーと作業オーダーを自動的にスケジュールします。スマートカンバンとガントビューを使用して、提案された計画を確認します。高度な分析機能を使用して、リソース容量と在庫場所のボトルネックを検出します。製造オーダーを効率的にスケジュールする"
+"-----------------------------------------"
+"製造オーダーを取得して作業する調達ルール、予測数量、および依存需要(この部品の需要は、それを消費する別の部品に基づく)に基づいて自動的にスケジュールされます。柔軟なマスターデータの定義"
+"---------------------------"
+"マルチレベルの部品表、オプションのルーティング、バージョン変更、ファントムを作成する柔軟性を手に入れましょう部品表。 "
+"BoMは、キットまたは製造指図に使用できます。すべての操作で柔軟性を得る---------------------------------"
+"進行状況の任意のレベルで提案されたすべての操作を手動で編集します。 "
+"Odooを使用すると、厳格なシステムにイライラすることはありません。作業指示のスケジュール--------------------"
+"リソースの容量を確認し、ボトルネックを修正します。ルーティングを定義し、リソースの作業時間と容量を計画します。リソース要件とボトルネックをすばやく特定して、生産が納品スケジュールの日付を満たしていることを確認します。生産的なユーザーインターフェイス"
+"---------------------------"
+"製造オーダーと作業オーダーを好きなように整理します。リストビューから次の注文を処理し、カレンダービューで制御し、ガントビューで提案されたスケジュールを編集します。"
+" Inventory＆Manufacturing Analytics "
+"-----------------------------------に従って、株価の変化を追跡します。変革プロセスの進行に伴う製造活動のレベル。運用と完全に統合"
+"--------------------------------"
+"販売および購入との完全な統合により、製造リソースの計画を正確に行うアプリ。会計統合により、リアルタイムの会計評価と、製造業務のコストと収益に関するより詳細なレポートが可能になります。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_mass_mailing
@@ -16024,12 +16762,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_reports
 msgid "Odoo Mexican Localization Reports"
-msgstr ""
+msgstr "Odooメキシコローカリゼーションレポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_reports_closing
 msgid "Odoo Mexican Localization Reports for Closing"
-msgstr ""
+msgstr "クロージングのためのOdooメキシコローカリゼーションレポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_edi_customs
@@ -16045,12 +16783,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_mx_edi_landing
 msgid "Odoo Mexico Localization for Stock/Landing"
-msgstr ""
+msgstr "在庫/着陸のためのOdooメキシコローカリゼーション"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_mobile
 msgid "Odoo Mobile Core module"
-msgstr ""
+msgstr "Odooモバイルコアモジュール"
 
 #. module: base
 #: model:ir.module.module,description:base.module_note
@@ -16306,6 +17044,50 @@ msgid ""
 "etc.\n"
 "\n"
 msgstr ""
+"Odooサプライチェーン\n"
+"----------------- \n"
+"Odoo<a href=\"https://www.odoo.com/page/purchase\">オープンソースサプライチェーンを使用</a>して、支払い要求を自動化し、請求を管理します。\n"
+"調達提案の自動化、見積依頼の開始、発注書の追跡、ベンダーの情報の管理、製品の受け取りの管理、ベンダーの請求書の確認を行います。\n"
+"\n"
+"\n"
+"自動調達提案\n"
+"----------------------------------\n"
+"調達ルールを使用して在庫レベルを削減します。適切なタイミングで適切な購入提案を取得して、在庫レベルを下げます。\n"
+"在庫レベル、ロジスティックルール、販売注文、予測製造注文などに応じた調達ルールを使用して、購入と在庫のパフォーマンスを向上させます。\n"
+"見積依頼または注文をベンダーにワンクリックで送信します。注文書から製品の受付と請求書にアクセスできます。\n"
+"\n"
+"\n"
+"購入入札\n"
+"----------------\n"
+"購入入札を開始し、プロセスにベンダーの回答を統合し、提案を比較します。最良のオファーを選択し、注文書を簡単に送信します。\n"
+"その後、レポートを使用してベンダーの品質を分析します。\n"
+"\n"
+"\n"
+"電子メールの統合\n"
+"------------------\n"
+"発注書(またはRfQ)に関するすべてのベンダーのコミュニケーションを統合して、交渉またはアフターサービスの問題に関する強力なトレーサビリティを取得します。\n"
+"クレーム管理モジュールを使用して、ベンダーに関連する問題を追跡します。\n"
+"\n"
+"\n"
+"標準価格、平均価格、FIFO \n"
+"-----------------------------------\n"
+"ビジネスを反映した原価計算方法を使用します:標準価格、平均価格、fifoまたはlifo。会計エントリと適切な在庫評価をリアルタイムで取得します。 \n"
+"Odooはすべてを透過的に管理します。\n"
+"\n"
+"\n"
+"ベンダーの価格表をインポートする\n"
+"--------------------------\n"
+"最良の価格を使用して賢明な購入決定を下します。\n"
+"ベンダーの価格表を簡単にインポートして、プロモーション、数量に応じた価格、特別な契約条件に基づいて、よりスマートな購入決定を下すことができます。\n"
+"ベンダーの価格に応じて、販売価格を基準にすることもできます。\n"
+"\n"
+"\n"
+"製品と請求書の管理\n"
+"-----------------------------\n"
+"製品や注文が取り残されることはありません。在庫管理により、バックオーダーを管理できます。 \n"
+"返金、製品の受け取り、品質管理。必要に応じて適切な制御方法を選択してください。\n"
+"手間をかけずにベンダーの請求書を管理します。必要に応じて適切な方法を選択します。\n"
+"発注書、製品の受付に基づいてドラフト請求書を事前に生成し、手動で請求書を作成し、発注書から明細をインポートします。"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_diagram
@@ -16739,7 +17521,7 @@ msgstr ""
 #. module: base
 #: sql_constraint:res.currency.rate:0
 msgid "Only one currency rate per day allowed!"
-msgstr ""
+msgstr "1日あたり1つの為替レートのみが許可されています'"
 
 #. module: base
 #: code:addons/base/ir/ir_model.py:1189
@@ -16847,7 +17629,7 @@ msgstr "ウィンドウを開く"
 #: code:addons/base/ir/ir_model.py:1215 code:addons/models.py:2888
 #, python-format
 msgid "Operation:"
-msgstr ""
+msgstr "操作:"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_crm
@@ -16937,6 +17719,34 @@ msgid ""
 "\n"
 "You can activate a blog for each event allowing you to communicate on specific events. Visitors can subscribe to news to get informed."
 msgstr ""
+"イベント、トレーニング、ウェビナーを整理する\n"
+"------------------------------------- \n"
+"###スケジュール、宣伝、販売、整理イベントごとに追加機能を取得します。\n"
+"複数のページ、スポンサー、複数の講演、講演提案フォーム、議題、イベント関連のニュース、ドキュメント(プレゼンテーションのスライド)、イベント固有のメニュー。\n"
+"\n"
+"トラックを整理する\n"
+"-------------------- \n"
+"###講演の提案から出版物までイベントに講演の提案フォームを追加して、訪問者が講演や講演者を提出できるようにします。\n"
+"すべての講演の検証プロセスを整理し、簡単にスケジュールします。 \n"
+"Odoo独自のフロントエンドとバックエンドの統合により、編成と公開が非常に簡単になります。\n"
+"美しいスピーカーの経歴とトークの説明を簡単にデザインできます。\n"
+"\n"
+"議題と講演リスト\n"
+"------------------------ \n"
+"###強力なユーザーインターフェイスWebサイトに自動的に公開される各イベントの美しい議題を取得します。\n"
+"訪問者が簡単に講演を検索して閲覧したり、タグ、場所、講演者でフィルタリングしたりできるようにします。\n"
+"\n"
+"スポンサーの管理\n"
+"--------------- \n"
+"###スポンサーシップの販売、スポンサーの宣伝イベントにスポンサーを追加し、\n"
+"すべてのページの下部にレベル(ブロンズ、シルバー、ゴールドなど)ごとにイベントのスポンサーを公開します。 \n"
+"Odoo eコマースを通じてスポンサーシップパッケージをオンラインで販売し、販売サイクルを完全に統合します。\n"
+"\n"
+"\n"
+"効率的なコミュニケーション\n"
+"----------------------- \n"
+"###一部のイベントのブログをアクティブ化するイベントごとにブログをアクティブ化して、\n"
+"特定のイベントについてコミュニケーションをとることができます。訪問者はニュースを購読して情報を得ることができます。"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_event
@@ -17156,7 +17966,7 @@ msgstr "オーナー"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_P
 msgid "P EDUCATION"
-msgstr ""
+msgstr "P教育"
 
 #. module: base
 #: selection:ir.actions.report,report_type:0
@@ -17371,7 +18181,7 @@ msgstr "パス"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_payment
 msgid "Payment - Account"
-msgstr ""
+msgstr "支払い-アカウント"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_payment
@@ -17438,7 +18248,7 @@ msgstr "決済サービス:送金実装"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_reports_followup
 msgid "Payment Follow-up Management"
-msgstr ""
+msgstr "支払いフォローアップ管理"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_payment
@@ -17509,7 +18319,7 @@ msgstr "電話"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_phone_validation
 msgid "Phone Numbers Validation"
-msgstr ""
+msgstr "電話番号の検証"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form
@@ -17561,7 +18371,7 @@ msgstr "値選択の前に作成対象モデルを設定してください。"
 #: code:addons/base/ir/ir_model.py:472
 #, python-format
 msgid "Please specify a valid model for the object relation"
-msgstr ""
+msgstr "オブジェクト関係の有効なモデルを指定してください"
 
 #. module: base
 #: code:addons/base/res/res_users.py:255
@@ -17710,7 +18520,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_l10n_us_check_printing
 msgid "Print US Checks"
-msgstr ""
+msgstr "米国の小切手を印刷する"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_expense_check
@@ -17917,12 +18727,12 @@ msgstr "プロジェクト評価"
 #. module: base
 #: model:ir.module.module,summary:base.module_helpdesk_sale_timesheet
 msgid "Project, Helpdesk, Timesheet and Sale Orders"
-msgstr ""
+msgstr "プロジェクト、ヘルプデスク、タイムシート、販売注文"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_helpdesk_timesheet
 msgid "Project, Tasks, Timesheet"
-msgstr ""
+msgstr "プロジェクト、タスク、タイムシート"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_project
@@ -18066,7 +18876,7 @@ msgstr "Python表現"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_Q
 msgid "Q HUMAN HEALTH AND SOCIAL WORK ACTIVITIES"
-msgstr ""
+msgstr "Q HUMAN HEALTH AND SOCIAL WORK ACTIVITIES"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_view_search selection:ir.ui.view,type:0
@@ -18096,7 +18906,7 @@ msgstr "品質管理"
 #. module: base
 #: model:ir.module.module,summary:base.module_quality_mrp
 msgid "Quality Management with MRP"
-msgstr ""
+msgstr "MRPによる品質管理"
 
 #. module: base
 #: model:ir.module.module,description:base.module_website_event_questions
@@ -18115,7 +18925,7 @@ msgstr "新しいアプリのインストール、ユーザの追加、プラン
 #: model:ir.module.module,summary:base.module_sale_expense
 #: model:ir.module.module,summary:base.module_sale_stock
 msgid "Quotation, Sales Orders, Delivery & Invoicing Control"
-msgstr ""
+msgstr "見積り、受注、納品、請求管理"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sale_management
@@ -18133,17 +18943,17 @@ msgstr "Qweb viewはレコードで定義する「グループ」を持つこと
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_R
 msgid "R ARTS, ENTERTAINMENT AND RECREATION"
-msgstr ""
+msgstr "Rアート、エンターテインメント、レクリエーション"
 
 #. module: base
 #: model:res.country,vat_label:base.mx
 msgid "RFC"
-msgstr ""
+msgstr "RFC"
 
 #. module: base
 #: model:res.country,vat_label:base.do
 msgid "RNC"
-msgstr ""
+msgstr "RNC"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_currency_rate_rate
@@ -18228,7 +19038,7 @@ msgstr "レコード規則"
 #: code:addons/models.py:3235 code:addons/models.py:4020
 #, python-format
 msgid "Records:"
-msgstr ""
+msgstr "記録:"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_hr_recruitment
@@ -18320,7 +19130,7 @@ msgstr "リレーション名"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields_relation_table
 msgid "Relation Table"
-msgstr ""
+msgstr "関係表"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_report_xml_attachment_use
@@ -18330,12 +19140,12 @@ msgstr "添付ファイルからリロード"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Remove 'More' top-menu contextual action related to this action"
-msgstr ""
+msgstr "このアクションに関連する'その他'のトップメニューのコンテキストアクションを削除します"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
 msgid "Remove Contextual Action"
-msgstr ""
+msgstr "コンテキストアクションを削除する"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.act_report_xml_view
@@ -18602,12 +19412,12 @@ msgstr "レユニオン"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_S
 msgid "S OTHER SERVICE ACTIVITIES"
-msgstr ""
+msgstr "その他のサービス活動"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_sepa
 msgid "SEPA Credit Transfer"
-msgstr ""
+msgstr "SEPAクレジット移転"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_expense_sepa
@@ -18617,12 +19427,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_sepa_direct_debit
 msgid "SEPA Direct Debit"
-msgstr ""
+msgstr "SEPA口座振替"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_sms
 msgid "SMS Text Messaging"
-msgstr ""
+msgstr "SMSテキストメッセージング"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sms
@@ -18692,7 +19502,7 @@ msgstr "セントビンセント及びグレナディーン諸島"
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_contract_salary
 msgid "Salary Package Configurator"
-msgstr ""
+msgstr "給与パッケージコンフィギュレーター"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form
@@ -18707,12 +19517,12 @@ msgstr "販売＆購入券"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_coupon
 msgid "Sale Coupon"
-msgstr ""
+msgstr "セールクーポン"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_coupon_delivery
 msgid "Sale Coupon Delivery"
-msgstr ""
+msgstr "セールクーポン配信"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_service_rating
@@ -18776,7 +19586,7 @@ msgstr "販売・倉庫管理"
 #. module: base
 #: model:ir.module.module,summary:base.module_sale
 msgid "Sales internal machinery"
-msgstr ""
+msgstr "販売内部機械"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_partner_user_id
@@ -18891,7 +19701,7 @@ msgstr "取引先検索"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_window_search_view
 msgid "Search View"
-msgstr ""
+msgstr "検索ビュー"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_window_search_view_id
@@ -18935,7 +19745,7 @@ msgstr "利用可能なすべての値を見る"
 #: code:addons/common.py:42
 #, python-format
 msgid "See http://openerp.com"
-msgstr ""
+msgstr "http://openerp.comを参照してください"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_report_paperformat_format
@@ -18976,7 +19786,7 @@ msgstr "Self"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_helpdesk_sale_timesheet
 msgid "Sell Helpdesk Timesheet"
-msgstr ""
+msgstr "ヘルプデスクタイムシートを販売する"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_sale
@@ -19030,27 +19840,27 @@ msgstr "オンライン署名、署名済ドキュメントの受領・アーカ
 #: model:ir.module.module,description:base.module_calendar_sms
 #: model:ir.module.module,summary:base.module_calendar_sms
 msgid "Send text messages as event reminders"
-msgstr ""
+msgstr "イベントのリマインダーとしてテキストメッセージを送信する"
 
 #. module: base
 #: model:ir.module.module,description:base.module_delivery_dhl
 msgid "Send your shippings through DHL and track them online"
-msgstr ""
+msgstr "DHLを介して配送を送信し、オンラインで追跡します"
 
 #. module: base
 #: model:ir.module.module,description:base.module_delivery_fedex
 msgid "Send your shippings through Fedex and track them online"
-msgstr ""
+msgstr "Fedexを介して配送を送信し、オンラインで追跡します"
 
 #. module: base
 #: model:ir.module.module,description:base.module_delivery_ups
 msgid "Send your shippings through UPS and track them online"
-msgstr ""
+msgstr "UPSを介して出荷を送信し、オンラインで追跡します"
 
 #. module: base
 #: model:ir.module.module,description:base.module_delivery_usps
 msgid "Send your shippings through USPS and track them online"
-msgstr ""
+msgstr "USPSを通してあなたの積荷を送って、それらをオンラインで追跡してください"
 
 #. module: base
 #: model:res.country,name:base.sn
@@ -19171,7 +19981,7 @@ msgstr "ToDoとしてセット"
 msgid ""
 "Setting a value makes this action available in the sidebar for the given "
 "model."
-msgstr ""
+msgstr "値を設定すると、特定のモデルのサイドバーでこのアクションを使用できるようになります。"
 
 #. module: base
 #: code:addons/base/res/res_users.py:567
@@ -19226,7 +20036,7 @@ msgstr "出荷先"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_uninstall_show_all
 msgid "Show All"
-msgstr ""
+msgstr "すべて表示する"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_currency_search
@@ -19241,7 +20051,7 @@ msgstr "アクティブでない通貨を表示"
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_uninstall
 msgid "Show technical modules"
-msgstr ""
+msgstr "技術モジュールを表示"
 
 #. module: base
 #: model:res.country,name:base.sl
@@ -19286,7 +20096,7 @@ msgstr "シンガポール - Accounting"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_sg_reports
 msgid "Singapore - Accounting Reports"
-msgstr ""
+msgstr "シンガポール-会計報告"
 
 #. module: base
 #: model:res.country,name:base.sx
@@ -19459,12 +20269,12 @@ msgstr "スペイン - Accounting (PGCE 2008)"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_es_reports
 msgid "Spain - Accounting (PGCE 2008) Reports"
-msgstr ""
+msgstr "スペイン-会計(PGCE 2008)レポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_base_sparse_field
 msgid "Sparse Fields"
-msgstr ""
+msgstr "スパースフィールド"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_specific_industry_applications
@@ -19586,7 +20396,7 @@ msgstr "在庫バーコード (モバイル)"
 #. module: base
 #: model:ir.module.module,summary:base.module_stock_barcode_mobile
 msgid "Stock Barcode scan in Mobile"
-msgstr ""
+msgstr "モバイルでのストックバーコードスキャン"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_fields_store
@@ -19750,7 +20560,7 @@ msgstr "スイス - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_ch_reports
 msgid "Switzerland - Accounting Reports"
-msgstr ""
+msgstr "スイス-会計報告"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_currency_symbol
@@ -19765,7 +20575,7 @@ msgstr "記号位置"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_project_timesheet_synchro
 msgid "Synchronization with the external timesheet application"
-msgstr ""
+msgstr "外部タイムシートアプリケーションとの同期"
 
 #. module: base
 #: model:res.country,name:base.sy
@@ -19801,6 +20611,8 @@ msgid ""
 "T ACTIVITIES OF HOUSEHOLDS AS EMPLOYERS;UNDIFFERENTIATED GOODS- AND "
 "SERVICES-PRODUCING ACTIVITIES OF HOUSEHOLDS FOR OWN USE"
 msgstr ""
+"T ACTIVITIES OF HOUSEHOLDS AS EMPLOYERS;UNDIFFERENTIATED GOODS- AND "
+"SERVICES-PRODUCING ACTIVITIES OF HOUSEHOLDS FOR OWN USE"
 
 #. module: base
 #: selection:base.language.export,format:0
@@ -20459,12 +21271,12 @@ msgstr "税識別番号。会社が納税関連の処理が必要な場合入力
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale_taxcloud_delivery
 msgid "TaxCloud and Delivery - Ecommerce"
-msgstr ""
+msgstr "TaxCloudと配信-eコマース"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_taxcloud
 msgid "TaxCloud make it easy for business to comply with sales tax law"
-msgstr ""
+msgstr "TaxCloudにより、企業は消費税法を簡単に順守できます"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_hr
@@ -20527,17 +21339,17 @@ msgstr "接続テスト"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_main_flows
 msgid "Test Main Flow"
-msgstr ""
+msgstr "メインフローをテストする"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_performance
 msgid "Test Performance"
-msgstr ""
+msgstr "パフォーマンスをテストする"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_rpc
 msgid "Test RPC"
-msgstr ""
+msgstr "RPCをテストする"
 
 #. module: base
 #: model:ir.module.module,description:base.module_test_access_rights
@@ -20584,7 +21396,7 @@ msgstr ""
 #: code:addons/base/res/res_users.py:295
 #, python-format
 msgid "The \"App Switcher\" action cannot be selected as home action."
-msgstr ""
+msgstr "\"アプリスイッチャー\"アクションはホームアクションとして選択できません。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country_code
@@ -20805,6 +21617,16 @@ msgid "The list of models that extends the current model."
 msgstr "現在のモデルを拡張したモデルのリスト。"
 
 #. module: base
+#: code:addons/base/ir/ir_model.py:522
+#, python-format
+msgid ""
+"The m2o field %s is required but declares its ondelete policy as being 'set "
+"null'. Only 'restrict' and 'cascade' make sense."
+msgstr ""
+"m2oフィールド%sは必須ですが、そのondeleteポリシーが'nullに設定されている'と宣言しています。 "
+"'制限'と'カスケード'のみが意味をなします。"
+
+#. module: base
 #: model:ir.model.fields,help:base.field_ir_filters_action_id
 msgid ""
 "The menu action this filter applies to. When left empty the filter applies "
@@ -20876,7 +21698,7 @@ msgstr "事前定義された変数は次のもののみ:"
 #: code:addons/model.py:121
 #, python-format
 msgid "The operation cannot be completed:"
-msgstr ""
+msgstr "操作を完了できません:"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_domain
@@ -20951,7 +21773,7 @@ msgstr ""
 #. module: base
 #: sql_constraint:res.currency:0
 msgid "The rounding factor must be greater than 0!"
-msgstr ""
+msgstr "丸め係数は0より大きくなければなりません!"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_language_install
@@ -20971,7 +21793,7 @@ msgstr "選択されたモジュールは更新あるいはインストールさ
 msgid ""
 "The server is busy right now, module operations are not possible at this "
 "time, please try again later."
-msgstr ""
+msgstr "現在サーバに処理中のプロセスがあり、モジュールの操作ができません。少し時間を置いて再度お試しください。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country_state_code
@@ -21011,7 +21833,7 @@ msgstr "このユーザに提供されているプライベートフィルタ。
 msgid ""
 "The value for the field '%s' already exists (this is probably '%s' in the "
 "current model)."
-msgstr ""
+msgstr "'%s'領域の値はすでに存在します(おそらく現在のモデルの'%s'です)。"
 
 #. module: base
 #: code:addons/models.py:5350
@@ -21019,7 +21841,7 @@ msgstr ""
 msgid ""
 "The values for the fields '%s' already exist (they are probably '%s' in the "
 "current model)."
-msgstr ""
+msgstr "'%s'領域の値はすでに存在します(おそらく現在のモデルの'%s'です)。"
 
 #. module: base
 #: model:ir.module.category,name:base.module_category_theme
@@ -21120,6 +21942,7 @@ msgid ""
 "This module ensures that when delivery price is computed online, and taxes are computed with TaxCloud, the tax computation is done correctly on both the order and delivery.\n"
 "    "
 msgstr ""
+"このモジュールは、配送価格がオンラインで計算され、税金がTaxCloudで計算されるときに、注文と配送の両方で税金の計算が正しく行われるようにします。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_base_module_upgrade
@@ -21151,7 +21974,7 @@ msgstr "チケット、サポート、ライブチャット"
 #. module: base
 #: model:ir.module.module,summary:base.module_website_helpdesk_slides
 msgid "Ticketing, Support, Slides"
-msgstr ""
+msgstr "チケット、サポート、スライド"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_lang_time_format
@@ -21250,7 +22073,7 @@ msgstr "アップグレード対象"
 #, python-format
 msgid ""
 "To enable it, make sure this directory exists and is writable on the server:"
-msgstr ""
+msgstr "これを有効にするには、このディレクトリが存在し、サーバー上で書き込み可能であることを確認してください。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_server_action_form
@@ -21290,7 +22113,7 @@ msgstr "上部余白 (mm)"
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_count
 msgid "Total number of records in this model"
-msgstr ""
+msgstr "このモデルのレコードの総数"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_point_of_sale
@@ -21336,7 +22159,7 @@ msgstr "過渡: True"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_transifex
 msgid "Transifex integration"
-msgstr ""
+msgstr "Transifexの連携"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_groups_trans_implied_ids
@@ -21517,7 +22340,7 @@ msgstr "タイプ:"
 #. module: base
 #: model:res.partner.industry,full_name:base.res_partner_industry_U
 msgid "U ACTIVITIES OF EXTRA TERRITORIAL ORGANISATIONS AND BODIES"
-msgstr ""
+msgstr "U ACTIVITIES OF EXTRA TERRITORIAL ORGANISATIONS AND BODIES"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_ae
@@ -21532,7 +22355,7 @@ msgstr "イギリス - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_uk_reports
 msgid "UK - Accounting Reports"
-msgstr ""
+msgstr "英国-会計報告"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_uk_reports_hmrc
@@ -21547,7 +22370,7 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_delivery_ups
 msgid "UPS Shipping"
-msgstr ""
+msgstr "UPS輸送"
 
 #. module: base
 #: selection:ir.attachment,type:0
@@ -21559,7 +22382,7 @@ msgstr "URL"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_us_reports
 msgid "US - Accounting Reports"
-msgstr ""
+msgstr "米国-会計レポート"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_us_check_printing
@@ -21602,7 +22425,7 @@ msgstr "デフォルトのプロパティとして使用されているため、
 #: code:addons/base/ir/ir_actions_report.py:626
 #, python-format
 msgid "Unable to find Wkhtmltopdf on this system. The PDF can not be created."
-msgstr ""
+msgstr "このシステムでWkhtmltopdfが見つかりません。 PDFを作成できません。"
 
 #. module: base
 #: code:addons/base/module/module.py:342
@@ -21677,7 +22500,7 @@ msgstr "アメリカ合衆国 - 会計"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_delivery_usps
 msgid "United States Postal Service (USPS) Shipping"
-msgstr ""
+msgstr "米国郵政公社（USPS）の配送"
 
 #. module: base
 #: selection:ir.module.module.dependency,state:0
@@ -21689,7 +22512,7 @@ msgstr "不明"
 #: code:addons/models.py:833
 #, python-format
 msgid "Unknown database error: '%s'"
-msgstr ""
+msgstr "未知のデータベースエラー: '%s'"
 
 #. module: base
 #: code:addons/models.py:996
@@ -21732,7 +22555,7 @@ msgstr "不明な値です '%s' ブール値フィールド '%%(field)s', もし
 #, python-format
 msgid ""
 "Unrecognized extension: must be one of .csv, .po, or .tgz (received .%s)."
-msgstr ""
+msgstr "認識されない拡張子:.csv、.po、または.tgz(。%sを受信)のいずれかである必要があります。"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_translation_search
@@ -21867,7 +22690,7 @@ msgstr "このフォーマットが使われます '%s'"
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country_vat_label
 msgid "Use this field if you want to change vat label."
-msgstr ""
+msgstr "VATラベルを変更する場合は、このフィールドを使用します。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country_address_view_id
@@ -21877,6 +22700,8 @@ msgid ""
 "display addresses (in reports for example), while this field is used to "
 "modify the input form for addresses."
 msgstr ""
+"完全なアドレスをエンコードするいつもの方法を置き換える場合は、このフィールドを使用します。 "
+"address_formatフィールドは、（レポートなどで）住所の表示方法を変更するために使用され、住所の入力フォームを変更するために使用されます。"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_model_fields_relation_table
@@ -22032,12 +22857,12 @@ msgstr "VAT番号検査"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_voip
 msgid "VOIP"
-msgstr ""
+msgstr "VOIP"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_voip_onsip
 msgid "VOIP OnSIP"
-msgstr ""
+msgstr "VOIP OnSIP"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_website_crm_phone_validation
@@ -22047,7 +22872,7 @@ msgstr "電話番号を検証、正規化"
 #. module: base
 #: model:ir.module.module,summary:base.module_phone_validation
 msgid "Validate and format phone numbers"
-msgstr ""
+msgstr "電話番号の検証とフォーマット"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_crm_phone_validation
@@ -22071,22 +22896,22 @@ msgstr "値 '%s' は、選択したフィールドには見つかりません '%
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_binary
 msgid "Value Binary"
-msgstr ""
+msgstr "バイナリ値"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_datetime
 msgid "Value Datetime"
-msgstr ""
+msgstr "日付値"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_float
 msgid "Value Float"
-msgstr ""
+msgstr "浮動小数値"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_integer
 msgid "Value Integer"
-msgstr ""
+msgstr "Integer値"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_act_server_fields_lines
@@ -22097,12 +22922,12 @@ msgstr "値マッピング"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_reference
 msgid "Value Reference"
-msgstr ""
+msgstr "リファレンス値"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_property_value_text
 msgid "Value Text"
-msgstr ""
+msgstr "テキスト値"
 
 #. module: base
 #: model:res.country,name:base.vu
@@ -22134,7 +22959,7 @@ msgstr "仕入先"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_3way_match
 msgid "Vendor Bill: Release to Pay"
-msgstr ""
+msgstr "ベンダー請求書:支払いを開放する"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_supplier_form
@@ -22219,7 +23044,7 @@ msgstr "ビュータイプ"
 #. module: base
 #: model:ir.module.module,summary:base.module_account_reports
 msgid "View and create reports"
-msgstr ""
+msgstr "レポートを表示および作成する"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view_mode
@@ -22237,7 +23062,7 @@ msgstr "ビュータイプ：ツリー表示に使用する型式、階層ツリ
 #: code:addons/base/ir/ir_model.py:583
 #, python-format
 msgid "View: %s"
-msgstr ""
+msgstr "ビュー:%s"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_ui_view
@@ -22365,7 +23190,7 @@ msgstr "ウェブエディタ"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_enterprise
 msgid "Web Enterprise"
-msgstr ""
+msgstr "Web企業"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_web_gantt
@@ -22386,7 +23211,7 @@ msgstr "Webアイコンイメージ"
 #: model:ir.module.module,shortdesc:base.module_http_routing
 #: model:ir.module.module,summary:base.module_http_routing
 msgid "Web Routing"
-msgstr ""
+msgstr "Webルーティング"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_translation_search
@@ -22410,7 +23235,7 @@ msgstr "ウェブサイトビルダー"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_enterprise
 msgid "Website Enterprise"
-msgstr ""
+msgstr "Website企業"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_form_project
@@ -22440,12 +23265,12 @@ msgstr "ウェブサイト Google Map"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_helpdesk
 msgid "Website Helpdesk"
-msgstr ""
+msgstr "Webサイトのヘルプデスク"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_helpdesk_livechat
 msgid "Website IM Livechat Helpdesk"
-msgstr ""
+msgstr "WebサイトのIMライブチャットヘルプデスク"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_links
@@ -22515,12 +23340,12 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_helpdesk_slides
 msgid "Website Slides Helpdesk"
-msgstr ""
+msgstr "Webサイトのスライドのヘルプデスク"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_studio
 msgid "Website Studio"
-msgstr ""
+msgstr "Webサイトスタジオ"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_theme_install
@@ -22638,6 +23463,7 @@ msgid ""
 "Wkhtmltopdf failed (error code: %s). Memory limit too low or maximum file "
 "number of subprocess reached. Message : %s"
 msgstr ""
+"Wkhtmltopdfが失敗しました（エラーコード:%s）。メモリ制限が低すぎるか、サブプロセスの最大ファイル数に達しました。メッセージ:%s"
 
 #. module: base
 #: code:addons/base/ir/ir_actions_report.py:396
@@ -22683,12 +23509,12 @@ msgstr "イエメン"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_account_yodlee
 msgid "Yodlee"
-msgstr ""
+msgstr "Yodlee"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_account_yodlee
 msgid "Yodlee Finance"
-msgstr ""
+msgstr "Yodlee金融"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_users_simple_form
@@ -22701,7 +23527,7 @@ msgstr "新しいユーザを作成しています。保存した後、ユーザ
 #: code:addons/base/module/module.py:429
 #, python-format
 msgid "You are trying to install incompatible modules in category \"%s\":"
-msgstr ""
+msgstr "あなたはカテゴリ\"%s\"に不整合なモジュールをインストールしようとしています:"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_attachment_type
@@ -22838,6 +23664,8 @@ msgid ""
 "instead. If SSL is needed, an upgrade to Python 2.6 on the server-side "
 "should do the trick."
 msgstr ""
+"OdooサーバーはSMTP-over-SSLをサポートしていません。代わりにSTARTTLSを使用できます。 "
+"SSLが必要な場合は、サーバー側でPython2.6にアップグレードすることでうまくいくはずです。"
 
 #. module: base
 #: code:addons/base/ir/ir_mail_server.py:480
@@ -22930,22 +23758,22 @@ msgstr "base.update.translations"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "binary"
-msgstr ""
+msgstr "バイナリ"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "boolean"
-msgstr ""
+msgstr "ブーリアン"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_delivery_bpost
 msgid "bpost Shipping"
-msgstr ""
+msgstr "bpost配送"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "char"
-msgstr ""
+msgstr "キャラ"
 
 #. module: base
 #: selection:base.language.export,state:0
@@ -22966,12 +23794,12 @@ msgstr "データベース id"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "date"
-msgstr ""
+msgstr "日付"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "datetime"
-msgstr ""
+msgstr "日時"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.wizard_lang_export
@@ -23037,7 +23865,7 @@ msgstr "例: www.odoo.com"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_sale_ebay
 msgid "eBay Connector"
-msgstr ""
+msgstr "eBayコネクタ"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_website_sale
@@ -23074,7 +23902,7 @@ msgstr "false"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "float"
-msgstr ""
+msgstr "浮動小数"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_model_fields_form
@@ -23105,7 +23933,7 @@ msgstr "取得"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "html"
-msgstr ""
+msgstr "html"
 
 #. module: base
 #: selection:base.language.install,state:0
@@ -23116,7 +23944,7 @@ msgstr "初期化"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "integer"
-msgstr ""
+msgstr "integer"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.view_partner_form
@@ -23160,7 +23988,7 @@ msgstr "ir.actions.client"
 #: model:ir.model,name:base.model_ir_actions_report
 #: selection:ir.ui.menu,action:0
 msgid "ir.actions.report"
-msgstr ""
+msgstr "IRアクションレポート"
 
 #. module: base
 #: model:ir.model,name:base.model_ir_actions_server
@@ -23366,17 +24194,17 @@ msgstr "ir.ui.view.custom"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "many2many"
-msgstr ""
+msgstr "多対多"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "many2one"
-msgstr ""
+msgstr "多対一"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "monetary"
-msgstr ""
+msgstr "金銭"
 
 #. module: base
 #: code:addons/base/ir/ir_ui_view.py:494
@@ -23404,7 +24232,7 @@ msgstr "on"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "one2many"
-msgstr ""
+msgstr "一2多"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_pos_cache
@@ -23414,7 +24242,7 @@ msgstr "pos_cache"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_pos_sale
 msgid "pos_sale"
-msgstr ""
+msgstr "pos_sale"
 
 #. module: base
 #: selection:ir.model.fields,ttype:0
@@ -23459,7 +24287,7 @@ msgstr "res.users.log"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "selection"
-msgstr ""
+msgstr "選択"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_mimetypes
@@ -23519,12 +24347,12 @@ msgstr "test-limits"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_lint
 msgid "test-lint"
-msgstr ""
+msgstr "test-lint"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_translation_import
 msgid "test-translation-import"
-msgstr ""
+msgstr "test-translation-import"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_uninstall
@@ -23539,7 +24367,7 @@ msgstr "test_convert"
 #. module: base
 #: selection:ir.model.fields,ttype:0
 msgid "text"
-msgstr ""
+msgstr "テキスト"
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.res_config_installer
