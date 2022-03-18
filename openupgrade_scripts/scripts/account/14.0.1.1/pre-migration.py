@@ -1,7 +1,6 @@
 # Copyright 2021 ForgeFlow S.L.  <https://www.forgeflow.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openupgradelib import openupgrade
-from odoo.tools.sql import create_column
 
 
 def rename_fields(env):
@@ -341,16 +340,16 @@ def add_move_id_field_account_payment(env):
         UPDATE account_move am
         SET payment_id = ap.id
         FROM account_payment ap
-        WHERE am.id = ap.move_id
+        WHERE am.id = ap.move_id AND am.payment_id IS NULL
         """,
     )
     openupgrade.logged_query(
         env.cr,
         """
         UPDATE account_move am
-        SET currency_id = ap.{}
+        SET currency_id = ap.{0}
         FROM account_payment ap
-        WHERE am.id = ap.move_id
+        WHERE am.id = ap.move_id AND am.currency_id != ap.{0}
         """.format(
             openupgrade.get_legacy_name("currency_id"),
         ),
@@ -372,17 +371,23 @@ def add_edi_state_field_account_move(env):
 
 
 def _fill_empty_partner_type_account_payment_viin_hr_account(env):
-    env.cr.execute("""SELECT COUNT(*) FROM ir_module_module WHERE name='viin_hr_account' and state='installed'""")
+    env.cr.execute(
+        """
+        SELECT COUNT(*)
+        FROM ir_module_module
+        WHERE name='viin_hr_account' and state='installed'
+        """,
+    )
     if not env.cr.fetchone():
         return
-    if not openupgrade.column_exists(env.cr, 'account_payment', 'employee_id'):
+    if not openupgrade.column_exists(env.cr, "account_payment", "employee_id"):
         openupgrade.logged_query(
             env.cr,
             """
             ALTER TABLE account_payment
             ADD COLUMN employee_id integer;
-            """
-            )
+            """,
+        )
     openupgrade.logged_query(
         env.cr,
         """
@@ -392,11 +397,18 @@ def _fill_empty_partner_type_account_payment_viin_hr_account(env):
         FROM res_partner p
         JOIN hr_employee emp ON p.id = emp.address_home_id
         WHERE p.id = ap.partner_id AND partner_type IS NULL and partner_id IS NOT NULL
-        """
-        )
+        """,
+    )
+
 
 def _fill_empty_partner_type_account_payment_to_account_counterpart(env):
-    env.cr.execute("""SELECT COUNT(*) FROM ir_module_module WHERE name='to_account_counterpart' and state='installed'""")
+    env.cr.execute(
+        """
+        SELECT COUNT(*)
+        FROM ir_module_module
+        WHERE name='to_account_counterpart' and state='installed'
+        """,
+    )
     if not env.cr.fetchone():
         return
     openupgrade.logged_query(
@@ -409,8 +421,10 @@ def _fill_empty_partner_type_account_payment_to_account_counterpart(env):
             CASE
                 WHEN internal_type = 'payable' THEN 'supplier'
                 WHEN internal_type = 'receivable' THEN 'customer'
-                WHEN internal_type = 'other' AND payment_type = 'outbound' THEN 'supplier'
-                WHEN internal_type = 'other' AND payment_type = 'inbound' THEN 'customer'
+                WHEN internal_type = 'other' AND payment_type = 'outbound'
+                    THEN 'supplier'
+                WHEN internal_type = 'other' AND payment_type = 'inbound'
+                    THEN 'customer'
             END as partner_type
             FROM (
                 SELECT aml.payment_id, counter_part.internal_type, ap.payment_type
@@ -420,14 +434,15 @@ def _fill_empty_partner_type_account_payment_to_account_counterpart(env):
                 JOIN account_account hh ON hh.id = aml.account_id
                 JOIN account_payment ap ON aml.payment_id = ap.id
                 JOIN account_journal aj ON ap.journal_id = aj.id
-                WHERE ap.payment_type != 'transfer' 
+                WHERE ap.payment_type != 'transfer'
                     AND hh.internal_type = 'liquidity'
                     AND ap.partner_type IS NULL
                     ) x
             ) sub
         WHERE ap.id = sub.payment_id AND ap.partner_type IS NULL
-        """
-        )
+        """,
+    )
+
 
 def fill_empty_partner_type_account_payment(env):
     _fill_empty_partner_type_account_payment_viin_hr_account(env)
