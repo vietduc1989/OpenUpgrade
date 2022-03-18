@@ -98,19 +98,19 @@ def create_recurrent_events(env):
                 if (recurrent_id_date, recurrent_id_date + duration) in ranges:
                     ranges.remove((recurrent_id_date, recurrent_id_date + duration))
 
-            values = {}
-            for start, stop in ranges:
-                values[(recurrence.id, start, stop)] = dict(
-                    start=start,
-                    stop=stop,
-                    recurrence_id=recurrence.id,
-                )
-            if values:
-                recurrence.with_context(
-                    default_activity_ids=[(6, 0, [])]
-                )._apply_recurrence(
-                    specific_values_creation=values,
-                )
+        values = {}
+        for start, stop in ranges:
+            values[(recurrence.id, start, stop)] = dict(
+                start=start,
+                stop=stop,
+                recurrence_id=recurrence.id,
+            )
+        if values:
+            recurrence.with_context(
+                default_activity_ids=[(6, 0, [])]
+            )._apply_recurrence(
+                specific_values_creation=values,
+            )
 
 
 @openupgrade.migrate()
