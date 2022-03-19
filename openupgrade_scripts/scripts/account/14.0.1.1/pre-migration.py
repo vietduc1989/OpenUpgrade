@@ -378,7 +378,7 @@ def _fill_empty_partner_type_account_payment_viin_hr_account(env):
         WHERE name='viin_hr_account' and state='installed'
         """,
     )
-    if not env.cr.fetchone():
+    if not env.cr.fetchone()[0]:
         return
     if not openupgrade.column_exists(env.cr, "account_payment", "employee_id"):
         openupgrade.logged_query(
@@ -388,6 +388,16 @@ def _fill_empty_partner_type_account_payment_viin_hr_account(env):
             ADD COLUMN employee_id integer;
             """,
         )
+
+    env.cr.execute(
+        """
+        SELECT COUNT(*)
+        FROM ir_module_module
+        WHERE name='hr' and state='installed'
+        """,
+    )
+    if not env.cr.fetchone()[0]:
+        return
     openupgrade.logged_query(
         env.cr,
         """
@@ -409,7 +419,7 @@ def _fill_empty_partner_type_account_payment_to_account_counterpart(env):
         WHERE name='to_account_counterpart' and state='installed'
         """,
     )
-    if not env.cr.fetchone():
+    if not env.cr.fetchone()[0]:
         return
     openupgrade.logged_query(
         env.cr,
