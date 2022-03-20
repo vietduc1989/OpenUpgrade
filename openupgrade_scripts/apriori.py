@@ -64,7 +64,7 @@ renamed_modules = {
     # Viindoo/erponline-enterprise
     "to_enterprice_marks_account": "to_enterprise_marks_account",
     "to_enterprice_marks_mrp": "to_enterprise_marks_mrp",
-    "to_hide_ent_modules_website_theme_install": "to_hide_ent_modules_website",
+    "to_hide_ent_modules_website_theme_install": "to_hide_ent_modules_website_theme",
 }
 
 # Merged modules contain a mapping from old module names to other,
