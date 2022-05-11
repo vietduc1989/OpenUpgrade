@@ -53,6 +53,7 @@ renamed_modules = {
     'mrp_maintenance': 'to_mrp_maintenance',
     'mrp_mps': 'to_mrp_mps',
     'mrp_plm': 'to_mrp_plm',
+    'quality_mrp': 'to_quality_mrp',
 }
 
 merged_modules = {
