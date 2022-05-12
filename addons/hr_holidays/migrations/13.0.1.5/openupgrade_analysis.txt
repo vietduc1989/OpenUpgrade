@@ -11,7 +11,7 @@ hr_holidays  / hr.leave.allocation      / manager_id (many2one)         : NEW re
 hr_holidays  / hr.leave.type            / _order                        : _order is now 'id' ('sequence, id')
 hr_holidays  / hr.leave.type            / allocation_notif_subtype_id (many2one): NEW relation: mail.message.subtype, hasdefault
 hr_holidays  / hr.leave.type            / categ_id (many2one)           : DEL relation: calendar.event.type
-hr_holidays  / hr.leave.type            / code (char)                   : NEW
+hr_holidays  / hr.leave.type            / code (char)                   : previously in module to_hr_payroll_leave_type_code
 hr_holidays  / hr.leave.type            / create_calendar_meeting (boolean): NEW hasdefault
 hr_holidays  / hr.leave.type            / leave_notif_subtype_id (many2one): NEW relation: mail.message.subtype, hasdefault
 hr_holidays  / hr.leave.type            / request_unit (selection)      : selection_keys is now '['day', 'half_day', 'hour']' ('['day', 'hour']')

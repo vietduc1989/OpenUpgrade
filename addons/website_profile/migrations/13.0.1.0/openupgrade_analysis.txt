@@ -24,4 +24,4 @@ NEW ir.ui.view: website_profile.user_profile_sub_nav
 NEW ir.ui.view: website_profile.users_page_content
 NEW ir.ui.view: website_profile.users_page_header
 NEW ir.ui.view: website_profile.users_page_main
-NEW mail.template: website_profile.validation_email [renamed from website_forum module] (noupdate)
+NEW mail.template: website_profile.validation_email (noupdate)

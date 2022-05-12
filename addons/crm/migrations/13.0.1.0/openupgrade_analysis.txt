@@ -71,6 +71,5 @@ NEW ir.ui.view: crm.utm_campaign_view_kanban
 DEL ir.ui.view: crm.crm_case_form_view_leads
 DEL ir.ui.view: crm.crm_case_form_view_oppor
 DEL ir.ui.view: crm.view_create_opportunity_simplified
-DEL ir.ui.view: crm_phone_validation.res_config_settings_view_form
 NEW mail.message.subtype: crm.mt_lead_restored (noupdate)
 NEW mail.message.subtype: crm.mt_salesteam_lead_restored (noupdate)

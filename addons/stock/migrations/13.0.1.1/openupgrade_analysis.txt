@@ -35,6 +35,7 @@ stock        / stock.inventory.line     / categ_id (many2one)           : NEW re
 stock        / stock.inventory.line     / inventory_date (datetime)     : NEW hasdefault
 stock        / stock.inventory.line     / is_editable (boolean)         : NEW
 stock        / stock.inventory.line     / theoretical_qty (float)       : not a function anymore
+stock        / stock.location           / _order                        : _order is now 'complete_name, id' ('complete_name')
 stock        / stock.location           / partner_id (many2one)         : DEL relation: res.partner
 stock        / stock.location           / putaway_rule_ids (one2many)   : NEW relation: stock.putaway.rule
 stock        / stock.location           / putaway_strategy_id (many2one): DEL relation: product.putaway
@@ -102,26 +103,18 @@ DEL ir.actions.act_window: stock.product_open_quants
 DEL ir.actions.act_window: stock.quantsact
 NEW ir.actions.report: stock.action_label_transfer_template_pdf
 NEW ir.actions.report: stock.action_label_transfer_template_zpl
-NEW ir.actions.report: stock.label_barcode_product_product [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_barcode_product_template [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_lot_template [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_package_template [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_picking_type [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_product_packaging [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_product_product [renamed from stock_zebra module]
-NEW ir.actions.report: stock.label_product_template [renamed from stock_zebra module]
-DEL ir.actions.report: stock_zebra.label_barcode_product_product [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_barcode_product_template [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_lot_template [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_package_template [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_picking_type [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_product_packaging [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_product_product [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_product_template [renamed to stock module]
-DEL ir.actions.report: stock_zebra.label_transfer_template
+NEW ir.actions.report: stock.label_barcode_product_product
+NEW ir.actions.report: stock.label_barcode_product_template
+NEW ir.actions.report: stock.label_lot_template
+NEW ir.actions.report: stock.label_package_template
+NEW ir.actions.report: stock.label_picking_type
+NEW ir.actions.report: stock.label_product_packaging
+NEW ir.actions.report: stock.label_product_product
+NEW ir.actions.report: stock.label_product_template
 NEW ir.actions.server: stock.action_view_quants
 NEW ir.actions.server: stock.model_stock_inventory_line_action_recompute_quantity
 NEW ir.actions.server: stock.model_stock_inventory_line_action_reset_product_qty
+NEW ir.actions.server: stock.stock_quant_stock_move_line_desynchronization
 NEW ir.model.access: stock.access_report_stock_quantity
 NEW ir.model.access: stock.access_stock_putaway_all
 NEW ir.model.access: stock.access_stock_putaway_manager
@@ -171,16 +164,7 @@ DEL ir.ui.view: stock.view_putaway
 DEL ir.ui.view: stock.view_stock_level_forecast_filter
 DEL ir.ui.view: stock.view_stock_level_forecast_graph
 DEL ir.ui.view: stock.view_stock_level_forecast_pivot
-DEL ir.ui.view: stock_zebra.label_barcode_product_product_view
-DEL ir.ui.view: stock_zebra.label_barcode_product_template_view
-DEL ir.ui.view: stock_zebra.label_lot_template_view
-DEL ir.ui.view: stock_zebra.label_package_template_view
-DEL ir.ui.view: stock_zebra.label_picking_type_view
-DEL ir.ui.view: stock_zebra.label_product_packaging_view
-DEL ir.ui.view: stock_zebra.label_product_product_view
-DEL ir.ui.view: stock_zebra.label_product_template_view
-DEL ir.ui.view: stock_zebra.label_transfer_template_view
-NEW mail.template: stock.mail_template_data_delivery_confirmation [renamed from delivery module] (noupdate)
+NEW mail.template: stock.mail_template_data_delivery_confirmation (noupdate)
 DEL stock.location: stock.location_inventory (noupdate)
 DEL stock.location: stock.location_procurement (noupdate)
 DEL stock.location: stock.location_production (noupdate)

@@ -5,7 +5,7 @@ purchase     / account.invoice          / vendor_bill_purchase_id (many2one): DE
 purchase     / account.invoice.line     / purchase_line_id (many2one)   : DEL relation: purchase.order.line
 purchase     / account.move             / purchase_id (many2one)        : NEW relation: purchase.order
 purchase     / account.move             / purchase_vendor_bill_id (many2one): NEW relation: purchase.bill.union
-purchase     / account.move.line        / purchase_line_id (many2one)   : NEW relation: purchase.order.line
+purchase     / account.move.line        / purchase_line_id (many2one)   : previously in module to_purchase_landed_cost
 purchase     / purchase.order           / currency_rate (float)         : NEW isfunction: function, stored
 purchase     / purchase.order           / date_approve (date)           : type is now 'datetime' ('date')
 purchase     / purchase.order           / date_planned (datetime)       : not a function anymore

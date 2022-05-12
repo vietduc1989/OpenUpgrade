@@ -4,11 +4,12 @@ new model mail.address.mixin [abstract]
 new model mail.thread.blacklist (renamed from mail.blacklist.mixin) [abstract]
 new model mail.thread.cc [abstract]
 ---Fields in module 'mail'---
-mail         / ir.actions.act_window.view / view_mode (False)             : selection_keys is now '['activity', 'calendar', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'qweb', 'tree']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'tree']')
+mail         / ir.actions.act_window.view / view_mode (False)             : selection_keys is now '['activity', 'calendar', 'form', 'gantt', 'graph', 'kanban', 'org', 'pivot', 'qweb', 'tree', 'viin_cohort', 'viin_dashboard']' ('['activity', 'calendar', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'tree']')
 mail         / ir.model                 / is_mail_activity (boolean)    : NEW hasdefault
 mail         / ir.model                 / is_mail_blacklist (boolean)   : NEW hasdefault
 mail         / ir.model.fields          / track_visibility (selection)  : DEL selection_keys: ['always', 'onchange']
 mail         / ir.model.fields          / tracking (integer)            : NEW
+mail         / ir.ui.view               / type (False)                  : selection_keys is now '['activity', 'calendar', 'diagram', 'form', 'gantt', 'graph', 'kanban', 'org', 'pivot', 'qweb', 'search', 'tree', 'viin_cohort', 'viin_dashboard']' ('['activity', 'calendar', 'diagram', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'qweb', 'search', 'tree']')
 mail         / mail.activity            / create_user_id (many2one)     : DEL relation: res.users
 mail         / mail.activity            / feedback (html)               : DEL
 mail         / mail.activity            / res_id (integer)              : relation is now 'res_model' ('False') [nothing to do]

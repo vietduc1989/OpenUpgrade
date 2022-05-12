@@ -69,7 +69,7 @@ base         / res.company              / secondary_color (char)        : NEW
 base         / res.lang                 / translatable (boolean)        : DEL
 base         / res.lang                 / url_code (char)               : NEW required
 base         / res.lang                 / week_start (selection)        : selection_keys is now '['1', '2', '3', '4', '5', '6', '7']' ('[1, 2, 3, 4, 5, 6, 7]')
-base         / res.partner              / barcode (char)                : module is now 'point_of_sale' ('base')
+base         / res.partner              / barcode (char)                : DEL
 base         / res.partner              / customer (boolean)            : DEL
 base         / res.partner              / image (binary)                : DEL attachment: True
 base         / res.partner              / image_1024 (binary)           : NEW attachment: True, isrelated: related, stored
@@ -107,6 +107,7 @@ DEL ir.model.access: decimal_precision.access_decimal_precision_all
 DEL ir.model.access: decimal_precision.access_decimal_precision_config [renamed to base module]
 DEL ir.model.access: decimal_precision.access_decimal_precision_test_all
 NEW ir.module.category: base.module_category_accounting_accounting (noupdate)
+ir.module.category: base.module_category_administration (noupdate) (noupdate switched)
 NEW ir.module.category: base.module_category_administration_administration
 ir.module.category: base.module_category_hidden (noupdate) (noupdate switched)
 ir.module.category: base.module_category_human_resources (noupdate) (noupdate switched)
@@ -115,7 +116,7 @@ ir.module.category: base.module_category_localization (noupdate) (noupdate switc
 ir.module.category: base.module_category_manufacturing (noupdate) (noupdate switched)
 NEW ir.module.category: base.module_category_marketing (noupdate)
 NEW ir.module.category: base.module_category_operations (noupdate)
-NEW ir.module.category: base.module_category_operations_helpdesk
+NEW ir.module.category: base.module_category_operations_helpdesk (noupdate)
 NEW ir.module.category: base.module_category_payroll_localization
 NEW ir.module.category: base.module_category_sales (noupdate)
 NEW ir.module.category: base.module_category_sales_sign
@@ -175,87 +176,87 @@ DEL ir.ui.view: base.view_company_report_form
 DEL ir.ui.view: base.view_company_report_form_with_print
 DEL ir.ui.view: decimal_precision.view_decimal_precision_form
 DEL ir.ui.view: decimal_precision.view_decimal_precision_tree
-NEW res.country.state: base.RO_AB [renamed from l10n_ro module]
-NEW res.country.state: base.RO_AG [renamed from l10n_ro module]
-NEW res.country.state: base.RO_AR [renamed from l10n_ro module]
-NEW res.country.state: base.RO_B [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BC [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BH [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BN [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BR [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BT [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BV [renamed from l10n_ro module]
-NEW res.country.state: base.RO_BZ [renamed from l10n_ro module]
-NEW res.country.state: base.RO_CJ [renamed from l10n_ro module]
-NEW res.country.state: base.RO_CL [renamed from l10n_ro module]
-NEW res.country.state: base.RO_CS [renamed from l10n_ro module]
-NEW res.country.state: base.RO_CT [renamed from l10n_ro module]
-NEW res.country.state: base.RO_CV [renamed from l10n_ro module]
-NEW res.country.state: base.RO_DB [renamed from l10n_ro module]
-NEW res.country.state: base.RO_DJ [renamed from l10n_ro module]
-NEW res.country.state: base.RO_GJ [renamed from l10n_ro module]
-NEW res.country.state: base.RO_GL [renamed from l10n_ro module]
-NEW res.country.state: base.RO_GR [renamed from l10n_ro module]
-NEW res.country.state: base.RO_HD [renamed from l10n_ro module]
-NEW res.country.state: base.RO_HR [renamed from l10n_ro module]
-NEW res.country.state: base.RO_IF [renamed from l10n_ro module]
-NEW res.country.state: base.RO_IL [renamed from l10n_ro module]
-NEW res.country.state: base.RO_IS [renamed from l10n_ro module]
-NEW res.country.state: base.RO_MH [renamed from l10n_ro module]
-NEW res.country.state: base.RO_MM [renamed from l10n_ro module]
-NEW res.country.state: base.RO_MS [renamed from l10n_ro module]
-NEW res.country.state: base.RO_NT [renamed from l10n_ro module]
-NEW res.country.state: base.RO_OT [renamed from l10n_ro module]
-NEW res.country.state: base.RO_PH [renamed from l10n_ro module]
-NEW res.country.state: base.RO_SB [renamed from l10n_ro module]
-NEW res.country.state: base.RO_SJ [renamed from l10n_ro module]
-NEW res.country.state: base.RO_SM [renamed from l10n_ro module]
-NEW res.country.state: base.RO_SV [renamed from l10n_ro module]
-NEW res.country.state: base.RO_TL [renamed from l10n_ro module]
-NEW res.country.state: base.RO_TM [renamed from l10n_ro module]
-NEW res.country.state: base.RO_TR [renamed from l10n_ro module]
-NEW res.country.state: base.RO_VL [renamed from l10n_ro module]
-NEW res.country.state: base.RO_VN [renamed from l10n_ro module]
-NEW res.country.state: base.RO_VS [renamed from l10n_ro module]
-NEW res.country.state: base.state_A [renamed from l10n_cr module]
-NEW res.country.state: base.state_C [renamed from l10n_cr module]
-NEW res.country.state: base.state_DO_01 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_02 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_03 [renamed from l10n_do module] (noupdate switched)
+NEW res.country.state: base.RO_AB
+NEW res.country.state: base.RO_AG
+NEW res.country.state: base.RO_AR
+NEW res.country.state: base.RO_B
+NEW res.country.state: base.RO_BC
+NEW res.country.state: base.RO_BH
+NEW res.country.state: base.RO_BN
+NEW res.country.state: base.RO_BR
+NEW res.country.state: base.RO_BT
+NEW res.country.state: base.RO_BV
+NEW res.country.state: base.RO_BZ
+NEW res.country.state: base.RO_CJ
+NEW res.country.state: base.RO_CL
+NEW res.country.state: base.RO_CS
+NEW res.country.state: base.RO_CT
+NEW res.country.state: base.RO_CV
+NEW res.country.state: base.RO_DB
+NEW res.country.state: base.RO_DJ
+NEW res.country.state: base.RO_GJ
+NEW res.country.state: base.RO_GL
+NEW res.country.state: base.RO_GR
+NEW res.country.state: base.RO_HD
+NEW res.country.state: base.RO_HR
+NEW res.country.state: base.RO_IF
+NEW res.country.state: base.RO_IL
+NEW res.country.state: base.RO_IS
+NEW res.country.state: base.RO_MH
+NEW res.country.state: base.RO_MM
+NEW res.country.state: base.RO_MS
+NEW res.country.state: base.RO_NT
+NEW res.country.state: base.RO_OT
+NEW res.country.state: base.RO_PH
+NEW res.country.state: base.RO_SB
+NEW res.country.state: base.RO_SJ
+NEW res.country.state: base.RO_SM
+NEW res.country.state: base.RO_SV
+NEW res.country.state: base.RO_TL
+NEW res.country.state: base.RO_TM
+NEW res.country.state: base.RO_TR
+NEW res.country.state: base.RO_VL
+NEW res.country.state: base.RO_VN
+NEW res.country.state: base.RO_VS
+NEW res.country.state: base.state_A
+NEW res.country.state: base.state_C
+NEW res.country.state: base.state_DO_01
+NEW res.country.state: base.state_DO_02
+NEW res.country.state: base.state_DO_03
 NEW res.country.state: base.state_DO_04
-NEW res.country.state: base.state_DO_05 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_06 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_07 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_08 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_09 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_10 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_11 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_12 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_13 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_14 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_15 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_16 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_17 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_18 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_19 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_20 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_21 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_22 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_23 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_24 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_25 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_26 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_27 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_28 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_29 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_30 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_31 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_DO_32 [renamed from l10n_do module] (noupdate switched)
-NEW res.country.state: base.state_G [renamed from l10n_cr module]
-NEW res.country.state: base.state_H [renamed from l10n_cr module]
-NEW res.country.state: base.state_L [renamed from l10n_cr module]
-NEW res.country.state: base.state_P [renamed from l10n_cr module]
-NEW res.country.state: base.state_SJ [renamed from l10n_cr module]
+NEW res.country.state: base.state_DO_05
+NEW res.country.state: base.state_DO_06
+NEW res.country.state: base.state_DO_07
+NEW res.country.state: base.state_DO_08
+NEW res.country.state: base.state_DO_09
+NEW res.country.state: base.state_DO_10
+NEW res.country.state: base.state_DO_11
+NEW res.country.state: base.state_DO_12
+NEW res.country.state: base.state_DO_13
+NEW res.country.state: base.state_DO_14
+NEW res.country.state: base.state_DO_15
+NEW res.country.state: base.state_DO_16
+NEW res.country.state: base.state_DO_17
+NEW res.country.state: base.state_DO_18
+NEW res.country.state: base.state_DO_19
+NEW res.country.state: base.state_DO_20
+NEW res.country.state: base.state_DO_21
+NEW res.country.state: base.state_DO_22
+NEW res.country.state: base.state_DO_23
+NEW res.country.state: base.state_DO_24
+NEW res.country.state: base.state_DO_25
+NEW res.country.state: base.state_DO_26
+NEW res.country.state: base.state_DO_27
+NEW res.country.state: base.state_DO_28
+NEW res.country.state: base.state_DO_29
+NEW res.country.state: base.state_DO_30
+NEW res.country.state: base.state_DO_31
+NEW res.country.state: base.state_DO_32
+NEW res.country.state: base.state_G
+NEW res.country.state: base.state_H
+NEW res.country.state: base.state_L
+NEW res.country.state: base.state_P
+NEW res.country.state: base.state_SJ
 NEW res.country.state: base.state_cl_01
 NEW res.country.state: base.state_cl_02
 NEW res.country.state: base.state_cl_03
@@ -321,17 +322,17 @@ NEW res.country.state: base.state_ee_78
 NEW res.country.state: base.state_ee_82
 NEW res.country.state: base.state_ee_84
 NEW res.country.state: base.state_ee_86
-NEW res.country.state: base.state_et_1 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_10 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_11 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_2 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_3 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_4 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_5 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_6 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_7 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_8 [renamed from l10n_et module]
-NEW res.country.state: base.state_et_9 [renamed from l10n_et module]
+NEW res.country.state: base.state_et_1
+NEW res.country.state: base.state_et_10
+NEW res.country.state: base.state_et_11
+NEW res.country.state: base.state_et_2
+NEW res.country.state: base.state_et_3
+NEW res.country.state: base.state_et_4
+NEW res.country.state: base.state_et_5
+NEW res.country.state: base.state_et_6
+NEW res.country.state: base.state_et_7
+NEW res.country.state: base.state_et_8
+NEW res.country.state: base.state_et_9
 NEW res.country.state: base.state_fi_01
 NEW res.country.state: base.state_fi_02
 NEW res.country.state: base.state_fi_03
@@ -513,21 +514,21 @@ NEW res.country.state: base.state_lv_rix
 NEW res.country.state: base.state_lv_ven
 NEW res.country.state: base.state_lv_vmr
 NEW res.country.state: base.state_mx_q_roo
-NEW res.country.state: base.state_nl_bq1 [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_bq2 [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_bq3 [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_dr [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_fl [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_fr [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_ge [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_gr [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_li [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_nb [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_nh [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_ov [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_ut [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_ze [renamed from l10n_nl module]
-NEW res.country.state: base.state_nl_zh [renamed from l10n_nl module]
+NEW res.country.state: base.state_nl_bq1
+NEW res.country.state: base.state_nl_bq2
+NEW res.country.state: base.state_nl_bq3
+NEW res.country.state: base.state_nl_dr
+NEW res.country.state: base.state_nl_fl
+NEW res.country.state: base.state_nl_fr
+NEW res.country.state: base.state_nl_ge
+NEW res.country.state: base.state_nl_gr
+NEW res.country.state: base.state_nl_li
+NEW res.country.state: base.state_nl_nb
+NEW res.country.state: base.state_nl_nh
+NEW res.country.state: base.state_nl_ov
+NEW res.country.state: base.state_nl_ut
+NEW res.country.state: base.state_nl_ze
+NEW res.country.state: base.state_nl_zh
 NEW res.country.state: base.state_no_03
 NEW res.country.state: base.state_no_11
 NEW res.country.state: base.state_no_15
@@ -587,87 +588,87 @@ NEW res.country.state: base.state_se_w
 NEW res.country.state: base.state_se_x
 NEW res.country.state: base.state_se_y
 NEW res.country.state: base.state_se_z
-NEW res.country.state: base.state_tr_01 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_02 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_03 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_04 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_05 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_06 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_07 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_08 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_09 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_10 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_11 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_12 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_13 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_14 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_15 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_16 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_17 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_18 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_19 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_20 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_21 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_22 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_23 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_24 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_25 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_26 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_27 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_28 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_29 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_30 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_31 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_32 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_33 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_34 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_35 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_36 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_37 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_38 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_39 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_40 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_41 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_42 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_43 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_44 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_45 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_46 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_47 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_48 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_49 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_50 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_51 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_52 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_53 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_54 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_55 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_56 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_57 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_58 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_59 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_60 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_61 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_62 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_63 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_64 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_65 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_66 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_67 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_68 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_69 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_70 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_71 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_72 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_73 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_74 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_75 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_76 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_77 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_78 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_79 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_80 [renamed from l10n_tr module]
-NEW res.country.state: base.state_tr_81 [renamed from l10n_tr module]
+NEW res.country.state: base.state_tr_01
+NEW res.country.state: base.state_tr_02
+NEW res.country.state: base.state_tr_03
+NEW res.country.state: base.state_tr_04
+NEW res.country.state: base.state_tr_05
+NEW res.country.state: base.state_tr_06
+NEW res.country.state: base.state_tr_07
+NEW res.country.state: base.state_tr_08
+NEW res.country.state: base.state_tr_09
+NEW res.country.state: base.state_tr_10
+NEW res.country.state: base.state_tr_11
+NEW res.country.state: base.state_tr_12
+NEW res.country.state: base.state_tr_13
+NEW res.country.state: base.state_tr_14
+NEW res.country.state: base.state_tr_15
+NEW res.country.state: base.state_tr_16
+NEW res.country.state: base.state_tr_17
+NEW res.country.state: base.state_tr_18
+NEW res.country.state: base.state_tr_19
+NEW res.country.state: base.state_tr_20
+NEW res.country.state: base.state_tr_21
+NEW res.country.state: base.state_tr_22
+NEW res.country.state: base.state_tr_23
+NEW res.country.state: base.state_tr_24
+NEW res.country.state: base.state_tr_25
+NEW res.country.state: base.state_tr_26
+NEW res.country.state: base.state_tr_27
+NEW res.country.state: base.state_tr_28
+NEW res.country.state: base.state_tr_29
+NEW res.country.state: base.state_tr_30
+NEW res.country.state: base.state_tr_31
+NEW res.country.state: base.state_tr_32
+NEW res.country.state: base.state_tr_33
+NEW res.country.state: base.state_tr_34
+NEW res.country.state: base.state_tr_35
+NEW res.country.state: base.state_tr_36
+NEW res.country.state: base.state_tr_37
+NEW res.country.state: base.state_tr_38
+NEW res.country.state: base.state_tr_39
+NEW res.country.state: base.state_tr_40
+NEW res.country.state: base.state_tr_41
+NEW res.country.state: base.state_tr_42
+NEW res.country.state: base.state_tr_43
+NEW res.country.state: base.state_tr_44
+NEW res.country.state: base.state_tr_45
+NEW res.country.state: base.state_tr_46
+NEW res.country.state: base.state_tr_47
+NEW res.country.state: base.state_tr_48
+NEW res.country.state: base.state_tr_49
+NEW res.country.state: base.state_tr_50
+NEW res.country.state: base.state_tr_51
+NEW res.country.state: base.state_tr_52
+NEW res.country.state: base.state_tr_53
+NEW res.country.state: base.state_tr_54
+NEW res.country.state: base.state_tr_55
+NEW res.country.state: base.state_tr_56
+NEW res.country.state: base.state_tr_57
+NEW res.country.state: base.state_tr_58
+NEW res.country.state: base.state_tr_59
+NEW res.country.state: base.state_tr_60
+NEW res.country.state: base.state_tr_61
+NEW res.country.state: base.state_tr_62
+NEW res.country.state: base.state_tr_63
+NEW res.country.state: base.state_tr_64
+NEW res.country.state: base.state_tr_65
+NEW res.country.state: base.state_tr_66
+NEW res.country.state: base.state_tr_67
+NEW res.country.state: base.state_tr_68
+NEW res.country.state: base.state_tr_69
+NEW res.country.state: base.state_tr_70
+NEW res.country.state: base.state_tr_71
+NEW res.country.state: base.state_tr_72
+NEW res.country.state: base.state_tr_73
+NEW res.country.state: base.state_tr_74
+NEW res.country.state: base.state_tr_75
+NEW res.country.state: base.state_tr_76
+NEW res.country.state: base.state_tr_77
+NEW res.country.state: base.state_tr_78
+NEW res.country.state: base.state_tr_79
+NEW res.country.state: base.state_tr_80
+NEW res.country.state: base.state_tr_81
 NEW res.country.state: base.state_uk1
 NEW res.country.state: base.state_uk10
 NEW res.country.state: base.state_uk100
