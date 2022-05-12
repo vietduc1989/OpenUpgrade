@@ -1,5 +1,5 @@
 ---Models in module 'sale'---
-model sale.product.configurator (moved to sale_product_configurator) [transient]
+obsolete model sale.product.configurator [transient]
 ---Fields in module 'sale'---
 sale         / account.invoice          / comment (False)               : DEL mode: modify
 sale         / account.invoice          / partner_shipping_id (many2one): DEL relation: res.partner
@@ -20,8 +20,7 @@ sale         / product.attribute.custom.value / attribute_value_id (many2one) : 
 sale         / product.attribute.custom.value / custom_product_template_attribute_value_id (many2one): NEW relation: product.template.attribute.value, required
 sale         / product.attribute.custom.value / sale_order_line_id (many2one) : now required
 sale         / product.pricelist        / discount_policy (selection)   : module is now 'product' ('sale')
-sale         / product.product          / optional_product_ids (many2many): module is now 'sale_product_configurator' ('sale')
-sale         / product.template         / optional_product_ids (many2many): module is now 'sale_product_configurator' ('sale')
+sale         / product.template         / optional_product_ids (many2many): DEL relation: product.template
 sale         / res.company              / sale_note (text)              : DEL
 sale         / sale.order               / campaign_id (many2one)        : previously in module sale_crm
 sale         / sale.order               / company_id (many2one)         : now required, req_default: function

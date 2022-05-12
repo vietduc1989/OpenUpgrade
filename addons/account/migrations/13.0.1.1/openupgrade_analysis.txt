@@ -126,6 +126,8 @@ account      / account.invoice.tax      / name (char)                   : DEL re
 account      / account.invoice.tax      / sequence (integer)            : DEL
 account      / account.invoice.tax      / tax_id (many2one)             : DEL relation: account.tax
 account      / account.journal          / activity_ids (one2many)       : NEW relation: mail.activity
+account      / account.journal          / alias_name (char)             : not related anymore
+account      / account.journal          / alias_name (char)             : now a function
 account      / account.journal          / group_invoice_lines (boolean) : DEL
 account      / account.journal          / invoice_reference_model (selection): NEW required, selection_keys: ['euro', 'odoo'], req_default: function, hasdefault
 account      / account.journal          / invoice_reference_type (selection): NEW required, selection_keys: ['invoice', 'none', 'partner'], req_default: function, hasdefault
@@ -145,7 +147,12 @@ account      / account.journal.group    / name (char)                   : NEW re
 account      / account.journal.group    / sequence (integer)            : NEW hasdefault
 account      / account.move             / _order                        : _order is now 'date desc, name desc, id desc' ('date desc, id desc')
 account      / account.move             / access_token (char)           : NEW
-account      / account.move             / activity_ids (one2many)       : NEW relation: mail.activity
+account      / account.move             / activity_date_deadline (date) : previously in module to_account_journal_entry_chatter
+account      / account.move             / activity_ids (one2many)       : previously in module to_account_journal_entry_chatter
+account      / account.move             / activity_state (selection)    : previously in module to_account_journal_entry_chatter
+account      / account.move             / activity_summary (char)       : previously in module to_account_journal_entry_chatter
+account      / account.move             / activity_type_id (many2one)   : previously in module to_account_journal_entry_chatter
+account      / account.move             / activity_user_id (many2one)   : previously in module to_account_journal_entry_chatter
 account      / account.move             / amount (float)                : DEL
 account      / account.move             / amount_residual (float)       : NEW isfunction: function, stored
 account      / account.move             / amount_residual_signed (float): NEW isfunction: function, stored
@@ -158,6 +165,8 @@ account      / account.move             / amount_untaxed_signed (float) : NEW is
 account      / account.move             / auto_post (boolean)           : NEW hasdefault
 account      / account.move             / auto_reverse (boolean)        : DEL
 account      / account.move             / commercial_partner_id (many2one): NEW relation: res.partner, isfunction: function, stored
+account      / account.move             / company_id (many2one)         : not related anymore
+account      / account.move             / company_id (many2one)         : now a function
 account      / account.move             / currency_id (many2one)        : not a function anymore
 account      / account.move             / currency_id (many2one)        : now required, req_default: function
 account      / account.move             / fiscal_position_id (many2one) : NEW relation: account.fiscal.position
@@ -178,9 +187,19 @@ account      / account.move             / invoice_source_email (char)   : NEW
 account      / account.move             / invoice_user_id (many2one)    : NEW relation: res.users, hasdefault
 account      / account.move             / invoice_vendor_bill_id (many2one): NEW relation: account.move
 account      / account.move             / matched_percentage (float)    : DEL
-account      / account.move             / message_follower_ids (one2many): NEW relation: mail.followers
-account      / account.move             / message_ids (one2many)        : NEW relation: mail.message
-account      / account.move             / message_main_attachment_id (many2one): NEW relation: ir.attachment
+account      / account.move             / message_attachment_count (integer): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_channel_ids (many2many): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_follower_ids (one2many): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_has_error (boolean)   : previously in module to_account_journal_entry_chatter
+account      / account.move             / message_has_error_counter (integer): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_ids (one2many)        : previously in module to_account_journal_entry_chatter
+account      / account.move             / message_is_follower (boolean) : previously in module to_account_journal_entry_chatter
+account      / account.move             / message_main_attachment_id (many2one): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_needaction (boolean)  : previously in module to_account_journal_entry_chatter
+account      / account.move             / message_needaction_counter (integer): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_partner_ids (many2many): previously in module to_account_journal_entry_chatter
+account      / account.move             / message_unread (boolean)      : previously in module to_account_journal_entry_chatter
+account      / account.move             / message_unread_counter (integer): previously in module to_account_journal_entry_chatter
 account      / account.move             / partner_id (many2one)         : not a function anymore
 account      / account.move             / reversal_move_id (one2many)   : NEW relation: account.move
 account      / account.move             / reverse_date (date)           : DEL
@@ -191,13 +210,13 @@ account      / account.move             / state (selection)             : select
 account      / account.move             / tax_type_domain (char)        : DEL
 account      / account.move             / to_check (boolean)            : NEW hasdefault
 account      / account.move             / type (selection)              : NEW required, selection_keys: ['entry', 'in_invoice', 'in_receipt', 'in_refund', 'out_invoice', 'out_receipt', 'out_refund'], req_default: function, hasdefault
-account      / account.move             / website_message_ids (one2many): NEW relation: mail.message
+account      / account.move             / website_message_ids (one2many): previously in module to_account_journal_entry_chatter
 account      / account.move.line        / _order                        : _order is now 'date desc, move_name desc, id' ('date desc, id desc')
 account      / account.move.line        / account_internal_type (selection): NEW selection_keys: function, isrelated: related, stored
 account      / account.move.line        / account_root_id (many2one)    : NEW relation: account.root, isrelated: related, stored
-account      / account.move.line        / balance_cash_basis (float)    : DEL
-account      / account.move.line        / credit_cash_basis (float)     : DEL
-account      / account.move.line        / debit_cash_basis (float)      : DEL
+account      / account.move.line        / balance_cash_basis (float)    : module is now 'to_account_reports' ('account')
+account      / account.move.line        / credit_cash_basis (float)     : module is now 'to_account_reports' ('account')
+account      / account.move.line        / debit_cash_basis (float)      : module is now 'to_account_reports' ('account')
 account      / account.move.line        / discount (float)              : NEW hasdefault
 account      / account.move.line        / display_type (selection)      : NEW selection_keys: ['line_note', 'line_section'], hasdefault
 account      / account.move.line        / exclude_from_invoice_tab (boolean): NEW
@@ -310,7 +329,7 @@ account      / res.company              / expense_accrual_account_id (many2one):
 account      / res.company              / fiscalyear_last_month (selection): selection_keys is now '['1', '10', '11', '12', '2', '3', '4', '5', '6', '7', '8', '9']' ('[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]')
 account      / res.company              / invoice_reference_type (selection): DEL selection_keys: function
 account      / res.company              / invoice_terms (text)          : NEW
-account      / res.company              / overdue_msg (text)            : DEL
+account      / res.company              / overdue_msg (text)            : module is now 'to_account_reports' ('account')
 account      / res.company              / revenue_accrual_account_id (many2one): NEW relation: account.account
 account      / res.company              / tax_lock_date (date)          : NEW
 account      / res.partner              / customer_rank (integer)       : NEW hasdefault
@@ -354,9 +373,6 @@ account_voucher / account.voucher.line     / quantity (float)              : DEL
 account_voucher / account.voucher.line     / sequence (integer)            : DEL
 account_voucher / account.voucher.line     / tax_ids (many2many)           : DEL relation: account.tax
 account_voucher / account.voucher.line     / voucher_id (many2one)         : DEL relation: account.voucher, required
-l10n_fr_certification / account.move             / l10n_fr_hash (char)           : DEL
-l10n_fr_certification / account.move             / l10n_fr_secure_sequence_number (integer): DEL
-l10n_fr_certification / res.company              / l10n_fr_secure_sequence_id (many2one): DEL relation: ir.sequence
 ---XML records in module 'account'---
 NEW account.account.type: account.data_account_off_sheet (noupdate)
 NEW account.payment.term: account.account_payment_term_21days (noupdate)
@@ -434,18 +450,16 @@ DEL ir.actions.act_window.view: account_voucher.action_sale_receipt_tree
 DEL ir.actions.client: account.action_bank_reconcile_bank_statements
 NEW ir.actions.report: account.action_account_original_vendor_bill
 NEW ir.actions.report: account.action_report_account_hash_integrity
-NEW ir.actions.report: account.action_report_account_statement [renamed from point_of_sale module]
+NEW ir.actions.report: account.action_report_account_statement
 NEW ir.actions.server: account.action_account_invoice_from_list
 NEW ir.actions.server: account.action_accrual_entry
-NEW ir.actions.server: account.action_check_hash_integrity [renamed from l10n_fr_certification module]
+NEW ir.actions.server: account.action_check_hash_integrity
 NEW ir.actions.server: account.action_duplicate_account
 NEW ir.actions.server: account.action_move_switch_invoice_to_credit_note
 NEW ir.actions.server: account.action_new_bank_setting
 NEW ir.actions.server: account.model_account_move_action_share (noupdate)
 DEL ir.actions.server: account.action_invoice_tree2
 DEL ir.actions.server: account.model_account_invoice_action_share (noupdate)
-DEL ir.actions.server: l10n_fr_certification.action_check_hash_integrity [renamed to account module]
-DEL ir.actions.server: l10n_fr_certification.odoo_french_certification
 NEW ir.cron: account.ir_cron_auto_post_draft_entry
 DEL ir.cron: account.ir_cron_reverse_entry
 DEL ir.filters: account.filter_invoice_salespersons
@@ -507,7 +521,6 @@ DEL ir.ui.menu: account.menu_action_invoice_tree2
 DEL ir.ui.menu: account.menu_finance_entries_accounting_entries
 DEL ir.ui.menu: account_voucher.menu_action_purchase_receipt
 DEL ir.ui.menu: account_voucher.menu_action_sale_receipt
-DEL ir.ui.menu: l10n_fr_certification.menu_check_move_integrity_reporting [renamed to l10n_fr_pos_cert module]
 NEW ir.ui.view: account._assets_primary_variables
 NEW ir.ui.view: account.account_accrual_accounting_wizard_form_view
 NEW ir.ui.view: account.account_tag_view_search
@@ -579,6 +592,5 @@ DEL ir.ui.view: account_voucher.view_voucher_line_form
 DEL ir.ui.view: account_voucher.view_voucher_line_tree
 DEL ir.ui.view: account_voucher.view_voucher_tree
 DEL ir.ui.view: account_voucher.view_voucher_tree_purchase
-DEL ir.ui.view: l10n_fr_certification.view_general_fr_inalterability_inherit_config
 DEL mail.message.subtype: account_voucher.mt_voucher_state_change (noupdate)
 DEL res.groups: account.group_products_in_bills

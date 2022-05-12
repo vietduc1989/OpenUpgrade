@@ -9,7 +9,7 @@ new model slide.question
 new model slide.slide.link
 new model slide.slide.partner
 ---Fields in module 'website_slides'---
-website_slides / gamification.challenge   / category (False)              : NEW selection_keys: ['certification', 'forum', 'hr', 'other', 'slides'], mode: modify
+website_slides / gamification.challenge   / category (False)              : NEW selection_keys: ['certification', 'hr', 'other', 'slides'], mode: modify
 website_slides / res.partner              / slide_channel_ids (many2many) : NEW relation: slide.channel
 website_slides / slide.answer             / is_correct (boolean)          : NEW
 website_slides / slide.answer             / question_id (many2one)        : NEW relation: slide.question, required

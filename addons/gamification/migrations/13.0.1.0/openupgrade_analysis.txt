@@ -7,8 +7,8 @@ gamification / gamification.badge       / image_128 (binary)            : NEW at
 gamification / gamification.badge       / image_1920 (binary)           : NEW attachment: True
 gamification / gamification.badge       / image_256 (binary)            : NEW attachment: True, isrelated: related, stored
 gamification / gamification.badge       / image_512 (binary)            : NEW attachment: True, isrelated: related, stored
-gamification / gamification.badge       / level (selection)             : previously in module website_forum
-gamification / gamification.badge.user  / level (selection)             : previously in module website_forum
+gamification / gamification.badge       / level (selection)             : NEW selection_keys: ['bronze', 'gold', 'silver'], hasdefault
+gamification / gamification.badge.user  / level (selection)             : NEW selection_keys: function, isrelated: related, stored
 gamification / gamification.karma.rank  / description (html)            : NEW
 gamification / gamification.karma.rank  / description_motivational (html): NEW
 gamification / gamification.karma.rank  / image_1024 (binary)           : NEW attachment: True, isrelated: related, stored
@@ -20,12 +20,9 @@ gamification / gamification.karma.rank  / karma_min (integer)           : NEW
 gamification / gamification.karma.rank  / name (text)                   : NEW required
 gamification / gamification.karma.rank  / user_ids (one2many)           : NEW relation: res.users
 gamification / res.users                / badge_ids (one2many)          : previously in module hr_gamification
-gamification / res.users                / bronze_badge (integer)        : previously in module website_forum
-gamification / res.users                / gold_badge (integer)          : previously in module website_forum
-gamification / res.users                / karma (integer)               : previously in module website_forum
+gamification / res.users                / karma (integer)               : NEW hasdefault
 gamification / res.users                / next_rank_id (many2one)       : NEW relation: gamification.karma.rank
 gamification / res.users                / rank_id (many2one)            : NEW relation: gamification.karma.rank
-gamification / res.users                / silver_badge (integer)        : previously in module website_forum
 ---XML records in module 'gamification'---
 NEW gamification.karma.rank: gamification.rank_bachelor (noupdate)
 NEW gamification.karma.rank: gamification.rank_doctor (noupdate)
