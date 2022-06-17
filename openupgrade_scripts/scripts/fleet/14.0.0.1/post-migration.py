@@ -3,6 +3,8 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 from openupgradelib import openupgrade
 
+from odoo.tools.translate import _
+
 
 def fill_fleet_vehicle_log_contract_fields(env):
     openupgrade.logged_query(
@@ -68,6 +70,66 @@ def recompute_fleet_vehicle_log_contract_name(env):
     contracts._compute_contract_name()
 
 
+def _move_data_from_cost_to_service(env):
+    other_service_type_id = None
+    env.cr.execute("""
+    SELECT *
+    FROM fleet_vehicle_cost c
+    WHERE c.cost_type = 'other' AND c.cost_subtype_id IS NULL;
+    """
+    )
+    if env.cr.fetchone():
+        other_service_type_id = env['fleet.service.type'].create({
+            'name': _('Other'),
+            'category': 'service'
+        }).id
+    openupgrade.logged_query(
+        env.cr,"""
+        INSERT INTO fleet_vehicle_log_services (cost_id, vehicle_id, amount, date, description, create_uid, create_date,
+        write_uid, write_date, active, service_type_id, odometer_id, company_id, state)
+        SELECT id, vehicle_id, amount, date, description, create_uid, create_date, write_uid, write_date, True, COALESCE(cost_subtype_id, %(type_id)s),
+        odometer_id, company_id, 'todo'
+        FROM fleet_vehicle_cost c
+        WHERE c.cost_type = 'other';
+        """, {
+            "type_id": other_service_type_id,
+        })
+
+def _move_data_from_fuel_to_service(env):
+    fuel_service_type_id = None
+    env.cr.execute("""
+    SELECT *
+    FROM fleet_vehicle_cost c join fleet_vehicle_log_fuel f ON c.id = f.cost_id
+    WHERE c.cost_subtype_id IS NULL;
+    """
+    )
+    if env.cr.fetchone():
+        fuel_service_type_id = env['fleet.service.type'].create({
+            'name': _('Refueling'),
+            'category': 'service'
+        }).id
+    openupgrade.logged_query(
+        env.cr,"""
+        INSERT INTO fleet_vehicle_log_services (cost_id, vehicle_id, amount, date, description, create_uid, create_date,
+            write_uid, write_date, active, service_type_id, odometer_id, company_id, state)
+        SELECT c.id, c.vehicle_id, c.amount, c.date, c.description, c.create_uid, c.create_date, c.write_uid, c.write_date, True, COALESCE(c.cost_subtype_id, %(type_id)s),
+         c.odometer_id, c.company_id, 'todo'
+        FROM fleet_vehicle_cost c join fleet_vehicle_log_fuel f ON c.id = f.cost_id
+        """, {
+            "type_id": fuel_service_type_id,
+        })
+
+
+def set_module_viin_fleet_to_install(env):
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE ir_module_module
+        SET state='to install'
+        WHERE name = 'viin_fleet' AND state='uninstalled'
+        """
+    )
+
 @openupgrade.migrate()
 def migrate(env, version):
     fill_fleet_vehicle_log_contract_fields(env)
@@ -87,3 +149,10 @@ def migrate(env, version):
         ],
     )
     recompute_fleet_vehicle_log_contract_name(env)
+
+    # Move data from fleet_vehicle_cost and fleet_vehicle_log_fuel to fleet_vehicle_log_services
+    _move_data_from_cost_to_service(env)
+    _move_data_from_fuel_to_service(env)
+
+    # Install viin_fleet module
+    set_module_viin_fleet_to_install(env)
