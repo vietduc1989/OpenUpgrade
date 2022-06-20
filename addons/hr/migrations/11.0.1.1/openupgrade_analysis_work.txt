@@ -1,5 +1,7 @@
 ---Fields in module 'hr'---
-hr           / hr.employee              / _inherits (False)             : DEL 
+hr           / hr.employee              / _inherits (False)             : DEL
+# Done: fill data on pre-migration
+
 hr           / hr.employee              / permit_no (char)              : NEW 
 hr           / hr.employee              / visa_expire (date)            : NEW 
 hr           / hr.employee              / visa_no (char)                : NEW
