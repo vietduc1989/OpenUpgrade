@@ -151,6 +151,12 @@ def fill_account_move_line_tax_base_amount(env):
         """,
     )
 
+def cancel_no_entry_posted_payments(env):
+    payments = env['account.payment'].search([('state', 'in', ['posted', 'reconciled']),
+                                              ('move_line_ids', '=', False)])
+    _logger.info("Cancelling all no-entry-posted-payments with ids: %s" % payments.ids)
+    payments.action_cancel()
+
 
 @openupgrade.migrate()
 def migrate(env, version):
@@ -202,6 +208,7 @@ def migrate(env, version):
     fill_account_invoice_line_total(env)
     fill_account_move_line_tax_base_amount(env)
     _migrate_security(env)
+    cancel_no_entry_posted_payments(env)
 
     openupgrade.load_data(
         env.cr, 'account', 'migrations/11.0.1.1/noupdate_changes.xml',
