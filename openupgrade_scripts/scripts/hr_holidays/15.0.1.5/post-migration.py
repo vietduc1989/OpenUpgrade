@@ -30,62 +30,49 @@ HolidaysRequest._check_allocation_id = _check_allocation_id
 
 
 def _fill_hr_leave_type_holiday_allocation_id(env):
-    Allocation = env["hr.leave.allocation"].with_context(active_test=False)
-    employee_leaves = (
-        env["hr.leave"]
-        .with_context(active_test=False)
-        .search(
-            [
-                ("holiday_status_id.requires_allocation", "=", "yes"),
-                ("holiday_type", "=", "employee"),
-                ("date_from", "!=", False),
-                ("date_to", "!=", False),
-            ]
-        )
+    leaves = env["hr.leave"].search(
+        [
+            ("holiday_status_id.requires_allocation", "=", "yes"),
+            ("date_from", "!=", False),
+            ("date_to", "!=", False),
+        ],
+        order="date_to, id",
     )
-    for employee in employee_leaves.employee_id:
-        # sorted by `date_from`
-        employee_allocations = Allocation.search(
-            [("employee_id", "=", employee.id), ("holiday_type", "=", "employee")]
-        ).sorted("date_from")
-        number_of_days_diff = 0.0
-        for allocation in employee_allocations:
-            number_of_days = allocation.number_of_days
-            # number_of_hours = allocation.number_of_hours_display
-            leaves_of_employee = employee_leaves.filtered(
-                lambda r: r.employee_id == employee
-                and r.holiday_status_id == allocation.holiday_status_id
-            )
-            leaves_of_allocation = env["hr.leave"]
-            total_days = number_of_days_diff
-            leaves_of_employee = leaves_of_employee.sorted("date_from")
-            for leave in leaves_of_employee:
-                leaves_of_allocation |= leave
-                if leave.state in ("confirm", "validate1", "validate"):
-                    total_days += leave.number_of_days
-                if total_days >= number_of_days or leave == leaves_of_employee[-1]:
-                    number_of_days_diff = (
-                        total_days - number_of_days
-                        if total_days > number_of_days
-                        else 0.0
-                    )
-                    # update `holiday_allocation_id`
-                    leave_ids = str(tuple(leaves_of_allocation.ids)).replace(",)", ")")
-                    openupgrade.logged_query(
-                        env.cr,
-                        """
-                        UPDATE hr_leave
-                        SET holiday_allocation_id = %s
-                        WHERE id in %s
-                        """
-                        % (allocation.id, leave_ids),
-                    )
-                    # Exclude updated leaves
-                    employee_leaves -= leaves_of_allocation
-                    break
+    leaves._compute_from_holiday_status_id()
+
+
+def _map_hr_leave_allocation_date_to(env):
+    env.cr.execute(
+        """
+        SELECT id FROM hr_leave_allocation
+        WHERE state = 'validate' AND %s IS NOT NULL
+        """,
+        (openupgrade.get_legacy_name("date_to"),),
+    )
+    allocation_ids = [d[0] for d in env.cr.fetchall()]
+    allocations_to_update = env["hr.leave.allocation"]
+    for hla in env["hr.leave.allocation"].browse(allocation_ids):
+        leave_unit = "number_of_%s_display" % (
+            "hours" if hla.holiday_status_id.request_unit == "hour" else "days"
+        )
+        if hla.max_leaves >= sum(hla.taken_leave_ids.mapped(leave_unit)):
+            allocations_to_update |= hla
+
+    hla_ids = str(tuple(allocations_to_update.ids)).replace(",)", ")")
+    # Using SQL to update date_to
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE hr_leave_allocation
+        SET date_to = %s
+        WHERE id IN %s
+        """
+        % (openupgrade.get_legacy_name("date_to"), hla_ids),
+    )
 
 
 @openupgrade.migrate()
 def migrate(env, version):
     _fill_hr_leave_type_holiday_allocation_id(env)
     openupgrade.load_data(env.cr, "hr_holidays", "15.0.1.5/noupdate_changes.xml")
+    _map_hr_leave_allocation_date_to(env)

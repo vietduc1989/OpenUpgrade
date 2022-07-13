@@ -238,6 +238,36 @@ def _create_column_hr_leave_holiday_allocation_id(env):
     )
 
 
+def _map_hr_leave_allocation_temp_date_to(env):
+    """
+    set null the date_to column to fill `holiday_allocation_id` column
+    after re-update `date_to` column at post-migrate
+    """
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE hr_leave_allocation
+        SET date_to = null
+        WHERE date_to < date_from
+        """,
+    )
+    openupgrade.copy_columns(
+        env.cr,
+        {
+            "hr_leave_allocation": [
+                ("date_to", None, None),
+            ],
+        },
+    )
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE hr_leave_allocation
+        SET date_to = null
+        """,
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _fast_fill_hr_leave_employee_company_id(env)
@@ -255,3 +285,4 @@ def migrate(env, version):
     _fast_fill_hr_leave_allocation_employee_ids(env)
     _fast_fill_hr_leave_allocation_multi_employee(env)
     _create_column_hr_leave_holiday_allocation_id(env)
+    _map_hr_leave_allocation_temp_date_to(env)
