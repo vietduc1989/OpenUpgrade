@@ -16,6 +16,27 @@ def migrate(env, version):
         ],
     )
     update_color_for_slide_channel_tag(env)
+    update_translation_type_for_description_fields(env)
+
+
+def update_translation_type_for_description_fields(env):
+    # Update the translation type for the fields: description, description_short of
+    # (slide.slide and slide.channel) because they are converted from text to html
+    # Type model -> model_terms
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE ir_translation
+        SET type = 'model_terms'
+        WHERE
+            type ='model'
+            AND name IN (
+                'slide.channel,description',
+                'slide.channel,description_short',
+                'slide.slide,description'
+            )
+        """,
+    )
 
 
 def update_color_for_slide_channel_tag(env):
