@@ -103,7 +103,8 @@ def _re_fill_account_analytic_line_timesheet_invoice_type(env):
         )
         UPDATE account_analytic_line aal
         SET timesheet_invoice_type = aal_tmp.timesheet_invoice_type
-        FROM aal_tmp WHERE aal_tmp.aal_id = aal.id
+        FROM aal_tmp
+        WHERE aal_tmp.aal_id = aal.id
         """,
     )
     openupgrade.logged_query(
@@ -130,15 +131,16 @@ def _re_fill_account_analytic_line_timesheet_invoice_type(env):
             WHEN so_line IS NOT NULL AND product IS NOT NULL
                 AND tmpl.type = 'service' AND tmpl.invoice_policy = 'order'
                 THEN 'billable_fixed'
-            WHEN so_line IS NULL OR (product IS NOT NULL AND tmpl.type != 'service')
-                THEN 'non_billable'
+            WHEN so_line IS NULL AND (product IS NOT NULL AND tmpl.type != 'service')
+                THEN NULL
+            WHEN so_line IS NULL THEN 'non_billable'
             END
             AS timesheet_invoice_type
         FROM account_analytic_line aal
         LEFT JOIN sale_order_line so_line ON aal.so_line = so_line.id
         LEFT JOIN product_product product ON so_line.product_id = product.id
         LEFT JOIN product_template tmpl ON tmpl.id = product.product_tmpl_id
-        WHERE aal.project_id IS NOT NULL AND aal.timesheet_invoice_type IS NULL
+        WHERE aal.project_id IS NOT NULL
         )
         UPDATE account_analytic_line aal
         SET timesheet_invoice_type = aal_tmp.timesheet_invoice_type
