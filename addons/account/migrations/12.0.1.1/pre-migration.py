@@ -158,7 +158,7 @@ def drop_obsolete_fk_constraints(env):
 def migrate(env, version):
     cr = env.cr
     openupgrade.delete_records_safely_by_xml_id(
-        env, ['account.action_view_account_move_line_reconcile'],
+        env, ['account.action_view_account_move_line_reconcile', 'account.action_invoice_tree2'],
     )
     openupgrade.copy_columns(cr, _column_copies)
     openupgrade.rename_columns(cr, _column_renames)
