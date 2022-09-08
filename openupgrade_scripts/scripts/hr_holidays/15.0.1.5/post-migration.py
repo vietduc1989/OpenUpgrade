@@ -10,25 +10,6 @@ from odoo.addons.hr_holidays.models.hr_leave import HolidaysRequest
 _logger = logging.getLogger(__name__)
 
 
-@api.constrains("holiday_allocation_id")
-def _check_allocation_id(self):
-    """Don't raise ValidationError in _check_allocation_id method."""
-    try:
-        return HolidaysRequest._check_allocation_id._original_method(self)
-    except ValidationError:
-        _logger.warning(
-            "Could not find an allocation of type %s for the time off with ID %s."
-            "\nRequires allocation of this type is now set to 'No Limit'."
-            "\nPlease review requires allocation of this type manually "
-            "after the migration."
-            % (self.holiday_status_id.mapped("display_name"), self.ids)
-        )
-
-
-_check_allocation_id._original_method = HolidaysRequest._check_allocation_id
-HolidaysRequest._check_allocation_id = _check_allocation_id
-
-
 def _fill_hr_leave_type_holiday_allocation_id(env):
     leaves = env["hr.leave"].search(
         [
@@ -58,17 +39,20 @@ def _map_hr_leave_allocation_date_to(env):
         if hla.max_leaves >= sum(hla.taken_leave_ids.mapped(leave_unit)):
             allocations_to_update |= hla
 
-    hla_ids = str(tuple(allocations_to_update.ids)).replace(",)", ")")
-    # Using SQL to update date_to
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE hr_leave_allocation
-        SET date_to = %s
-        WHERE id IN %s
-        """
-        % (openupgrade.get_legacy_name("date_to"), hla_ids),
-    )
+    if allocations_to_update:
+        # Using SQL to update date_to
+        openupgrade.logged_query(
+            env.cr,
+            """
+            UPDATE hr_leave_allocation
+            SET date_to = %s
+            WHERE id IN %s
+            """
+            % (
+                openupgrade.get_legacy_name("date_to"), 
+                tuple(allocations_to_update.ids),
+            ),
+        )
 
 
 @openupgrade.migrate()
