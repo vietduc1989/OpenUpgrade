@@ -279,19 +279,22 @@ def migration_invoice_moves(env):
     # 2st: exclude from invoice_tab the grouped ones
     openupgrade.logged_query(
         env.cr, """
-        UPDATE account_move_line aml
-        SET exclude_from_invoice_tab = TRUE, sequence = ail.sequence,
-        name = '(OLD GROUPED ITEM)' || aml.name,
-        create_uid = ail.create_uid, create_date = ail.create_date
-        FROM account_invoice_line ail
-            JOIN account_invoice ai ON ail.invoice_id = ai.id AND ai.state NOT IN ('draft', 'cancel')
-            JOIN account_move am ON ail.invoice_id = am.old_invoice_id
-        WHERE am.id = aml.move_id AND ail.company_id = aml.company_id AND ail.account_id = aml.account_id
+            DELETE FROM account_move_line aml
+            USING
+            account_invoice ai,
+            account_move AS am,
+            account_invoice_line ail
+            WHERE am.id = aml.move_id
+            AND ail.invoice_id = ai.id
+            AND ai.state NOT IN ('draft', 'cancel')
+            AND ail.invoice_id = am.old_invoice_id
+            AND ail.company_id = aml.company_id
+            AND ail.account_id = aml.account_id
             AND ail.partner_id = aml.partner_id
             AND ((ail.product_id IS NULL AND aml.product_id IS NULL) OR ail.product_id = aml.product_id)
             AND ((ail.uom_id IS NULL AND aml.product_uom_id IS NULL) OR ail.uom_id = aml.product_uom_id)
             AND ((ail.account_analytic_id IS NULL AND aml.analytic_account_id IS NULL)
-                OR ail.account_analytic_id = aml.analytic_account_id)
+            OR ail.account_analytic_id = aml.analytic_account_id)
             AND aml.tax_line_id IS NULL
             AND aml.old_invoice_line_id IS NULL
             """,
@@ -319,7 +322,13 @@ def migration_invoice_moves(env):
         ail.product_id, ail.account_analytic_id, ail.display_type,
         ail.is_rounding_line, COALESCE(ai.move_id, am.id), ail.id, COALESCE(ai.date, ai.date_invoice),
         ail.create_uid, ail.create_date, ail.write_uid, ail.write_date, am.state, am.name,
-        0.0, 0.0, 0.0
+        CASE WHEN ail.price_subtotal <0 AND ai.type IN ('out_refund', 'in_invoice') THEN -ail.price_subtotal
+                 WHEN ail.price_subtotal >0 AND ai.type IN ('out_invoice', 'in_refund') THEN ail.price_subtotal
+        ELSE 0 END,
+        CASE WHEN ail.price_subtotal >0 AND ai.type IN ('out_refund', 'in_invoice') THEN ail.price_subtotal
+                 WHEN ail.price_subtotal <0 AND ai.type IN ('out_invoice', 'in_refund') THEN -ail.price_subtotal
+        ELSE 0 END,
+        ail.price_subtotal
         FROM account_invoice_line ail
             JOIN account_invoice ai ON ail.invoice_id = ai.id
             JOIN account_move am ON am.old_invoice_id = ai.id
